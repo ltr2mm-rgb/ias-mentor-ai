@@ -1,0 +1,32 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# ---- Virtual environments ----
+venv/
+venv311/
+env/
+.venv/
+ENV/
+
+# ---- Secrets & local config ----
+.env
+*.env.local
+
+# ---- Databases / runtime data ----
+*.db
+*.sqlite
+*.sqlite3
+
+# ---- Backups & editor junk ----
+*.backup
+*.bak
+*.orig
+*~
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

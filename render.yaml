@@ -1,0 +1,28 @@
+# Render Blueprint: one web service + a free PostgreSQL database.
+# Deploy by connecting this repo as a Blueprint, or Render reads it on the service.
+databases:
+  - name: ias-mentor-db
+    plan: free
+    databaseName: iasmentor
+    user: iasmentor
+
+services:
+  - type: web
+    name: ias-mentor-ai
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false          # set manually in the Render dashboard
+      - key: SECRET_KEY
+        generateValue: true  # Render generates a strong random secret
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "60"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ias-mentor-db
+          property: connectionString
