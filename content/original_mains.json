@@ -1,0 +1,259 @@
+{
+  "_note": "AIVORA-authored original UPSC Mains-style questions with answer frameworks. Questions and answer guidance are original, written from standard general-studies knowledge; not copied from any coaching material.",
+  "subjects": [
+    {
+      "subject": "Polity & Governance",
+      "questions": [
+        {
+          "q": "The basic structure doctrine has preserved constitutional identity while allowing the Constitution to evolve. Critically examine.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Briefly define the basic structure doctrine and its origin in the Kesavananda Bharati case (1973).",
+            "body": [
+              "Explain why it emerged: to check unlimited amending power under Article 368 after cases like Golaknath and the 24th/25th Amendments.",
+              "Elements identified as basic structure over time: supremacy of the Constitution, rule of law, separation of powers, federalism, secularism, judicial review, free and fair elections.",
+              "Positives: protects core values from transient majorities; balances parliamentary sovereignty with constitutionalism.",
+              "Criticisms: doctrine is judge-made and not textually defined; concerns of judicial overreach and uncertainty about what counts as 'basic'."
+            ],
+            "conclusion": "Conclude that the doctrine, despite criticism, has strengthened constitutional democracy by anchoring identity while permitting reform."
+          }
+        },
+        {
+          "q": "Local self-government institutions were envisaged as the third tier of Indian federalism, yet they face structural constraints. Discuss.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Note the constitutional status given by the 73rd and 74th Amendments (1992).",
+            "body": [
+              "Intended empowerment: regular elections, reservations for SC/ST/women, State Finance Commissions, devolution of functions in the 11th and 12th Schedules.",
+              "Constraints: inadequate devolution of the '3 Fs' (functions, funds, functionaries); dependence on state governments; limited own revenue.",
+              "Capacity gaps: weak administrative support and training at the grassroots.",
+              "Way forward: genuine fiscal devolution, activity mapping, capacity building, and accountability mechanisms."
+            ],
+            "conclusion": "Emphasise that effective decentralisation requires political will beyond formal constitutional recognition."
+          }
+        },
+        {
+          "q": "Discuss the mechanisms of cooperative and competitive federalism in India and their significance for balanced regional development.",
+          "marks": 10,
+          "words": 150,
+          "framework": {
+            "intro": "Define cooperative and competitive federalism.",
+            "body": [
+              "Cooperative federalism institutions: Inter-State Council, GST Council, Finance Commission, NITI Aayog forums.",
+              "Competitive federalism: states competing on ease of doing business, investment, and outcome rankings.",
+              "Significance: pooled decision-making and healthy competition can drive reform and development."
+            ],
+            "conclusion": "Note that both must be balanced so competition does not widen regional inequalities."
+          }
+        },
+        {
+          "q": "Emergency provisions are a necessary safeguard but carry the risk of misuse. Analyse in the light of constitutional safeguards.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Introduce the three types of emergency (Articles 352, 356, 360).",
+            "body": [
+              "Rationale: to protect the sovereignty, unity, and constitutional machinery of the nation.",
+              "Historical misuse: the 1975-77 National Emergency period highlighted dangers to civil liberties.",
+              "Safeguards after the 44th Amendment: written Cabinet advice, 'armed rebellion' replacing 'internal disturbance', periodic parliamentary approval, and judicial review (S. R. Bommai case for Article 356).",
+              "Balance between security and liberty."
+            ],
+            "conclusion": "Conclude that safeguards have reduced but not eliminated the risk, making vigilance essential."
+          }
+        }
+      ]
+    },
+    {
+      "subject": "Modern History",
+      "questions": [
+        {
+          "q": "Evaluate the significance of the Revolt of 1857 in shaping subsequent British policy and Indian national consciousness.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Briefly set the context of the 1857 uprising and its immediate and underlying causes.",
+            "body": [
+              "Nature and spread: began at Meerut, symbolic leadership of Bahadur Shah Zafar, key centres at Delhi, Kanpur, Lucknow, Jhansi.",
+              "Consequences for British policy: end of Company rule, Government of India Act 1858, Queen's Proclamation, reorganisation of the army, and a policy of divide and cautious non-interference.",
+              "Impact on national consciousness: provided a memory of resistance and martyrs, later invoked by nationalists.",
+              "Limitations: lacked unified leadership, all-India character, and a common programme."
+            ],
+            "conclusion": "Conclude that although it failed militarily, 1857 was a turning point in India's political history."
+          }
+        },
+        {
+          "q": "Assess the contribution of the nineteenth-century socio-religious reform movements to the making of modern India.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Introduce the reform movements as responses to social evils and colonial contact.",
+            "body": [
+              "Key movements and leaders: Brahmo Samaj (Ram Mohan Roy), Arya Samaj (Dayananda), Ramakrishna Mission (Vivekananda), Aligarh Movement (Sir Syed), Satyashodhak Samaj (Phule).",
+              "Social reforms: abolition of Sati, widow remarriage, women's education, opposition to caste discrimination.",
+              "Intellectual awakening and rise of rational and humanist thought.",
+              "Limitations: largely urban, elite-led, and sometimes revivalist."
+            ],
+            "conclusion": "Conclude that these movements laid the social and intellectual foundations of nationalism."
+          }
+        },
+        {
+          "q": "Analyse how Gandhian mass movements transformed the character of the Indian freedom struggle.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Note Gandhi's arrival in Indian politics and the method of satyagraha.",
+            "body": [
+              "Early experiments: Champaran, Ahmedabad, Kheda.",
+              "Mass phases: Non-Cooperation (1920-22), Civil Disobedience (1930-34), Quit India (1942).",
+              "Transformation: from elite petitioning to mass participation across classes, regions, and communities; involvement of peasants, workers, and women.",
+              "Techniques: non-violence, constructive programme, use of symbols like khadi and salt."
+            ],
+            "conclusion": "Conclude that Gandhi broadened and democratised the national movement."
+          }
+        },
+        {
+          "q": "Why did the Simon Commission provoke widespread protest in India? Explain its consequences.",
+          "marks": 10,
+          "words": 150,
+          "framework": {
+            "intro": "Introduce the Simon Commission (1928) and its mandate.",
+            "body": [
+              "Cause of protest: an all-British commission with no Indian member, seen as an insult ('Simon Go Back').",
+              "Consequences: united political response, the Nehru Report as an Indian alternative, and radicalisation of the movement."
+            ],
+            "conclusion": "Note that it accelerated the demand for self-government and eventually Purna Swaraj."
+          }
+        }
+      ]
+    },
+    {
+      "subject": "Geography",
+      "questions": [
+        {
+          "q": "Explain the mechanism of the Indian monsoon and discuss the factors that cause its interannual variability.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Define the monsoon as a seasonal reversal of winds driven by differential heating of land and sea.",
+            "body": [
+              "Mechanism: summer low pressure over the subcontinent draws moist winds from the Indian Ocean (southwest monsoon); winter reversal gives the northeast monsoon.",
+              "Role of the Inter-Tropical Convergence Zone and the Tibetan Plateau.",
+              "Variability factors: El Nino and La Nina (ENSO), the Indian Ocean Dipole, jet streams, and snow cover.",
+              "Socio-economic significance: agriculture, water resources, and the rural economy depend on it."
+            ],
+            "conclusion": "Conclude that understanding monsoon variability is vital for agriculture and disaster preparedness."
+          }
+        },
+        {
+          "q": "Distinguish between the Himalayan and Peninsular river systems of India with respect to their origin and regime.",
+          "marks": 10,
+          "words": 150,
+          "framework": {
+            "intro": "Introduce the two major drainage systems of India.",
+            "body": [
+              "Himalayan rivers: perennial, fed by snowmelt and rain, form large plains and deltas (Ganga, Yamuna, Brahmaputra).",
+              "Peninsular rivers: mostly seasonal and rain-fed, flow through stable plateaus (Godavari, Krishna, Kaveri); Narmada and Tapi flow westward.",
+              "Differences in age, gradient, and erosional character."
+            ],
+            "conclusion": "Note their differing implications for irrigation, hydropower, and flooding."
+          }
+        },
+        {
+          "q": "Account for the diversity of soils in India and their significance for agriculture.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "State that soil diversity reflects variations in parent rock, climate, and relief.",
+            "body": [
+              "Major soils: alluvial (fertile, northern plains), black/regur (cotton, Deccan), red, laterite, arid, and mountain soils.",
+              "Link between soil type and cropping patterns.",
+              "Problems: erosion, salinity, and declining fertility.",
+              "Conservation measures: contour ploughing, crop rotation, afforestation."
+            ],
+            "conclusion": "Conclude that sustainable soil management is essential for food security."
+          }
+        },
+        {
+          "q": "Discuss the significance of the Western Ghats as an ecological and hydrological system.",
+          "marks": 10,
+          "words": 150,
+          "framework": {
+            "intro": "Introduce the Western Ghats as a biodiversity hotspot and older, continuous range.",
+            "body": [
+              "Ecological role: high endemism, dense forests, and habitat for rare species.",
+              "Hydrological role: source of major peninsular rivers and influence on the monsoon.",
+              "Threats: deforestation, mining, and development pressures."
+            ],
+            "conclusion": "Note the need for balanced conservation and livelihoods."
+          }
+        }
+      ]
+    },
+    {
+      "subject": "Economy & Environment",
+      "questions": [
+        {
+          "q": "Distinguish between fiscal deficit, revenue deficit, and primary deficit, and explain their significance for fiscal management.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "State that deficit indicators measure different dimensions of government finances.",
+            "body": [
+              "Fiscal deficit: total expenditure minus total receipts excluding borrowings; indicates total borrowing need.",
+              "Revenue deficit: revenue expenditure exceeding revenue receipts; signals borrowing for current spending.",
+              "Primary deficit: fiscal deficit minus interest payments; shows current fiscal stance excluding past debt.",
+              "Significance: high deficits can raise debt and inflation; fiscal responsibility frameworks aim for prudence."
+            ],
+            "conclusion": "Conclude that quality of deficit (capital vs revenue spending) matters as much as its size."
+          }
+        },
+        {
+          "q": "Examine the objectives and impact of the Goods and Services Tax (GST) on India's indirect tax structure.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Introduce GST as a comprehensive indirect tax implemented in 2017.",
+            "body": [
+              "Objectives: unify fragmented indirect taxes, create a common market, reduce cascading of taxes.",
+              "Institutional mechanism: the GST Council as a forum of Centre and states (cooperative federalism).",
+              "Positives: input tax credit, wider tax base, formalisation.",
+              "Challenges: rate complexity, compliance burden for small firms, and revenue concerns of states."
+            ],
+            "conclusion": "Conclude that GST is a structural reform whose gains depend on continued simplification."
+          }
+        },
+        {
+          "q": "Discuss the concept of sustainable development and the trade-offs it involves for a developing economy like India.",
+          "marks": 15,
+          "words": 250,
+          "framework": {
+            "intro": "Define sustainable development as meeting present needs without compromising future generations.",
+            "body": [
+              "Three pillars: economic, social, and environmental sustainability.",
+              "Trade-offs: growth and employment needs versus environmental protection and emission reduction.",
+              "Policy instruments: renewable energy expansion, clean air programmes, circular economy, and international commitments under the Paris Agreement.",
+              "Equity dimension: common but differentiated responsibilities."
+            ],
+            "conclusion": "Conclude that India must pursue a low-carbon yet inclusive growth path."
+          }
+        },
+        {
+          "q": "Explain the concept of energy flow in an ecosystem and its ecological implications.",
+          "marks": 10,
+          "words": 150,
+          "framework": {
+            "intro": "Define energy flow through trophic levels in an ecosystem.",
+            "body": [
+              "Flow from producers to consumers to decomposers along food chains and webs.",
+              "The ten percent law: only about 10 percent of energy passes to the next level.",
+              "Implications: limited number of trophic levels; vulnerability of top predators; importance of the producer base."
+            ],
+            "conclusion": "Note that understanding energy flow underpins conservation and ecosystem management."
+          }
+        }
+      ]
+    }
+  ]
+}

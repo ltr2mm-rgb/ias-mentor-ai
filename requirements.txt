@@ -1,0 +1,22 @@
+# Unpinned so pip installs versions with prebuilt wheels for your Python
+# (including Python 3.13/3.14). bcrypt is held at 4.0.1 because it ships a
+# universal wheel and avoids a passlib version-check warning.
+fastapi
+uvicorn[standard]
+pydantic[email]
+sqlalchemy
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt==4.0.1
+python-dotenv
+google-genai
+openai
+python-multipart
+psycopg2-binary
+pypdf
+PyMuPDF
+python-docx
+Pillow
+# RAG: local HF embeddings + Qdrant vector store
+fastembed
+qdrant-client
