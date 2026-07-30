@@ -1,0 +1,352 @@
+"""build_ops_html.py — render ops_data.json into a self-contained HTML dashboard.
+The page is a THIN renderer: it embeds the real evaluator/experiment artifact model
+and does only presentation (formatting, sorting, grouping, CI-strip geometry)."""
+import os, json
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = json.load(open(os.path.join(HERE, "ops_data.json")))
+
+HTML = r"""<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Marga — Experiment Operations</title>
+<style>
+  :root{
+    color-scheme: light;
+    --plane:#f9f9f7; --surface:#fcfcfb; --surface-2:#f4f3ef;
+    --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --good:#0ca30c; --good-ink:#006300; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --seq:#256abf; --seq-soft:#cde2fb;
+    --radius:14px; --radius-sm:9px;
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --plane:#0d0d0d; --surface:#1a1a19; --surface-2:#212120;
+    --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+    --good:#0ca30c; --good-ink:#0ca30c; --warning:#fab219; --serious:#ec835a; --critical:#d03b3b;
+    --seq:#3987e5; --seq-soft:#184f95;
+  }
+  @media (prefers-color-scheme: dark){
+    :root[data-theme="auto"]{
+      color-scheme: dark;
+      --plane:#0d0d0d; --surface:#1a1a19; --surface-2:#212120;
+      --ink:#fff; --ink-2:#c3c2b7; --muted:#898781;
+      --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+      --good-ink:#0ca30c; --seq:#3987e5; --seq-soft:#184f95;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--plane); color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:14px; line-height:1.5;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px; margin:0 auto; padding:28px 22px 60px;}
+  .num{font-variant-numeric:tabular-nums;}
+  h1{font-size:20px; margin:0; letter-spacing:-0.01em;}
+  h2{font-size:12px; text-transform:uppercase; letter-spacing:0.09em; color:var(--muted);
+    margin:34px 2px 12px; font-weight:600;}
+  a{color:var(--seq)}
+  /* header */
+  header{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .sub{color:var(--ink-2); font-size:13px; margin-top:3px;}
+  .hbtns{display:flex; gap:8px; align-items:center;}
+  .chip{border:1px solid var(--border); background:var(--surface); color:var(--ink-2);
+    border-radius:999px; padding:5px 11px; font-size:12px; font-variant-numeric:tabular-nums;}
+  .toggle{cursor:pointer; user-select:none;}
+  .offline{border-color:color-mix(in srgb,var(--warning) 45%,var(--border));
+    color:var(--ink); background:color-mix(in srgb,var(--warning) 14%,var(--surface));}
+  /* card */
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:20px; box-shadow:0 1px 0 var(--border);}
+  .exp-head{display:flex; align-items:center; gap:12px; flex-wrap:wrap;}
+  .exp-id{font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums;}
+  .exp-title{font-size:18px; font-weight:650; letter-spacing:-0.01em;}
+  .hypo{color:var(--ink-2); margin-top:8px; font-size:13.5px;}
+  .pill{display:inline-flex; align-items:center; gap:6px; border-radius:999px;
+    padding:3px 10px; font-size:11.5px; font-weight:600; border:1px solid var(--border);
+    text-transform:uppercase; letter-spacing:0.04em;}
+  .pill .dot{width:7px;height:7px;border-radius:50%;background:currentColor;}
+  .st-good{color:var(--good-ink); background:color-mix(in srgb,var(--good) 12%,var(--surface)); border-color:color-mix(in srgb,var(--good) 40%,var(--border));}
+  .st-critical{color:var(--critical); background:color-mix(in srgb,var(--critical) 12%,var(--surface)); border-color:color-mix(in srgb,var(--critical) 40%,var(--border));}
+  .st-warning{color:var(--ink); background:color-mix(in srgb,var(--warning) 16%,var(--surface)); border-color:color-mix(in srgb,var(--warning) 45%,var(--border));}
+  .st-neutral{color:var(--ink-2); background:var(--surface-2); border-color:var(--border);}
+  /* KPI tiles */
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin-top:18px;}
+  .tile{background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius-sm); padding:13px 14px;}
+  .tile .k{font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted);}
+  .tile .v{font-size:22px; font-weight:650; margin-top:4px; letter-spacing:-0.01em; font-variant-numeric:tabular-nums;}
+  .tile .v.sm{font-size:15px; font-weight:600;}
+  .tile .foot{font-size:11.5px; color:var(--ink-2); margin-top:3px; font-variant-numeric:tabular-nums;}
+  .splitbar{height:8px; border-radius:4px; overflow:hidden; display:flex; margin-top:9px; background:var(--surface); border:1px solid var(--border);}
+  .splitbar i{display:block; height:100%;}
+  /* decision banner */
+  .banner{display:flex; align-items:center; gap:14px; border-radius:var(--radius); padding:16px 18px; margin-top:2px; border:1px solid var(--border);}
+  .banner.b-good{background:color-mix(in srgb,var(--good) 10%,var(--surface)); border-color:color-mix(in srgb,var(--good) 38%,var(--border));}
+  .banner.b-critical{background:color-mix(in srgb,var(--critical) 10%,var(--surface)); border-color:color-mix(in srgb,var(--critical) 38%,var(--border));}
+  .banner.b-warning{background:color-mix(in srgb,var(--warning) 13%,var(--surface)); border-color:color-mix(in srgb,var(--warning) 45%,var(--border));}
+  .banner .ic{font-size:22px; line-height:1;}
+  .banner .lead{font-size:16px; font-weight:680;}
+  .banner .why{color:var(--ink-2); font-size:13px; margin-top:2px;}
+  /* table */
+  table{width:100%; border-collapse:collapse; margin-top:6px;}
+  th,td{text-align:right; padding:10px 10px; border-bottom:1px solid var(--grid); font-variant-numeric:tabular-nums; white-space:nowrap;}
+  th{font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); font-weight:600; border-bottom:1px solid var(--axis);}
+  th:first-child,td:first-child{text-align:left; white-space:normal;}
+  tbody tr:last-child td{border-bottom:none;}
+  .metric-name{font-weight:600;}
+  .metric-class{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.04em;}
+  .delta.up{color:var(--good-ink);} .delta.dn{color:var(--critical);} .delta.flat{color:var(--ink-2);}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:12px;}
+  /* CI strip */
+  .ci{display:flex; align-items:center; gap:8px; justify-content:flex-end;}
+  .ci .track{position:relative; width:120px; height:16px; background:var(--surface-2); border:1px solid var(--border); border-radius:4px;}
+  .ci .zero{position:absolute; top:-2px; bottom:-2px; width:1.5px; background:var(--axis);}
+  .ci .bar{position:absolute; top:4px; height:8px; border-radius:3px; min-width:3px;}
+  .ci .val{font-size:11.5px; color:var(--ink-2); min-width:118px; text-align:right;}
+  .sig{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:600;}
+  .sig .dot{width:8px;height:8px;border-radius:50%;}
+  .sig.good{color:var(--good-ink);} .sig.critical{color:var(--critical);} .sig.neutral{color:var(--ink-2);}
+  /* replay grid */
+  .kv{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px 22px;}
+  .kv .row{display:flex; justify-content:space-between; gap:12px; border-bottom:1px solid var(--grid); padding:8px 2px;}
+  .kv .row .k{color:var(--muted);}
+  .kv .row .v{font-weight:600; text-align:right;}
+  /* promotion history */
+  .plist{list-style:none; margin:8px 0 0; padding:0;}
+  .plist li{display:flex; gap:12px; align-items:flex-start; padding:11px 0; border-bottom:1px solid var(--grid);}
+  .plist .date{color:var(--muted); font-variant-numeric:tabular-nums; min-width:92px;}
+  .plist .body{flex:1;}
+  .plist .note{color:var(--ink-2); font-size:12.5px; margin-top:2px;}
+  footer{color:var(--muted); font-size:12px; margin-top:34px; border-top:1px solid var(--grid); padding-top:14px;}
+  .legend{display:flex; gap:16px; flex-wrap:wrap; color:var(--ink-2); font-size:12px; margin:10px 2px 0;}
+  .legend span{display:inline-flex; align-items:center; gap:6px;}
+  .legend .dot{width:9px;height:9px;border-radius:50%;}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<script>
+// EMBEDDED = the bundled representative snapshot (keeps the standalone/offline
+// artifact working). At runtime the loader tries the live endpoint first and, on
+// any failure, falls back to EMBEDDED. `render()` reads the `DATA` global and is
+// AGNOSTIC to which path produced it — the renderer is coupled to the contract,
+// never to the producer or the transport.
+const EMBEDDED = __DATA__;
+let DATA = EMBEDDED;
+let LOADER_SOURCE = "embedded";   // "endpoint" | "embedded" — UI state, NOT part of the artifact
+
+const POL = p => ({["mission-policy-det-1.0"]:"det-1.0",["mission-policy-det-1.1"]:"det-1.1"}[p]||p);
+const pct = x => x==null? "—" : (x*100).toFixed(1)+"%";
+const f2  = x => x==null? "—" : (+x).toFixed(2);
+const f3  = x => x==null? "—" : (+x).toFixed(3);
+const sgn = x => x==null? "" : (x>0?"+":"");
+const esc = s => String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const VERDICT = {
+  "PROMOTE":       {cls:"good",     ic:"✓", label:"PROMOTE candidate"},
+  "KEEP_DEFAULT":  {cls:"neutral",  ic:"■", label:"KEEP DEFAULT"},
+};
+const VERDICT_SUB = {"worse":{cls:"critical",ic:"✕",label:"worse"},
+                     "insufficient_evidence":{cls:"warning",ic:"◐",label:"insufficient evidence"},
+                     null:{cls:"good",ic:"✓",label:"gates passed"}};
+function decisionView(p){
+  if(p.decision==="PROMOTE") return {cls:"good", ic:"✓", label:"PROMOTE candidate"};
+  const v = VERDICT_SUB[p.verdict]||VERDICT_SUB.null;
+  return {cls:v.cls, ic:v.ic, label:"KEEP DEFAULT · "+v.label};
+}
+
+function ciStrip(row){
+  const [lo,hi] = row.interval, st = row.signal.status;
+  if(lo==null||hi==null) return `<div class="ci"><span class="val">n/a</span></div>`;
+  const span = Math.max(Math.abs(lo),Math.abs(hi),1e-9);
+  const dom = span*1.25, map = v => (v/dom*0.5+0.5)*100;
+  const col = st==="good"?"var(--good)":st==="critical"?"var(--critical)":"var(--axis)";
+  const L=map(Math.min(lo,hi)), R=map(Math.max(lo,hi));
+  return `<div class="ci">
+    <span class="val num">[${f3(lo)}, ${f3(hi)}]</span>
+    <div class="track" title="95% CI of (candidate − default)">
+      <div class="zero" style="left:${map(0)}%"></div>
+      <div class="bar" style="left:${L}%; width:${Math.max(R-L,2.5)}%; background:${col}"></div>
+    </div></div>`;
+}
+
+function tile(k,v,foot,extra){return `<div class="tile"><div class="k">${k}</div>
+  <div class="v ${extra||""}">${v}</div>${foot?`<div class="foot">${foot}</div>`:""}</div>`;}
+
+function render(){
+  const F = DATA.featured, sc = F.scorecard, P = F.promotion, dv = decisionView(P);
+  const arms = F.arm_counts, aD = arms[F.default_policy], aC = arms[F.candidate_policy];
+  const total = aD+aC, pctD = (aD/total*100), pctC = (aC/total*100);
+
+  // ── header ──
+  const src = DATA.source || {kind:"snapshot"};
+  const live = src.kind === "live";
+  let h = `<header>
+    <div><h1>Experiment Operations</h1>
+      <div class="sub">${esc(DATA.platform)} · read-only · ${live?"live":"representative snapshot"}</div></div>
+    <div class="hbtns">
+      <span class="chip ${live?"":"offline"}">${live?"● live":"◐ representative snapshot"}</span>
+      <span class="chip num">generated ${esc(src.generated_at||DATA.generated_at)}</span>
+      <span class="chip num">${esc(DATA.artifact_version||"ops-1.0")}</span>
+      <span class="chip toggle" id="tg">◐ theme</span>
+    </div></header>`;
+
+  // ── 1. experiment summary ──
+  h += `<h2>Experiment summary</h2><div class="card">
+    <div class="exp-head">
+      <span class="exp-id num">${esc(F.id)}</span>
+      <span class="exp-title">${esc(F.title)}</span>
+      <span class="pill st-neutral"><span class="dot"></span>${esc(F.status)}</span>
+    </div>
+    <div class="hypo">Hypothesis: ${esc(F.hypothesis)}</div>
+    <div class="tiles">
+      ${tile("Decision", `<span class="pill st-${dv.cls}" style="font-size:13px"><span class="dot"></span>${dv.ic} ${esc(dv.label)}</span>`, `primary metric: ${esc(F.primary_metric)}`, "sm")}
+      ${tile("Enrolled", `<span class="num">${F.enrolled}</span>`, "learners (audit: EXPERIMENT_ENROLLED)")}
+      ${tile("Arm split", `<span class="num">${aD} / ${aC}</span>`,
+          `<span style="color:var(--seq)">det-1.0</span> vs <span style="color:var(--serious)">det-1.1</span>`+
+          `<div class="splitbar"><i style="width:${pctD}%;background:var(--seq)"></i><i style="width:${pctC}%;background:var(--serious)"></i></div>`, "sm")}
+      ${tile("In-window outcomes", `<span class="num">${F.in_window_outcomes}</span>`, "by created_seq")}
+      ${tile("Sample vs threshold", `<span class="num">${P.min_sample_size} ≥ ${P.threshold}</span>`, "min arm n vs minimum_sample")}
+      ${tile("Window", `<span class="num sm" style="font-size:13px">seq ${F.window.start_seq} → ${F.window.end_seq}</span>`, esc(F.window.basis), "sm")}
+    </div>
+    <div class="legend">
+      <span><b style="color:var(--ink)">Default</b>&nbsp;<span class="mono">${esc(F.default_policy)}</span></span>
+      <span><b style="color:var(--ink)">Candidate</b>&nbsp;<span class="mono">${esc(F.candidate_policy)}</span></span>
+      <span>assignment&nbsp;<span class="mono">${esc(F.assignment_version)}</span></span>
+    </div></div>`;
+
+  // ── 2. policy comparison ──
+  h += `<h2>Policy comparison</h2>
+    <div class="banner b-${dv.cls}">
+      <div class="ic">${dv.ic}</div>
+      <div><div class="lead">${esc(dv.label)}</div>
+        <div class="why">${esc(P.reasons[0]||"")}</div></div></div>
+    <div class="card" style="margin-top:12px; overflow-x:auto">
+    <table><thead><tr>
+      <th>Metric</th><th>Default</th><th>Candidate</th><th>Δ</th>
+      <th>95% CI (cand − default)</th><th>n</th><th>Method</th><th>Signal</th>
+    </tr></thead><tbody>`;
+  const fmt = {completion_rate:pct, avg_mastery_gain:f3, avg_attempts_on_target:f2, avg_elapsed_seq:f2};
+  for(const r of sc.rows){
+    const ff = fmt[r.metric]||f3;
+    const d = r.delta, dcls = d==null?"flat":(d>0?"up":(d<0?"dn":"flat"));
+    const s = r.signal;
+    h += `<tr>
+      <td><div class="metric-name">${esc(r.label)}</div><div class="metric-class">${esc(r.class)}</div></td>
+      <td class="num">${ff(r.default)}</td>
+      <td class="num">${ff(r.candidate)}</td>
+      <td class="num delta ${dcls}">${sgn(d)}${ff(d)}</td>
+      <td>${ciStrip(r)}</td>
+      <td class="num">${r.sample_size.min}</td>
+      <td class="mono" style="color:var(--muted)">${esc(r.method)}</td>
+      <td style="text-align:left"><span class="sig ${s.status}"><span class="dot" style="background:${s.status==="good"?"var(--good)":s.status==="critical"?"var(--critical)":"var(--axis)"}"></span>${esc(s.label)}</span></td>
+    </tr>`;
+  }
+  h += `</tbody></table>
+    <div class="legend"><span>CI clears 0 → statistically supported.</span>
+      <span><span class="dot" style="background:var(--good)"></span>supported gain</span>
+      <span><span class="dot" style="background:var(--critical)"></span>supported regression</span>
+      <span><span class="dot" style="background:var(--axis)"></span>crosses 0 (no sig. difference)</span></div>
+    </div>`;
+
+  // ── 3. replay metadata ──
+  const R = DATA.replay;
+  const rrow = (k,v,mono)=>`<div class="row"><span class="k">${k}</span><span class="v ${mono?"mono":""}">${esc(v)}</span></div>`;
+  h += `<h2>Replay metadata</h2><div class="card"><div class="kv">
+    ${rrow("Experiment layer", R.experiment_layer_version, true)}
+    ${rrow("Evaluator", R.evaluator_version, true)}
+    ${rrow("Outcome projection", R.outcome_version, true)}
+    ${rrow("Confidence", R.confidence_version, true)}
+    ${rrow("Scorecard", R.scorecard_version, true)}
+    ${rrow("Promotion", R.promotion_version, true)}
+    ${rrow("Assignment", R.assignment_version, true)}
+    ${rrow("Window basis", R.window_basis, false)}
+  </div>
+  <div class="kv" style="margin-top:10px"><div class="row"><span class="k">Replay hash</span>
+    <span class="v mono" style="color:var(--seq)">${esc(R.replay_hash)}</span></div></div>
+  <div class="legend"><span>${esc(R.note)}</span></div></div>`;
+
+  // ── 4. history ──
+  h += `<h2>Experiment history</h2><div class="card" style="overflow-x:auto"><table><thead><tr>
+    <th>Experiment</th><th>Date</th><th>Candidate</th><th>n</th>
+    <th>Primary Δ</th><th>95% CI</th><th>Decision</th></tr></thead><tbody>`;
+  for(const e of DATA.history){
+    const dv2 = e.decision==="PROMOTE"?{cls:"good",ic:"✓",label:"PROMOTE"}
+              : {cls:(VERDICT_SUB[e.verdict]||{}).cls, ic:(VERDICT_SUB[e.verdict]||{}).ic,
+                 label:"KEEP · "+((VERDICT_SUB[e.verdict]||{}).label||"")};
+    h += `<tr>
+      <td><div class="metric-name">${esc(e.experiment_id)}</div><div class="metric-class" style="text-transform:none">${esc(e.title)}</div></td>
+      <td class="num" style="color:var(--ink-2)">${esc(e.date)}</td>
+      <td class="mono">${esc(POL(e.candidate))}</td>
+      <td class="num">${e.n}</td>
+      <td class="num delta ${e.primary_effect>0?"up":"dn"}">${sgn(e.primary_effect)}${f3(e.primary_effect)}</td>
+      <td class="num mono" style="color:var(--ink-2)">[${f3(e.primary_ci[0])}, ${f3(e.primary_ci[1])}]</td>
+      <td style="text-align:left"><span class="pill st-${dv2.cls}"><span class="dot"></span>${dv2.ic} ${esc(dv2.label)}</span></td>
+    </tr>`;
+  }
+  h += `</tbody></table></div>`;
+
+  // promotion history
+  h += `<h2>Promotion history</h2><div class="card"><ul class="plist">`;
+  for(const p of DATA.promotion_history){
+    const good = p.action.indexOf("PROMOTE")===0;
+    h += `<li><span class="date">${esc(p.date)}</span><div class="body">
+      <span class="sig ${good?"good":"neutral"}"><span class="dot" style="background:${good?"var(--good)":"var(--axis)"}"></span>${esc(p.action)}</span>
+      <span class="mono" style="color:var(--muted)">&nbsp;(${esc(p.experiment_id)})</span>
+      <div class="note">${esc(p.note)}</div></div></li>`;
+  }
+  h += `</ul></div>`;
+
+  h += `<footer>${esc(DATA.footer)}</footer>`;
+  document.getElementById("app").innerHTML = h;
+
+  document.getElementById("tg").onclick = ()=>{
+    const el=document.documentElement, cur=el.getAttribute("data-theme");
+    const dark = cur==="dark" || (cur==="auto" && matchMedia("(prefers-color-scheme:dark)").matches);
+    el.setAttribute("data-theme", dark?"light":"dark");
+  };
+}
+
+// ── dual-mode loader (data-loading only; render() is untouched) ─────────────
+// loadArtifact() → try live endpoint → success → render(DATA) ; failure →
+//                  embedded snapshot → render(DATA). render() never learns which.
+function adminToken(){
+  // reuse the token the existing admin UI already manages (no new auth mechanism).
+  // production admin sessions store `ias_admin_token`; fall back to `ias_token`
+  // for regular/any-future authenticated contexts — not coupled to one key.
+  try { return localStorage.getItem("ias_admin_token") ?? localStorage.getItem("ias_token"); }
+  catch(e){ return null; }
+}
+async function loadArtifact(){
+  try {
+    const tok = adminToken();
+    const res = await fetch("/admin/experiment-ops", {
+      headers: tok ? {"Authorization": "Bearer " + tok} : {},
+      credentials: "same-origin", cache: "no-store"
+    });
+    if (res.ok) { DATA = await res.json(); LOADER_SOURCE = "endpoint"; }
+  } catch(e) { /* opened from disk / not served by the app / unauthorized → fall back */ }
+  render();                 // consumes DATA; agnostic to its origin
+  markLoaderSource();       // UI-only badge, added OUTSIDE render()
+}
+function markLoaderSource(){
+  const hb = document.querySelector(".hbtns"); if(!hb) return;
+  const live = LOADER_SOURCE === "endpoint";
+  const b = document.createElement("span");
+  b.className = "chip " + (live ? "" : "offline");
+  b.title = "Where the dashboard fetched its data (UI state — complements source.kind)";
+  b.textContent = live ? "● live endpoint" : "○ embedded snapshot (offline)";
+  hb.insertBefore(b, hb.firstChild);
+}
+loadArtifact();
+</script>
+</body>
+</html>
+"""
+
+out = HTML.replace("__DATA__", json.dumps(DATA))
+with open(os.path.join(HERE, "experiment_ops.html"), "w") as f:
+    f.write(out)
+print("wrote experiment_ops.html (%d bytes)" % len(out))

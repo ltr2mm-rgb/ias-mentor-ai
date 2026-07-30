@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIMENTORA — Admin</title>
+<style>
+:root{--bg:#0f1117;--surface:#1a1d27;--surface2:#222633;--border:#2e3248;--accent:#f5a623;--text:#e8eaf0;--muted:#7a7f99;--success:#2ecc71;--danger:#e74c3c;--info:#3b82f6;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+.top{display:flex;align-items:center;justify-content:space-between;height:60px;padding:0 1.5rem;background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;}
+.brand{font-weight:700;font-size:1.05rem;}.brand span{color:var(--accent);}
+.btn{border:none;border-radius:8px;padding:0.55rem 1rem;font-size:0.88rem;cursor:pointer;font-weight:600;}
+.btn-primary{background:var(--accent);color:#1a1d27;}
+.btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border);}
+.btn-sm{padding:0.4rem 0.8rem;font-size:0.82rem;}
+.wrap{max-width:1100px;margin:0 auto;padding:1.5rem;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem;}
+.spinner{display:inline-block;width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.empty{text-align:center;padding:2.5rem;color:var(--muted);}
+.alert{padding:0.7rem 1rem;border-radius:8px;font-size:0.88rem;margin-bottom:0.75rem;}
+.alert-error{background:rgba(231,76,60,.15);color:#ff8b7e;border:1px solid rgba(231,76,60,.3);}
+input{width:100%;padding:0.7rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:0.92rem;margin-top:0.3rem;}
+label{font-size:0.82rem;color:var(--muted);}
+table{width:100%;border-collapse:collapse;}
+th,td{text-align:left;padding:0.6rem 0.8rem;font-size:0.86rem;border-bottom:1px solid var(--border);}
+th{color:var(--muted);text-transform:uppercase;font-size:0.72rem;letter-spacing:.05em;}
+tbody tr:hover{background:var(--surface2);}
+.badge{display:inline-block;padding:0.1rem 0.5rem;border-radius:20px;font-size:0.72rem;font-weight:600;}
+.auth{max-width:380px;margin:8vh auto;}
+.tabs{display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap;}
+.hidden{display:none;}
+select{width:100%;padding:0.7rem 0.9rem;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:0.92rem;margin-top:0.3rem;}
+input[type=file]{padding:0.5rem;}
+.pill{display:inline-block;padding:0.12rem 0.55rem;border-radius:20px;font-size:0.72rem;background:var(--surface2);color:var(--muted);border:1px solid var(--border);}
+.alert-success{background:rgba(46,204,113,.15);color:#7ee2a8;border:1px solid rgba(46,204,113,.3);}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-view" class="auth">
+  <div class="card">
+    <div class="brand" style="font-size:1.3rem;margin-bottom:0.25rem">🛠️ <span>AIMENTORA</span> Admin</div>
+    <div style="color:var(--muted);font-size:0.85rem;margin-bottom:1.25rem">Sign in with an admin account.</div>
+    <div id="login-alert"></div>
+    <div style="margin-bottom:0.9rem"><label>Email</label><input type="email" id="email" placeholder="admin@email.com"></div>
+    <div style="margin-bottom:1.1rem"><label>Password</label><input type="password" id="password" onkeydown="if(event.key==='Enter')doLogin()"></div>
+    <button class="btn btn-primary" style="width:100%" id="btn-login" onclick="doLogin()">Sign in</button>
+    <div style="text-align:center;margin-top:1rem"><a href="/" style="color:var(--muted);font-size:0.82rem">← Back to the main site</a></div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dash-view" class="hidden">
+  <div class="top">
+    <div class="brand">🛠️ <span>AIMENTORA</span> Admin</div>
+    <div><span id="admin-name" style="color:var(--muted);font-size:0.85rem;margin-right:1rem"></span><button class="btn btn-secondary btn-sm" onclick="logout()">Logout</button></div>
+  </div>
+  <div class="wrap">
+    <div class="tabs">
+      <button id="t-overview"   class="btn btn-primary btn-sm"   onclick="tab('overview')">📊 Overview</button>
+      <button id="t-candidates" class="btn btn-secondary btn-sm" onclick="tab('candidates')">👥 Candidates</button>
+      <button id="t-activity"   class="btn btn-secondary btn-sm" onclick="tab('activity')">🕑 Activity</button>
+      <button id="t-admins"     class="btn btn-secondary btn-sm" onclick="tab('admins')">🔐 Admins</button>
+      <button id="t-knowledge"  class="btn btn-secondary btn-sm" onclick="tab('knowledge')">📤 Upload Your Files Here</button>
+      <button id="t-blueprint"  class="btn btn-secondary btn-sm" onclick="tab('blueprint')">📐 Content Blueprint</button>
+      <button id="t-prelims"    class="btn btn-secondary btn-sm" onclick="tab('prelims')">📈 Prelims Dashboard</button>
+    </div>
+    <div id="s-overview"></div>
+    <div id="s-candidates" class="hidden"></div>
+    <div id="s-activity" class="hidden"></div>
+    <div id="s-admins" class="hidden"></div>
+    <div id="s-knowledge" class="hidden"></div>
+    <div id="s-blueprint" class="hidden"></div>
+    <div id="s-prelims" class="hidden"></div>
+  </div>
+</div>
+
+<script>
+let token = localStorage.getItem('ias_admin_token') || '';
+
+async function api(path, method='GET', body=null){
+  const h={'Content-Type':'application/json'};
+  if(token) h['Authorization']='Bearer '+token;
+  const r=await fetch(path,{method,headers:h,body:body?JSON.stringify(body):null});
+  const d=await r.json();
+  if(!r.ok) throw new Error(d.detail||'Error');
+  return d;
+}
+
+window.onload=()=>{ if(token) verify(); };
+
+async function verify(){
+  try{ const d=await api('/me'); if(d.is_admin){ document.getElementById('admin-name').textContent=d.name; showDash(); } else { logout(); } }
+  catch(e){ logout(); }
+}
+
+async function doLogin(){
+  const email=document.getElementById('email').value.trim(), pass=document.getElementById('password').value;
+  if(!email||!pass){ return alertMsg('Enter email and password'); }
+  const btn=document.getElementById('btn-login'); btn.disabled=true; btn.innerHTML='<span class="spinner"></span> Signing in...';
+  try{
+    const d=await api('/login','POST',{email,password:pass});
+    if(!d.data.is_admin){ alertMsg('This account is not an admin.'); btn.disabled=false; btn.innerHTML='Sign in'; return; }
+    token=d.data.access_token; localStorage.setItem('ias_admin_token',token);
+    document.getElementById('admin-name').textContent=d.data.name;
+    showDash();
+  }catch(e){ alertMsg(e.message); }
+  btn.disabled=false; btn.innerHTML='Sign in';
+}
+function alertMsg(m){ document.getElementById('login-alert').innerHTML=`<div class="alert alert-error">${m}</div>`; }
+function logout(){ token=''; localStorage.removeItem('ias_admin_token'); document.getElementById('dash-view').classList.add('hidden'); document.getElementById('login-view').classList.remove('hidden'); }
+function showDash(){ document.getElementById('login-view').classList.add('hidden'); document.getElementById('dash-view').classList.remove('hidden'); tab('overview'); }
+
+function fmtDate(s){ if(!s) return '—'; const d=new Date(s); return isNaN(d)?'—':d.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}); }
+function fmtDateTime(s){ if(!s) return '—'; const d=new Date(s); return isNaN(d)?'—':d.toLocaleString('en-IN',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}); }
+function pc(p){ return p>=60?'var(--success)':p>=40?'var(--accent)':'var(--danger)'; }
+
+function tab(which){
+  ['overview','candidates','activity','admins','knowledge','blueprint','prelims'].forEach(t=>{
+    document.getElementById('s-'+t).classList.toggle('hidden', t!==which);
+    document.getElementById('t-'+t).className='btn btn-sm '+(t===which?'btn-primary':'btn-secondary');
+  });
+  if(which==='overview') loadOverview();
+  if(which==='candidates') loadCandidates();
+  if(which==='activity') loadActivity();
+  if(which==='admins') loadAdmins();
+  if(which==='knowledge') loadKnowledge();
+  if(which==='blueprint') loadBlueprint();
+  if(which==='prelims') loadPrelims();
+}
+
+// ── Content Blueprint (what content candidates need vs. what we have) ────────
+function loadBlueprint(){
+  const el=document.getElementById('s-blueprint');
+  if(el.dataset.loaded){ return; }
+  el.dataset.loaded='1';
+  el.innerHTML='<iframe src="/admin/blueprint" title="UPSC Content Blueprint" '
+    +'style="width:100%;height:calc(100vh - 150px);border:1px solid var(--border);'
+    +'border-radius:12px;background:#fff;display:block"></iframe>';
+}
+
+// -- Prelims Dashboard (exam-oriented question counts) ------------------------
+async function loadPrelims(){
+ const el=document.getElementById('s-prelims');
+ el.innerHTML='<div style="padding:2rem;color:var(--muted,#888)">Loading question stats...</div>';
+ let d; try{ d=await api('/admin/prelims-stats'); }
+ catch(e){ el.innerHTML='<div class="alert alert-error" style="margin:1rem 0">Could not load: '+e.message+'</div>'; return; }
+ const f=n=>Number(n).toLocaleString('en-IN');
+ const card='background:var(--surface,#1a1d27);border:1px solid var(--border,#2e3248);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem';
+ const mut='color:var(--muted,#7a7f99)';
+ const cntS='font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent,#f5a623)';
+ const childS='display:flex;justify-content:space-between;align-items:center;padding:5px 0 5px 16px;font-size:.83rem;border-top:1px solid var(--border,#2e3248)';
+ function grp(items, nameKey, childKey, childWord){
+   if(!items || !items.length) return '<div style="'+mut+';font-size:.85rem;padding:.4rem 0">None yet.</div>';
+   return items.map(it=>{
+     const kids=(it[childKey]||[]).map(k=>'<div style="'+childS+'"><span style="'+mut+'">'+k.name+'</span><span style="'+cntS+'">'+f(k.count)+'</span></div>').join('');
+     const sub=(it.subject && nameKey!=='subject')?' <span style="'+mut+';font-size:.76rem">'+it.subject+'</span>':'';
+     return '<details style="border-top:1px solid var(--border,#2e3248)"><summary style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;padding:9px 0;font-size:.9rem"><span><b>'+it[nameKey]+'</b>'+sub+'</span><span style="'+cntS+';font-size:1rem;margin-left:10px">'+f(it.total)+'</span></summary><div style="padding-bottom:8px">'+(kids||'<div style="'+mut+';padding:4px 0 4px 16px;font-size:.8rem">no '+childWord+' recorded</div>')+'</div></details>';
+   }).join('');
+ }
+ el.innerHTML=
+  '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:1rem"><div style="font-weight:700;font-size:1.1rem">Question Bank -- by source and topic</div><div style="font-size:.78rem;'+mut+'">'+f(d.total)+' total questions &nbsp;|&nbsp; '+new Date(d.generated_at).toLocaleString('en-IN')+' &nbsp;<button class="btn btn-secondary btn-sm" onclick="loadPrelims()">Refresh</button></div></div>'
+  +'<div style="'+card+'"><div style="font-weight:600;margin-bottom:.3rem">1. NCERT &mdash; bookwise <span style="'+mut+';font-weight:400;font-size:.8rem">('+f(d.ncert_total)+' questions &middot; click a book to see chapters)</span></div>'+grp(d.ncert_books,'book','chapters','chapter')+'</div>'
+  +'<div style="'+card+'"><div style="font-weight:600;margin-bottom:.3rem">2. Reference books &mdash; chapterwise <span style="'+mut+';font-weight:400;font-size:.8rem">('+f(d.ref_total)+' questions)</span></div>'+grp(d.reference_books,'book','chapters','chapter')+'</div>'
+  +'<div style="'+card+'"><div style="font-weight:600;margin-bottom:.3rem">3. Subject &mdash; topicwise <span style="'+mut+';font-weight:400;font-size:.8rem">(click a subject to see topics)</span></div>'+grp(d.subjects,'subject','topics','topic')+'</div>';
+}
+
+const K_SUBJECTS=['Mixed Subject/Topic','Indian Polity','Indian History','Art & Culture','Geography','Indian Economy','Environment & Ecology','Science & Technology','International Relations','Current Affairs'];
+async function loadKnowledge(){
+  const el=document.getElementById('s-knowledge');
+  el.innerHTML=`
+    <div class="card" style="margin-bottom:1rem">
+      <div style="font-weight:600;font-size:1.05rem;margin-bottom:0.3rem">🧠 Concept Extraction — the only upload (copyright-safe)</div>
+      <div style="color:var(--muted);font-size:0.84rem;margin-bottom:1rem;line-height:1.6">
+        Upload a source file — PDF, Word, image or scan. AIMENTORA reads it <b>on the server</b> (with built-in <b>OCR</b>
+        for scans) and extracts only the <b>concepts and public facts</b> each item tests. The file is held in a
+        <b>temporary store only while it is being read</b>, then deleted — <b>nothing of the source is kept</b>, just the
+        concept metadata. Extraction runs in the <b>background</b>, so you can <b>close this tab or log out</b> and it
+        finishes on its own; come back any time to collect the concepts.
+      </div>
+      <div id="k-alert"></div>
+      <div><label>Choose file(s) — you can select several at once</label>
+        <input type="file" id="k-file" multiple onchange="const n=this.files.length;document.getElementById('k-filecount').textContent=n?(n+' file'+(n>1?'s':'')+' selected'):'';">
+        <div id="k-filecount" style="font-size:0.78rem;color:var(--muted);margin-top:0.3rem"></div></div>
+      <button class="btn btn-primary" style="margin-top:1rem" id="k-btn" onclick="uploadKnowledge()">🧠 Extract concepts (runs on server)</button>
+      <div id="k-hint" style="font-size:0.75rem;color:var(--muted);margin-top:0.6rem">Only concept metadata is kept — no raw copy, no verbatim text. Scanned files take longer (OCR runs page-by-page).</div>
+    </div>
+    <div id="k-jobs"></div>`;
+  refreshJobs(true);   // show current server-side jobs and poll while any are running
+}
+function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// Concept extraction runs SERVER-SIDE as background jobs. The browser only kicks
+// them off and polls for status — so extraction finishes even if this tab is
+// closed or the admin logs out. The server is the source of truth for progress
+// and results, so returning to this tab (even after re-login) shows current state.
+let _kxPoll=null, _kxAll=[];
+
+async function refreshJobs(keepPolling){
+  const box=document.getElementById('k-jobs'); if(!box) return;
+  try{
+    const d=await api('/admin/concepts/jobs');
+    renderJobs(d.jobs||[]);
+    const busy=(d.jobs||[]).some(j=>j.status==='queued'||j.status==='processing');
+    if(_kxPoll){ clearTimeout(_kxPoll); _kxPoll=null; }
+    if(busy && keepPolling!==false){ _kxPoll=setTimeout(()=>refreshJobs(true), 4000); }
+  }catch(e){ /* not logged in / offline — leave the current view */ }
+}
+
+function _conceptRows(items){
+  return `${items.slice(0,80).map(c=>`<div style="font-size:0.82rem;padding:0.35rem 0;border-top:1px solid var(--border)">
+      <b>${esc(c.concept||c.topic||c.name||'concept')}</b>${c.subject?` <span class="pill" style="font-size:0.7rem">${esc(c.subject)}</span>`:''}${c.subtopic?` <span class="pill" style="font-size:0.7rem">${esc(c.subtopic)}</span>`:''}${c.difficulty?` <span class="pill" style="font-size:0.7rem">${esc(c.difficulty)}</span>`:''}${c.importance?` <span class="pill" style="font-size:0.7rem">★ ${esc(c.importance)}</span>`:''}${(c.frequency&&c.frequency>1)?` <span class="pill" style="font-size:0.7rem">×${c.frequency} tested</span>`:''}${c.pattern?` <span class="pill" style="font-size:0.7rem">${esc(c.pattern)}</span>`:''}
+      ${(c.key_facts&&c.key_facts.length)?`<div style="color:var(--muted);margin-top:0.2rem">${c.key_facts.map(f=>'• '+esc(f)).join('<br>')}</div>`:((c.fact||c.summary||c.detail)?`<div style="color:var(--muted);margin-top:0.2rem">${esc(c.fact||c.summary||c.detail)}</div>`:'')}</div>`).join('')}
+    ${items.length>80?`<div style="color:var(--muted);font-size:0.78rem;margin-top:0.3rem">…and ${items.length-80} more</div>`:''}`;
+}
+
+function _fmtDur(s){
+  s=Math.round(s);
+  if(s<60) return '~'+s+'s left';
+  const m=Math.floor(s/60), ss=s%60;
+  if(m<60) return '~'+m+'m'+(ss?(' '+ss+'s'):'')+' left';
+  const h=Math.floor(m/60);
+  return '~'+h+'h '+(m%60)+'m left';
+}
+function _eta(j){
+  if(!j.started_at || !j.progress || j.progress>=100) return '';
+  const iso=j.started_at.endsWith('Z')?j.started_at:(j.started_at+'Z');   // server time is UTC
+  const started=Date.parse(iso); if(isNaN(started)) return '';
+  const elapsed=(Date.now()-started)/1000;
+  if(elapsed<=1 || j.progress<=1) return '';
+  return _fmtDur(elapsed*(100-j.progress)/j.progress);
+}
+const _STAGE={queued:'Queued',reading:'Reading & OCR',extracting:'Extracting concepts',done:'Done',error:'Error'};
+function _jobCard(j){
+  const map={queued:['⏳ queued','var(--accent)'],processing:['⚙ working…','var(--info)'],done:['✓ done','var(--success)'],error:['⚠ error','var(--danger)']};
+  const st=map[j.status]||['—','var(--muted)'];
+  const items=j.concepts||[];
+  let bar='';
+  if(j.status==='queued'||j.status==='processing'){
+    const pct=Math.max(3,Math.min(100,j.progress||(j.status==='queued'?3:5)));
+    const stg=_STAGE[j.stage||j.status]||'Working';
+    const eta=_eta(j);
+    bar=`<div style="margin-top:0.5rem">
+      <div style="display:flex;justify-content:space-between;font-size:0.76rem;color:var(--muted);margin-bottom:0.25rem">
+        <span>${esc(stg)}</span><span>${pct}%${eta?(' · '+eta):''}</span>
+      </div>
+      <div style="height:8px;background:var(--surface2);border-radius:6px;overflow:hidden">
+        <div style="height:100%;width:${pct}%;background:linear-gradient(90deg,var(--accent),#ffca6a);transition:width .6s ease"></div>
+      </div>
+    </div>`;
+  }
+  return `<div class="card" style="margin-bottom:0.5rem">
+    <div style="display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap">
+      <div style="font-weight:600">${esc(j.filename)}</div>
+      ${j.status==='done'?`<span class="pill">${j.item_count} concepts</span>`:''}
+      <span style="color:${st[1]};font-weight:600;font-size:0.85rem;margin-left:auto">${st[0]}</span>
+    </div>
+    ${bar}
+    ${j.error?`<div style="color:var(--danger);font-size:0.82rem;margin-top:0.3rem">${esc(j.error)}</div>`:''}
+    ${items.length?_conceptRows(items):''}
+  </div>`;
+}
+
+let _kxNames=new Set();     // filenames already uploaded (for the duplicate warning)
+function renderJobs(jobs){
+  const box=document.getElementById('k-jobs'); if(!box) return;
+  _kxNames=new Set(jobs.map(j=>(j.filename||'').trim().toLowerCase()));
+  if(!jobs.length){ box.innerHTML=''; return; }
+  const busy=jobs.filter(j=>j.status==='queued'||j.status==='processing').length;
+  const head=`<div style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin:0.6rem 0 0.7rem">
+    <div style="font-weight:600">Extraction jobs</div>
+    ${busy?`<span class="pill" style="color:var(--accent)">⚙ ${busy} running — finishing on the server</span>`:''}
+    <button class="btn btn-secondary btn-sm" style="margin-left:auto" onclick="refreshJobs(true)">↻ Refresh</button>
+    <button class="btn btn-secondary btn-sm" onclick="dlConcepts()">⬇ Download concept library</button>
+    <button class="btn btn-secondary btn-sm" onclick="clearJobs()">🧹 Clear finished</button>
+  </div>`;
+  box.innerHTML=head+jobs.map(_jobCard).join('');
+}
+
+async function dlConcepts(){
+  try{
+    const r=await fetch('/admin/concepts/inventory/export',{headers:{'Authorization':'Bearer '+token}});
+    if(!r.ok) throw new Error('server said '+r.status);
+    const blob=await r.blob();
+    const u=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=u; a.download='concept_inventory.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(()=>URL.revokeObjectURL(u),5000);
+  }catch(e){ alert('Download failed: '+e.message); }
+}
+
+async function clearJobs(){
+  if(!confirm('Remove all finished/errored extraction jobs and their stored concepts?')) return;
+  try{ await api('/admin/concepts/jobs/clear','POST'); refreshJobs(true); }
+  catch(e){ alert(e.message); }
+}
+
+async function uploadKnowledge(){
+  const files=[...document.getElementById('k-file').files];
+  const al=document.getElementById('k-alert');
+  if(!files.length){ al.innerHTML='<div class="alert alert-error">Choose one or more files first.</div>'; return; }
+  // Duplicate check: same filename already in the jobs list, or picked twice here.
+  const seen=new Set(), dupExisting=[], dupBatch=[];
+  files.forEach(f=>{ const n=(f.name||'').trim().toLowerCase();
+    if(_kxNames.has(n) && !dupExisting.includes(f.name)) dupExisting.push(f.name);
+    if(seen.has(n) && !dupBatch.includes(f.name)) dupBatch.push(f.name);
+    seen.add(n); });
+  if(dupExisting.length || dupBatch.length){
+    let w='⚠ Possible duplicate upload.\n';
+    if(dupExisting.length) w+='\nAlready uploaded before:\n • '+dupExisting.join('\n • ');
+    if(dupBatch.length) w+='\nSelected more than once now:\n • '+dupBatch.join('\n • ');
+    w+='\n\nRe-extracting the same file wastes time and API cost. Upload anyway?';
+    let wh='<div class="alert" style="background:rgba(245,166,35,.15);color:#f5c86a;border:1px solid rgba(245,166,35,.4)">⚠ Duplicate detected — ';
+    if(dupExisting.length) wh+='already uploaded: <b>'+dupExisting.map(esc).join(', ')+'</b>. ';
+    if(dupBatch.length) wh+='selected twice: <b>'+dupBatch.map(esc).join(', ')+'</b>. ';
+    wh+='</div>';
+    al.innerHTML=wh;
+    if(!confirm(w)) return;   // user chose to cancel
+  }
+  const btn=document.getElementById('k-btn'); btn.disabled=true;
+  // Upload ONE file per request. A single big multipart request with many/large
+  // files can overrun the free instance's memory or the proxy's limit and come
+  // back empty (→ "Unexpected end of JSON input"); small requests are reliable.
+  let ok=0, fail=0; const msgs=[];
+  for(let i=0;i<files.length;i++){
+    const f=files[i];
+    btn.innerHTML='<span class="spinner"></span> Uploading '+(i+1)+' / '+files.length+' …';
+    al.innerHTML='<div class="alert" style="background:rgba(59,130,246,.12);color:#9cc2ff;border:1px solid rgba(59,130,246,.3)">Uploading '+(i+1)+' / '+files.length+' — '+esc(f.name)+' …</div>';
+    const fd=new FormData(); fd.append('files',f);
+    try{
+      const r=await fetch('/admin/concepts/extract-jobs',{method:'POST',headers:{'Authorization':'Bearer '+token},body:fd});
+      const txt=await r.text(); let d={}; try{ d=txt?JSON.parse(txt):{}; }catch(_e){}
+      if(!r.ok) throw new Error((d&&d.detail) || ('server error '+r.status+(r.status>=500?' — the file may be too large for the free tier':'')));
+      ok++;
+    }catch(e){ fail++; msgs.push(esc(f.name)+': '+esc((e&&e.message)||'upload failed — check your connection')); }
+    if(i%2===0 || i===files.length-1) refreshJobs(false);   // show jobs as they queue
+  }
+  let html='<div class="alert alert-success">Queued '+ok+' file'+(ok!==1?'s':'')+' for server-side extraction — you can close this tab or log out; it will finish on its own.</div>';
+  if(fail) html+='<div class="alert alert-error">'+fail+' upload'+(fail!==1?'s':'')+' failed:<br>'+msgs.join('<br>')+'</div>';
+  al.innerHTML=html;
+  document.getElementById('k-file').value='';
+  const kfc=document.getElementById('k-filecount'); if(kfc) kfc.textContent='';
+  btn.disabled=false; btn.innerHTML='🧠 Extract concepts (runs on server)';
+  refreshJobs(true);
+}
+
+async function loadOverview(){
+  const el=document.getElementById('s-overview'); el.innerHTML='<div class="empty"><div class="spinner"></div></div>';
+  try{
+    const d=await api('/admin/overview');
+    const tile=(l,v)=>`<div style="flex:1;min-width:130px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem">
+       <div style="font-size:1.7rem;font-weight:800;color:var(--accent)">${v}</div>
+       <div style="font-size:0.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">${l}</div></div>`;
+    const top=(d.most_attempted||[]).map(p=>`<div style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border)"><span style="font-size:0.88rem">${p.title}</span><span style="color:var(--muted)">${p.attempts}</span></div>`).join('')||'<div style="color:var(--muted)">No attempts yet.</div>';
+    el.innerHTML=`<div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:1.25rem">
+      ${tile('Candidates',d.total_candidates)}${tile('Tests Taken',d.total_attempts)}${tile('Avg Score',d.avg_percentage+'%')}${tile('Active (7d)',d.active_last_7_days)}</div>
+      <div class="card"><div style="font-weight:600;margin-bottom:0.5rem">📈 Most-attempted papers</div>${top}</div>`;
+  }catch(e){ el.innerHTML=`<div class="alert alert-error">${e.message}</div>`; }
+}
+
+async function loadCandidates(){
+  const el=document.getElementById('s-candidates'); el.innerHTML='<div class="empty"><div class="spinner"></div></div>';
+  try{
+    const d=await api('/admin/candidates');
+    if(!d.candidates.length){ el.innerHTML='<div class="empty">No candidates yet.</div>'; return; }
+    el.innerHTML=`<div style="color:var(--muted);font-size:0.85rem;margin-bottom:0.6rem">${d.count} candidate${d.count!==1?'s':''} — click a row for details</div>
+      <div class="card" style="padding:0;overflow-x:auto"><table>
+      <thead><tr><th>Name</th><th>Email</th><th>Registered</th><th>Tests</th><th>Avg</th><th>Best</th><th>Last active</th></tr></thead>
+      <tbody>${d.candidates.map(c=>`<tr style="cursor:pointer" onclick="viewCandidate(${c.id})">
+        <td><strong>${c.name||'—'}</strong></td><td style="color:var(--muted)">${c.email}</td><td>${fmtDate(c.registered)}</td>
+        <td>${c.tests_taken}</td><td style="color:${pc(c.avg_pct)}">${c.avg_pct}%</td><td>${c.best_pct}%</td>
+        <td style="color:var(--muted)">${fmtDateTime(c.last_active)}</td></tr>`).join('')}</tbody></table></div>`;
+  }catch(e){ el.innerHTML=`<div class="alert alert-error">${e.message}</div>`; }
+}
+
+async function viewCandidate(id){
+  const el=document.getElementById('s-candidates'); el.innerHTML='<div class="empty"><div class="spinner"></div></div>';
+  try{
+    const d=await api('/admin/candidates/'+id); const c=d.candidate;
+    const subj=(d.by_subject||[]).map(b=>`<div style="display:flex;align-items:center;gap:0.6rem;margin:0.3rem 0">
+      <div style="width:150px;font-size:0.85rem">${b.subject}</div>
+      <div style="flex:1;background:var(--bg);border-radius:6px;height:9px;overflow:hidden"><div style="width:${b.accuracy}%;height:100%;background:${pc(b.accuracy)}"></div></div>
+      <div style="width:90px;text-align:right;font-size:0.8rem;color:var(--muted)">${b.correct}/${b.attempted} · ${b.accuracy}%</div></div>`).join('')||'<div style="color:var(--muted)">No subject data yet.</div>';
+    const rows=(d.attempts||[]).map(a=>`<tr><td>${fmtDateTime(a.date)}</td><td>${a.test}</td><td>${a.correct}/${a.total}</td>
+      <td style="color:${pc(a.pct)}">${a.pct}%</td><td>${a.net} <span style="color:var(--muted);font-size:0.8rem">(${a.net_pct}%)</span></td><td>${a.accuracy}%</td></tr>`).join('')||'<tr><td colspan="6" style="color:var(--muted)">No attempts yet.</td></tr>';
+    el.innerHTML=`<button class="btn btn-secondary btn-sm" onclick="loadCandidates()" style="margin-bottom:1rem">← Back to candidates</button>
+      <div class="card"><div style="font-weight:700;font-size:1.1rem">${c.name||'—'}</div>
+        <div style="color:var(--muted);font-size:0.88rem">${c.email}</div>
+        <div style="color:var(--muted);font-size:0.82rem;margin-top:0.3rem">Registered ${fmtDate(c.registered)} · ${c.tests_taken} test${c.tests_taken!==1?'s':''}</div></div>
+      <div class="card"><div style="font-weight:600;margin-bottom:0.5rem">📚 Subject-wise accuracy</div>${subj}</div>
+      <div class="card" style="padding:0;overflow-x:auto"><div style="font-weight:600;padding:1rem 1rem 0.5rem">📝 Test history</div>
+        <table><thead><tr><th>Date</th><th>Test</th><th>Correct</th><th>Score</th><th>Net (UPSC)</th><th>Accuracy</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  }catch(e){ el.innerHTML=`<div class="alert alert-error">${e.message}</div>`; }
+}
+
+async function loadActivity(){
+  const el=document.getElementById('s-activity'); el.innerHTML='<div class="empty"><div class="spinner"></div></div>';
+  try{
+    const d=await api('/admin/activity');
+    if(!d.activity.length){ el.innerHTML='<div class="empty">No activity yet.</div>'; return; }
+    el.innerHTML='<div class="card">'+d.activity.map(a=>`<div style="display:flex;gap:0.6rem;padding:0.55rem 0;border-bottom:1px solid var(--border)">
+      <div>${a.type==='register'?'🆕':'📝'}</div><div style="flex:1"><div style="font-size:0.9rem"><strong>${a.name}</strong> ${a.detail}</div>
+      <div style="font-size:0.76rem;color:var(--muted)">${fmtDateTime(a.time)}</div></div></div>`).join('')+'</div>';
+  }catch(e){ el.innerHTML=`<div class="alert alert-error">${e.message}</div>`; }
+}
+
+async function loadAdmins(){
+  const el=document.getElementById('s-admins'); el.innerHTML='<div class="empty"><div class="spinner"></div></div>';
+  try{
+    const d=await api('/admin/admins');
+    const rows=d.admins.map(a=>`<div style="display:flex;align-items:center;gap:0.6rem;padding:0.55rem 0;border-bottom:1px solid var(--border)">
+      <div style="flex:1"><span style="font-size:0.9rem">${a.email}</span>
+        ${a.source==='built-in'?'<span class="badge" style="background:var(--surface2);color:var(--muted);margin-left:0.5rem">built-in</span>':''}</div>
+      ${a.removable?`<button class="btn btn-secondary btn-sm" onclick="removeAdmin('${a.email}')">Remove</button>`:'<span style="color:var(--muted);font-size:0.78rem">protected</span>'}
+    </div>`).join('');
+    el.innerHTML=`
+      <div class="card">
+        <div style="font-weight:600;margin-bottom:0.5rem">🔐 Admin accounts</div>
+        <div style="color:var(--muted);font-size:0.82rem;margin-bottom:0.9rem">
+          Anyone who registers/logs in with one of these emails gets admin access. Built-in admins can't be removed here.
+        </div>
+        <div id="add-admin-alert"></div>
+        <div style="display:flex;gap:0.5rem;margin-bottom:1rem">
+          <input type="email" id="new-admin" placeholder="new.admin@email.com" style="flex:1;margin-top:0">
+          <button class="btn btn-primary btn-sm" onclick="addAdmin()" id="btn-add-admin">+ Add admin</button>
+        </div>
+        ${rows}
+      </div>`;
+  }catch(e){ el.innerHTML=`<div class="alert alert-error">${e.message}</div>`; }
+}
+async function addAdmin(){
+  const inp=document.getElementById('new-admin'); const email=inp.value.trim();
+  const al=document.getElementById('add-admin-alert');
+  if(!email){ al.innerHTML='<div class="alert alert-error">Enter an email</div>'; return; }
+  const btn=document.getElementById('btn-add-admin'); btn.disabled=true; btn.innerHTML='<span class="spinner"></span>';
+  try{
+    const d=await api('/admin/admins','POST',{email});
+    al.innerHTML=`<div class="alert" style="background:rgba(46,204,113,.15);color:#7be0a0;border:1px solid rgba(46,204,113,.3)">${d.message}. ${d.note||''}</div>`;
+    inp.value=''; await loadAdmins();
+  }catch(e){ al.innerHTML=`<div class="alert alert-error">${e.message}</div>`; }
+  btn.disabled=false; btn.innerHTML='+ Add admin';
+}
+async function removeAdmin(email){
+  if(!confirm('Remove admin access for '+email+'?')) return;
+  try{ await api('/admin/admins?email='+encodeURIComponent(email),'DELETE'); loadAdmins(); }
+  catch(e){ alert(e.message); }
+}
+</script>
+</body>
+</html>
