@@ -1,0 +1,20 @@
+{
+  "_note": "Active-experiment registry. Read by experiment.load_active() — ONE reader for both the generation path (experiment.generate_if_enrolled) and the live ops producer. Absent file OR absent 'featured' => no experiment runs and generation falls back to the default planner. Unknown keys are ignored. This first experiment is deliberately conservative: its purpose is to prove the experimentation platform behaves correctly under real traffic, NOT to prove det-1.1 wins.",
+  "featured": {
+    "id": "exp-due-gate-001",
+    "title": "det-1.0 vs det-1.1 — spaced-repetition due gate",
+    "hypothesis": "Interrupting acquisition to review a concept only when spaced repetition says the review is genuinely due (retention < 0.6) produces at least as much mastery gain as always ranking by lowest mastery, without hurting completion.",
+    "default_policy": "mission-policy-det-1.0",
+    "candidate_policy": "mission-policy-det-1.1",
+    "primary_metric": "avg_mastery_gain",
+    "guardrails": ["completion_rate"],
+    "minimum_sample": 20,
+    "alpha": 0.05,
+    "start_seq": 0,
+    "end_seq": 1000000,
+    "assignment_version": "exp-assign-v1",
+    "status": "active",
+    "activated_at": "2026-07-30T00:00:00Z"
+  },
+  "history": []
+}

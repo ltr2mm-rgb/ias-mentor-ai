@@ -1,0 +1,302 @@
+{
+  "_note": "AIVORA-authored original practice questions in the UPSC CSAT (Prelims Paper II) pattern. These are not reproductions of past papers; they mirror the exam's areas and difficulty for practice.",
+  "areas": [
+    {
+      "code": "numeracy",
+      "name": "Basic Numeracy",
+      "questions": [
+        {
+          "text": "A train 180 metres long crosses a platform 270 metres long in 30 seconds. What is the speed of the train?",
+          "option_a": "45 km/h",
+          "option_b": "54 km/h",
+          "option_c": "60 km/h",
+          "option_d": "72 km/h",
+          "correct_answer": "B",
+          "explanation": "To cross the platform the train covers 180 + 270 = 450 m in 30 s, i.e. 15 m/s. 15 m/s x 18/5 = 54 km/h."
+        },
+        {
+          "text": "If 20% of a number is 45, what is 35% of the same number?",
+          "option_a": "63",
+          "option_b": "72",
+          "option_c": "78.75",
+          "option_d": "81",
+          "correct_answer": "C",
+          "explanation": "20% = 45 means the number is 225. 35% of 225 = 78.75."
+        },
+        {
+          "text": "A shopkeeper marks his goods 40% above cost price and then allows a discount of 25% on the marked price. His profit or loss percentage is:",
+          "option_a": "5% profit",
+          "option_b": "10% profit",
+          "option_c": "5% loss",
+          "option_d": "No profit, no loss",
+          "correct_answer": "A",
+          "explanation": "Let CP = 100. MP = 140. SP = 140 x 0.75 = 105. Profit = 5 on 100 = 5%."
+        },
+        {
+          "text": "A sum of money doubles itself in 8 years at simple interest. In how many years will it become four times?",
+          "option_a": "16 years",
+          "option_b": "20 years",
+          "option_c": "24 years",
+          "option_d": "32 years",
+          "correct_answer": "C",
+          "explanation": "Doubling means the interest equals the principal in 8 years. Becoming four times needs interest = 3 x principal, i.e. 3 x 8 = 24 years."
+        },
+        {
+          "text": "The ratio of the present ages of A and B is 5 : 7. Six years from now the ratio will be 3 : 4. What is A's present age?",
+          "option_a": "25 years",
+          "option_b": "30 years",
+          "option_c": "35 years",
+          "option_d": "42 years",
+          "correct_answer": "B",
+          "explanation": "Let ages be 5x and 7x. (5x+6)/(7x+6) = 3/4 gives 20x+24 = 21x+18, so x = 6. A = 5x = 30."
+        },
+        {
+          "text": "The average of five consecutive odd numbers is 27. What is the largest of these numbers?",
+          "option_a": "29",
+          "option_b": "31",
+          "option_c": "33",
+          "option_d": "35",
+          "correct_answer": "B",
+          "explanation": "For consecutive numbers the average is the middle term, so the numbers are 23, 25, 27, 29, 31. The largest is 31."
+        }
+      ]
+    },
+    {
+      "code": "reasoning",
+      "name": "Logical Reasoning & Analytical Ability",
+      "questions": [
+        {
+          "text": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+          "option_a": "36",
+          "option_b": "40",
+          "option_c": "42",
+          "option_d": "44",
+          "correct_answer": "C",
+          "explanation": "Differences are 4, 6, 8, 10, then 12. 30 + 12 = 42. (Also the pattern n(n+1): 5x6 = 30, 6x7 = 42.)"
+        },
+        {
+          "text": "Pointing to a woman, a man said, 'That woman's son is the father of my son.' How is the woman related to the man?",
+          "option_a": "Sister",
+          "option_b": "Mother",
+          "option_c": "Aunt",
+          "option_d": "Grandmother",
+          "correct_answer": "B",
+          "explanation": "The father of the man's son is the man himself. So the woman's son is the man, which makes the woman his mother."
+        },
+        {
+          "text": "A person walks 5 km towards north, turns right and walks 3 km, then turns right again and walks 5 km. How far and in which direction is he from the starting point?",
+          "option_a": "3 km East",
+          "option_b": "3 km West",
+          "option_c": "5 km East",
+          "option_d": "8 km South",
+          "correct_answer": "A",
+          "explanation": "North 5, then East 3, then South 5 brings him back level with the start but 3 km to the east of it."
+        },
+        {
+          "text": "Choose the odd one out: 8, 27, 64, 100, 125",
+          "option_a": "27",
+          "option_b": "64",
+          "option_c": "100",
+          "option_d": "125",
+          "correct_answer": "C",
+          "explanation": "8, 27, 64 and 125 are perfect cubes (2^3, 3^3, 4^3, 5^3). 100 is not a cube."
+        },
+        {
+          "text": "In a certain code, FACE is written as GBDF. How is HEAD written in that code?",
+          "option_a": "IFBE",
+          "option_b": "GFBE",
+          "option_c": "IFBD",
+          "option_d": "IFCE",
+          "correct_answer": "A",
+          "explanation": "Each letter is shifted one forward: H to I, E to F, A to B, D to E, giving IFBE."
+        },
+        {
+          "text": "If all roses are flowers and some flowers fade quickly, which conclusion necessarily follows?",
+          "option_a": "All roses fade quickly",
+          "option_b": "Some roses fade quickly",
+          "option_c": "No rose fades quickly",
+          "option_d": "None of these necessarily follows",
+          "correct_answer": "D",
+          "explanation": "The flowers that fade quickly may or may not include roses; nothing about roses fading is guaranteed by the premises."
+        }
+      ]
+    },
+    {
+      "code": "di",
+      "name": "Data Interpretation",
+      "questions": [
+        {
+          "text": "A school has 1,200 students. 45% are girls. Among boys, 25% play a sport. How many boys do NOT play a sport?",
+          "option_a": "165",
+          "option_b": "495",
+          "option_c": "540",
+          "option_d": "660",
+          "correct_answer": "B",
+          "explanation": "Boys = 55% of 1200 = 660. Those who do not play a sport = 75% of 660 = 495."
+        },
+        {
+          "text": "In a budget of Rs 7,200, expenditure is split as Food 30%, Rent 25%, Education 20%, Savings 15%, Others 10%. How much more is spent on Food than on Savings?",
+          "option_a": "Rs 720",
+          "option_b": "Rs 900",
+          "option_c": "Rs 1,080",
+          "option_d": "Rs 1,260",
+          "correct_answer": "C",
+          "explanation": "Food = 30% = 2160; Savings = 15% = 1080. Difference = 2160 - 1080 = 1080."
+        },
+        {
+          "text": "A factory's output was 500 units in 2022 and 650 units in 2023. What is the percentage increase?",
+          "option_a": "23%",
+          "option_b": "30%",
+          "option_c": "15%",
+          "option_d": "32.5%",
+          "correct_answer": "B",
+          "explanation": "Increase = 150 on a base of 500 = 150/500 = 30%."
+        },
+        {
+          "text": "The ratio of literate to illiterate adults in a village is 9 : 5. If there are 700 adults, how many are illiterate?",
+          "option_a": "250",
+          "option_b": "300",
+          "option_c": "350",
+          "option_d": "450",
+          "correct_answer": "A",
+          "explanation": "Total parts = 14. Illiterate = (5/14) x 700 = 250."
+        },
+        {
+          "text": "Average monthly rainfall over four months was 80 mm. The first three months had 70, 90 and 60 mm. What was the rainfall in the fourth month?",
+          "option_a": "90 mm",
+          "option_b": "95 mm",
+          "option_c": "100 mm",
+          "option_d": "110 mm",
+          "correct_answer": "C",
+          "explanation": "Total for four months = 4 x 80 = 320. First three sum to 220, so the fourth = 320 - 220 = 100 mm."
+        }
+      ]
+    },
+    {
+      "code": "comprehension",
+      "name": "Reading Comprehension",
+      "questions": [
+        {
+          "text": "Passage: 'Good administration is not merely the efficient execution of orders. An officer who follows the letter of a rule while ignoring the suffering it causes has mistaken a means for an end. The purpose of every rule is the public good; when a rule, applied rigidly, defeats that good, the wise administrator seeks the spirit behind the rule rather than hiding behind its words.'\n\nWhich one of the following best reflects the central idea of the passage?",
+          "option_a": "Rules should always be followed exactly as written.",
+          "option_b": "Administrators should ignore rules that are inconvenient.",
+          "option_c": "Rules serve the public good, and their spirit matters more than their literal wording.",
+          "option_d": "Efficiency is the most important quality in an administrator.",
+          "correct_answer": "C",
+          "explanation": "The passage argues that rules exist for the public good and that the spirit of a rule should guide action when literal application defeats its purpose. It neither demands rigid obedience (A) nor endorses ignoring rules (B), and treats efficiency as insufficient by itself (D)."
+        },
+        {
+          "text": "Passage (same as above): The phrase 'mistaken a means for an end' implies that the officer has:",
+          "option_a": "Treated the rule itself as the goal instead of the public good it is meant to serve",
+          "option_b": "Failed to execute orders efficiently",
+          "option_c": "Broken the rule deliberately",
+          "option_d": "Acted out of personal gain",
+          "correct_answer": "A",
+          "explanation": "A 'means' (the rule) has been treated as if it were the 'end' (the public good). The officer has confused the tool with the purpose."
+        },
+        {
+          "text": "Passage: 'A society that reads only to confirm what it already believes does not truly read at all; it merely admires its own reflection. Real reading unsettles us, because it forces an encounter with a mind unlike our own.'\n\nThe author would most likely agree that:",
+          "option_a": "People should avoid books that challenge their views.",
+          "option_b": "Reading is valuable largely when it exposes us to unfamiliar perspectives.",
+          "option_c": "Reading mainly serves to reinforce existing opinions.",
+          "option_d": "Only difficult books are worth reading.",
+          "correct_answer": "B",
+          "explanation": "The author values reading that 'unsettles us' by exposing us to a mind unlike our own, i.e. unfamiliar perspectives. Option D overstates ('only difficult books'); the point is about unfamiliar views, not difficulty."
+        }
+      ]
+    },
+    {
+      "code": "mental",
+      "name": "General Mental Ability",
+      "questions": [
+        {
+          "text": "If the day before yesterday was a Thursday, what day will it be the day after tomorrow?",
+          "option_a": "Sunday",
+          "option_b": "Monday",
+          "option_c": "Tuesday",
+          "option_d": "Wednesday",
+          "correct_answer": "B",
+          "explanation": "Day before yesterday = Thursday, so today is Saturday. The day after tomorrow is Monday."
+        },
+        {
+          "text": "A clock shows 3:00. What is the angle between the hour and minute hands?",
+          "option_a": "60 degrees",
+          "option_b": "75 degrees",
+          "option_c": "90 degrees",
+          "option_d": "120 degrees",
+          "correct_answer": "C",
+          "explanation": "At 3:00 the minute hand is at 12 and the hour hand at 3. Each hour mark is 30 degrees; 3 marks = 90 degrees."
+        },
+        {
+          "text": "Find the missing term: AZ, BY, CX, ?",
+          "option_a": "DV",
+          "option_b": "DW",
+          "option_c": "EW",
+          "option_d": "DX",
+          "correct_answer": "B",
+          "explanation": "First letters go A, B, C, D forward; second letters go Z, Y, X, W backward. So the next term is DW."
+        },
+        {
+          "text": "A cube is painted on all faces and then cut into 27 equal smaller cubes. How many smaller cubes have exactly two faces painted?",
+          "option_a": "6",
+          "option_b": "8",
+          "option_c": "12",
+          "option_d": "27",
+          "correct_answer": "C",
+          "explanation": "In a 3x3x3 cube, the small cubes with exactly two painted faces are the edge (non-corner) cubes: one per edge x 12 edges = 12."
+        },
+        {
+          "text": "If '+' means 'divided by', '-' means 'multiplied by', 'x' means 'plus' and '/' means 'minus', then 16 + 4 - 3 x 2 = ?",
+          "option_a": "10",
+          "option_b": "12",
+          "option_c": "14",
+          "option_d": "16",
+          "correct_answer": "C",
+          "explanation": "Translating: 16 divided by 4 = 4; 4 multiplied by 3 = 12; 12 plus 2 = 14."
+        }
+      ]
+    },
+    {
+      "code": "decision",
+      "name": "Decision Making & Problem Solving",
+      "questions": [
+        {
+          "text": "As a project officer, you discover a small but genuine error in a report already submitted to your senior. Releasing a correction may cause minor embarrassment but the figure affects a funding decision. The most appropriate action is to:",
+          "option_a": "Ignore the error since it is small",
+          "option_b": "Quietly correct it in future reports without informing anyone",
+          "option_c": "Promptly inform your senior of the error with the corrected figure and its implication for the funding decision",
+          "option_d": "Wait to see if anyone notices before acting",
+          "correct_answer": "C",
+          "explanation": "Because the figure affects a funding decision, integrity and the public interest require promptly disclosing and correcting it, allowing an informed decision. The other options conceal or delay a material correction."
+        },
+        {
+          "text": "You lead a team facing a tight deadline. One capable member is repeatedly late, lowering morale. The best first step is to:",
+          "option_a": "Report the member to higher authority immediately",
+          "option_b": "Speak privately with the member to understand the reason and agree on a way forward",
+          "option_c": "Reassign all their work to others",
+          "option_d": "Ignore it until the deadline passes",
+          "correct_answer": "B",
+          "explanation": "A private, fact-finding conversation respects the individual, may surface a genuine cause, and seeks a constructive solution before escalation."
+        },
+        {
+          "text": "During a field inspection you are offered hospitality by a contractor whose work you are evaluating. The most appropriate response is to:",
+          "option_a": "Accept it to maintain a cordial relationship",
+          "option_b": "Politely decline and continue the evaluation impartially",
+          "option_c": "Accept but evaluate strictly to prove your impartiality",
+          "option_d": "Accept on behalf of the whole team",
+          "correct_answer": "B",
+          "explanation": "Accepting hospitality from a party under evaluation creates a conflict of interest and an appearance of bias. Politely declining preserves impartiality and public trust."
+        },
+        {
+          "text": "A new policy you must implement will benefit most citizens but disadvantage a small vulnerable group. The most balanced approach is to:",
+          "option_a": "Implement it as-is since the majority benefits",
+          "option_b": "Refuse to implement it",
+          "option_c": "Implement it while proposing specific measures to cushion the impact on the vulnerable group",
+          "option_d": "Delay indefinitely",
+          "correct_answer": "C",
+          "explanation": "Good governance pursues the larger public good while taking responsibility to mitigate harm to the vulnerable, rather than ignoring either the majority's benefit or the minority's hardship."
+        }
+      ]
+    }
+  ]
+}

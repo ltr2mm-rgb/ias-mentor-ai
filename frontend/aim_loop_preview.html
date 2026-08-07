@@ -1,0 +1,687 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AIMLoop preview</title><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>
+/* theme.aim.css - GENERATED from theme.css by gen_theme_aim.py. DO NOT HAND-EDIT.
+   Every rule is namespaced under .aim so it affects ONLY elements inside a
+   <... class="aim"> container and cannot restyle existing /learn screens.
+   Keyframes are prefixed aim-*. Edit theme.css and re-run the generator. */
+
+/* ============================================================================
+   AIMENTORA — Design System 1.0  (theme.css)
+   ----------------------------------------------------------------------------
+   The single shared visual foundation for the AI Marga (/learn) application.
+   Every panel consumes THESE tokens and components — so consistency is
+   guaranteed by construction, not by eyeballing.
+
+   Extracted verbatim from the existing, already-consistent look of Home and the
+   AI Marga dashboard, then formalised: the values the code used ad-hoc (radii,
+   shadows, spacing, form controls) are now named tokens.
+
+   Requires this in <head> (Sora = headings/UI, Inter = body):
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+   ========================================================================== */
+
+/* ---- 1. TOKENS ---------------------------------------------------------- */
+.aim{
+  /* surfaces */
+  --bg:#F8F4EC; --bg2:#F4ECDD; --card:#FFFFFF; --card2:#FBF7EF;
+  /* gold family */
+  --gold:#B8892E; --gold-soft:#D9B24A; --gold-hi:#D4AF37; --gold-deep:#8A6420;
+  /* burgundy accent */
+  --burgundy:#7A1F1F; --burgundy-deep:#5A1414;
+  /* ink */
+  --text:#1E1E1E; --muted:#5F5F5F; --line:#E8DDC6;
+  /* semantic */
+  --success:#1F9D57; --success-deep:#178048;
+  --danger:#C0392B;  --danger-deep:#A2372A;
+
+  /* signature gradients */
+  --grad-gold:linear-gradient(135deg,var(--gold),var(--gold-deep));      /* solid action */
+  --grad-gold-h:linear-gradient(90deg,var(--gold-soft),var(--gold-deep));/* progress fill */
+  --grad-brand:linear-gradient(135deg,var(--gold),var(--burgundy));      /* brand mark    */
+  --grad-hero:linear-gradient(120deg,var(--gold-soft),var(--gold),var(--gold-deep));
+  --grad-dark:linear-gradient(160deg,#2A1D09,#4A3410 70%,#6A4B16);       /* premium panel */
+  --grad-danger:linear-gradient(90deg,#E6B455,var(--danger));            /* low / negative */
+  --body-bg:radial-gradient(circle at 50% -5%,#FFFDF9 0%,#F8F4EC 46%,#F3EBDD 100%);
+
+  /* type */
+  --font-head:'Sora','Inter',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --fs-display:clamp(2.6rem,6.4vw,5.1rem);
+  --fs-h1:1.7rem; --fs-h2:1.35rem; --fs-h3:1.05rem;
+  --fs-body:1rem; --fs-lead:1.1rem; --fs-sm:.85rem; --fs-xs:.73rem; --fs-eyebrow:.78rem;
+
+  /* radii (the real 10→24 ladder, named) */
+  --r-sm:10px; --r-md:12px; --r-lg:14px; --r-xl:18px;
+  --r-2xl:20px; --r-3xl:22px; --r-max:24px; --r-pill:999px;
+
+  /* spacing scale (8-based) */
+  --sp-0:4px; --sp-1:8px; --sp-2:12px; --sp-3:16px; --sp-4:24px;
+  --sp-5:32px; --sp-6:48px; --sp-7:64px;
+
+  /* elevation */
+  --sh-card:0 12px 30px rgba(74,50,10,.06);
+  --sh-card-h:0 20px 56px rgba(0,0,0,.06);
+  --sh-lift-h:0 30px 72px rgba(0,0,0,.10);
+  --sh-pill:0 6px 16px rgba(74,50,10,.05);
+  --sh-gold:0 10px 24px rgba(184,137,46,.30);
+  --sh-gold-h:0 14px 44px rgba(245,185,66,.42);
+  --sh-pop:0 30px 70px rgba(0,0,0,.32);
+  --glow-gold:0 0 30px rgba(245,185,66,.40);
+
+  --radius:var(--r-max);           /* legacy alias kept for existing markup */
+  --dur:.25s; --ease:cubic-bezier(.22,.61,.36,1);
+  --shell:1180px;                  /* app content max-width */
+}
+
+/* ---- 2. BASE / RESET ---------------------------------------------------- */
+.aim *{box-sizing:border-box}
+.aim{scroll-behavior:smooth}
+.aim{
+  margin:0; font-family:var(--font-body); color:var(--text);
+  font-size:var(--fs-body); line-height:1.6;
+  background:var(--body-bg) fixed; background-color:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+.aim h1, .aim h2, .aim h3, .aim h4, .aim .display{font-family:var(--font-head);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin:0}
+.aim h1{font-size:var(--fs-h1);font-weight:800}
+.aim h2{font-size:var(--fs-h2);font-weight:800}
+.aim h3{font-size:var(--fs-h3);font-weight:800}
+.aim p{margin:0 0 .8em}
+.aim a{color:var(--gold-deep);text-decoration:none;transition:color var(--dur)}
+.aim a:hover{color:var(--gold)}
+.aim a:focus-visible, .aim button:focus-visible, .aim input:focus-visible, .aim select:focus-visible, .aim textarea:focus-visible{
+  outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+.aim .muted{color:var(--muted)}
+.aim .gold{color:var(--gold)}
+.aim .gold-grad{background:var(--grad-hero);-webkit-background-clip:text;background-clip:text;color:transparent}
+.aim hr, .aim .divider{border:none;border-top:1px solid var(--line);margin:var(--sp-4) 0}
+
+/* ---- 3. TYPOGRAPHY HELPERS --------------------------------------------- */
+.aim .display{font-size:var(--fs-display);font-weight:800}
+.aim .lead{color:var(--muted);font-size:var(--fs-lead);max-width:640px}
+.aim .eyebrow{font-size:var(--fs-eyebrow);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;display:inline-block}
+.aim .label{font-size:var(--fs-xs);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--gold-deep);font-weight:800}
+.aim .meta{font-size:var(--fs-sm);color:var(--muted)}
+.aim .stat-num{font-family:var(--font-head);font-weight:800;color:var(--gold-deep);line-height:1.1}
+
+/* ---- 4. BUTTONS -------------------------------------------------------- */
+.aim .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--font-head);font-weight:700;font-size:.95rem;line-height:1;
+  padding:.85rem 1.5rem;border-radius:var(--r-md);border:1px solid transparent;
+  cursor:pointer;transition:transform var(--dur) ease,box-shadow .3s ease,background .3s ease,border-color .2s;
+  text-decoration:none;white-space:nowrap}
+.aim .btn:hover{transform:translateY(-2px)}
+.aim .btn:active{transform:translateY(0)}
+.aim .btn[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+/* primary — solid gold gradient, white ink (the app action button) */
+.aim .btn-primary{background:var(--grad-gold);color:#fff;box-shadow:var(--sh-gold)}
+.aim .btn-primary:hover{box-shadow:var(--sh-gold-h)}
+/* pill — the marketing solid-gold pill, dark ink */
+.aim .btn-pill{background:var(--gold);color:#241A04;border-radius:var(--r-pill);
+  padding:1rem 1.9rem;box-shadow:var(--sh-gold)}
+.aim .btn-pill:hover{box-shadow:var(--sh-gold-h);transform:translateY(-2px) scale(1.02)}
+/* ghost — white, gold outline */
+.aim .btn-ghost{background:#fff;color:var(--gold-deep);border-color:var(--gold)}
+.aim .btn-ghost:hover{color:var(--gold);border-color:var(--gold)}
+/* subtle — quiet neutral */
+.aim .btn-subtle{background:var(--card2);color:var(--text);border-color:var(--line)}
+.aim .btn-subtle:hover{border-color:var(--gold)}
+/* sizes */
+.aim .btn-sm{padding:.55rem 1rem;font-size:.82rem;border-radius:var(--r-sm)}
+.aim .btn-lg{padding:1rem 2rem;font-size:1.02rem}
+.aim .btn-block{display:flex;width:100%}
+
+/* ---- 5. CARDS ---------------------------------------------------------- */
+.aim .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r-2xl);
+  padding:var(--sp-4);box-shadow:var(--sh-card)}
+.aim .card > h3{margin-bottom:2px}
+.aim .card > .sub, .aim .card-sub{color:var(--muted);font-size:var(--fs-sm);margin-bottom:var(--sp-3)}
+/* hoverable feature card */
+.aim .card-feature{background:var(--card);border:1px solid #ECE2CF;border-radius:var(--r-max);
+  padding:var(--sp-5) var(--sp-4);box-shadow:var(--sh-card-h);
+  transition:transform .3s,box-shadow .3s,border-color .3s}
+.aim .card-feature:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:var(--sh-lift-h)}
+/* accent (coach) card */
+.aim .card-accent{background:linear-gradient(135deg,#FFFDF9,#FBF3E2);border:1px solid var(--gold-soft);
+  border-radius:var(--r-2xl);padding:var(--sp-4);box-shadow:0 16px 38px rgba(184,137,46,.13)}
+/* dark premium (exam-readiness) card */
+.aim .card-dark{background:var(--grad-dark);color:#fff;border:none;border-radius:var(--r-2xl);
+  padding:var(--sp-4);position:relative;overflow:hidden}
+.aim .card-dark .big{font-family:var(--font-head);font-weight:800;font-size:3.4rem;line-height:1;
+  background:linear-gradient(120deg,#F9D77F,#F5B942);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* ---- 6. FORM CONTROLS (formalised — the panels need these) ------------- */
+.aim .field{display:flex;flex-direction:column;gap:6px;margin-bottom:var(--sp-3)}
+.aim .field > label, .aim .form-label{font-size:var(--fs-xs);letter-spacing:.06em;text-transform:uppercase;
+  font-weight:800;color:var(--gold-deep)}
+.aim .input, .aim input[type=text], .aim input[type=email], .aim input[type=password], .aim input[type=search], .aim input[type=number], .aim select, .aim textarea{
+  width:100%;font-family:var(--font-body);font-size:.92rem;color:var(--text);
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-md);
+  padding:12px 15px;outline:none;transition:border-color .2s,box-shadow .2s}
+.aim textarea{min-height:110px;resize:vertical;line-height:1.55}
+.aim .input:focus, .aim input:focus, .aim select:focus, .aim textarea:focus{
+  border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,137,46,.12)}
+.aim .input::placeholder, .aim textarea::placeholder{color:#B9AE96}
+.aim select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold-deep) 50%),
+  linear-gradient(135deg,var(--gold-deep) 50%,transparent 50%);
+  background-position:calc(100% - 20px) center,calc(100% - 15px) center;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat;padding-right:38px}
+/* inline field (input + button), e.g. chat / search */
+.aim .field-inline{display:flex;gap:10px}
+.aim .field-inline .input{flex:1}
+
+/* ---- 7. NAV ------------------------------------------------------------ */
+/* top bar */
+.aim .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(250,246,239,.82);border-bottom:1px solid var(--line)}
+.aim .nav-in{display:flex;align-items:center;gap:2rem;height:70px;max-width:var(--shell);
+  margin:0 auto;padding:0 var(--sp-4)}
+.aim .brand{display:flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-weight:700;font-size:1.15rem}
+.aim .brand .dot{width:30px;height:30px;border-radius:9px;background:var(--grad-brand);
+  display:grid;place-items:center;color:#fff;box-shadow:var(--glow-gold)}
+.aim .brand b{color:var(--gold)}
+.aim .nav-links{display:flex;gap:1.6rem;margin-left:1rem;font-size:.92rem}
+.aim .nav-links a{color:var(--muted)}
+.aim .nav-links a:hover, .aim .nav-links a.active{color:var(--text)}
+.aim .nav-right{margin-left:auto;display:flex;gap:.7rem;align-items:center}
+
+/* app shell: sidebar + content */
+.aim .app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+.aim .sidebar{background:#fff;border-right:1px solid var(--line);display:flex;flex-direction:column;
+  gap:4px;padding:22px 16px;position:sticky;top:0;height:100vh}
+.aim .sb-link{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:var(--r-md);
+  color:var(--muted);font-weight:600;font-size:.94rem;transition:.2s;cursor:pointer}
+.aim .sb-link:hover{background:var(--card2);color:var(--text)}
+.aim .sb-link.active{background:var(--grad-gold);color:#fff;box-shadow:0 8px 20px rgba(184,137,46,.28)}
+.aim .sb-link .ic{width:26px;text-align:center;font-size:1.05rem}
+.aim .app-main{padding:var(--sp-5);max-width:var(--shell)}
+@media(max-width:1000px){.aim .app{grid-template-columns:1fr}.aim .sidebar{display:none}.aim .app-main{padding:var(--sp-4)}}
+
+/* ---- 8. BADGES / PILLS / CHIPS ---------------------------------------- */
+.aim .pill{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r-pill);padding:9px 15px;font-weight:700;font-size:var(--fs-sm);box-shadow:var(--sh-pill)}
+.aim .badge{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:var(--fs-xs);
+  padding:5px 11px;border-radius:var(--r-pill);border:1px solid var(--line);
+  background:var(--card2);color:var(--gold-deep)}
+.aim .badge-gold{background:rgba(212,175,55,.12);border-color:var(--line);color:var(--gold)}
+.aim .badge-green{background:rgba(31,157,87,.12);border-color:rgba(31,157,87,.45);color:var(--success-deep)}
+.aim .badge-red{background:rgba(192,57,43,.08);border-color:rgba(192,57,43,.22);color:var(--danger-deep)}
+.aim .badge-muted{background:var(--card2);border-color:var(--line);color:var(--muted)}
+.aim .chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:var(--r-pill);
+  font-size:.82rem;font-weight:700;background:var(--card2);border:1px solid var(--line);color:var(--gold-deep)}
+
+/* ---- 9. PROGRESS ------------------------------------------------------- */
+.aim .track{height:9px;border-radius:var(--r-pill);background:var(--card2);overflow:hidden}
+.aim .track > i{display:block;height:100%;border-radius:var(--r-pill);background:var(--grad-gold-h);
+  transition:width 1.3s var(--ease)}
+.aim .track.low > i{background:var(--grad-danger)}
+.aim .ring{width:66px;height:66px}
+.aim .ring svg{transform:rotate(-90deg)}
+.aim .ring circle{fill:none;stroke-width:3.2}
+.aim .ring .bg{stroke:#EFE6D4}
+.aim .ring .fg{stroke:var(--gold);stroke-linecap:round}
+
+/* ---- 10. STAT TILES ---------------------------------------------------- */
+.aim .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.aim .stat{background:var(--card2);border:1px solid var(--line);border-radius:var(--r-md);
+  padding:14px 12px;text-align:center}
+.aim .stat b{font-family:var(--font-head);font-size:1.5rem;color:var(--gold-deep);display:block;line-height:1.15}
+.aim .stat span{font-size:var(--fs-xs);color:var(--muted)}
+
+/* ---- 11. LIST / MISSION ROW ------------------------------------------- */
+.aim .row{display:flex;align-items:flex-start;gap:14px;background:var(--card2);border:1px solid var(--line);
+  border-radius:var(--r-lg);padding:14px 16px;transition:.25s}
+.aim .row:hover{border-color:var(--gold);transform:translateX(3px)}
+.aim .row.done{opacity:.62}
+.aim .row.done .row-title{text-decoration:line-through}
+.aim .row .ic{width:34px;height:34px;flex:none;border-radius:var(--r-sm);background:rgba(245,185,66,.10);
+  display:grid;place-items:center}
+
+/* ---- 12. MCQ OPTION (first panel needs it) ----------------------------- */
+.aim .qcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-3xl);
+  padding:32px 34px;box-shadow:0 18px 44px rgba(74,50,10,.08)}
+.aim .qtext{font-family:var(--font-head);font-size:1.32rem;font-weight:700;line-height:1.45;margin-bottom:24px}
+.aim .opts{display:flex;flex-direction:column;gap:12px}
+.aim .opt{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line);border-radius:var(--r-lg);
+  padding:16px 18px;font-size:1rem;font-weight:600;cursor:pointer;transition:.2s;background:#fff;text-align:left;width:100%}
+.aim .opt:hover{border-color:var(--gold);background:var(--card2)}
+.aim .opt .okey{width:30px;height:30px;flex:none;border-radius:9px;background:var(--card2);
+  display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:.9rem;color:var(--gold-deep)}
+.aim .opt.correct{border-color:var(--success);background:rgba(31,157,87,.07)}
+.aim .opt.correct .okey{background:var(--success);color:#fff}
+.aim .opt.wrong{border-color:var(--danger);background:rgba(192,57,43,.06)}
+.aim .opt.wrong .okey{background:var(--danger);color:#fff}
+.aim .opts.locked .opt:not(.correct):not(.wrong){opacity:.55;pointer-events:none}
+
+/* ---- 13. MODAL + TOAST ------------------------------------------------- */
+.aim .modal-bg{position:fixed;inset:0;background:rgba(30,20,6,.55);backdrop-filter:blur(5px);
+  display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+.aim .modal-bg.show{display:flex}
+.aim .modal{background:#fff;border-radius:var(--r-3xl);max-width:540px;width:100%;padding:28px 30px;
+  box-shadow:var(--sh-pop);animation:aim-pop .3s}
+@keyframes aim-pop{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.aim .toast{position:fixed;top:24px;left:50%;transform:translateX(-50%) translateY(-120%);
+  background:var(--grad-dark);color:#fff;padding:14px 22px;border-radius:var(--r-lg);
+  box-shadow:0 20px 50px rgba(0,0,0,.3);font-weight:700;display:flex;align-items:center;gap:10px;
+  z-index:100;transition:transform .5s var(--ease)}
+.aim .toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ---- 14. LAYOUT UTILITIES --------------------------------------------- */
+.aim .grid{display:grid;gap:var(--sp-4)}
+.aim .grid-2{grid-template-columns:repeat(2,1fr)}
+.aim .grid-3{grid-template-columns:repeat(3,1fr)}
+.aim .grid-auto{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.aim .span-2{grid-column:span 2}.aim .span-3{grid-column:span 3}
+.aim .flex{display:flex;gap:var(--sp-3)}.aim .flex-between{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3)}
+.aim .wrap{max-width:var(--shell);margin:0 auto;padding:0 var(--sp-4)}
+.aim .stack>*+*{margin-top:var(--sp-3)}
+@media(max-width:820px){.aim .grid-2, .aim .grid-3{grid-template-columns:1fr}.aim .span-2, .aim .span-3{grid-column:auto}}
+
+/* ---- 15. LAYOUT VOCABULARY --------------------------------------------- */
+/* Page composition, not widgets. Every panel is built from these so learners
+   always know where they are. Skeleton of a panel:
+     <div class="page"><header class="page-header">…</header>
+       <section class="section">…</section> … </div>                       */
+
+.aim .page{max-width:var(--shell);margin:0 auto;padding:var(--sp-5) var(--sp-4);width:100%}
+
+/* page header: title + description on the left, primary action on the right */
+.aim .page-header{display:flex;align-items:flex-start;justify-content:space-between;gap:var(--sp-4);
+  padding-bottom:var(--sp-3);border-bottom:1px solid var(--line);margin-bottom:var(--sp-5)}
+.aim .page-header .ph-title{font-family:var(--font-head);font-weight:800;font-size:var(--fs-h1);letter-spacing:-.01em}
+.aim .page-header .ph-desc{color:var(--muted);font-size:var(--fs-sm);margin-top:4px;max-width:640px}
+.aim .page-header .ph-actions{display:flex;gap:10px;flex:none}
+@media(max-width:640px){.aim .page-header{flex-direction:column;gap:var(--sp-3)}.aim .page-header .ph-actions{width:100%}}
+
+/* section: a titled block within a page */
+.aim .section{margin-bottom:var(--sp-6)}
+.aim .section-head{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);margin-bottom:var(--sp-3)}
+.aim .section-head h2{font-size:var(--fs-h2)}
+.aim .section-head .section-link{font-size:var(--fs-sm);font-weight:700}
+
+/* card grid: the default responsive grid of cards */
+.aim .card-grid{display:grid;gap:var(--sp-4);grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.aim .card-grid.tight{gap:var(--sp-3);grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+
+/* content column: a readable single column for text-heavy panels (Notes) */
+.aim .content-col{max-width:720px;margin:0 auto}
+
+/* action bar: a row of actions (e.g. Previous · Progress · Next); can stick */
+.aim .action-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding:var(--sp-2) var(--sp-3);background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r-xl);box-shadow:var(--sh-card)}
+.aim .action-bar.sticky{position:sticky;bottom:var(--sp-4);z-index:20}
+
+/* bottom sheet: mobile-first slide-up panel (desktop can use .modal instead) */
+.aim .sheet-bg{position:fixed;inset:0;background:rgba(30,20,6,.55);backdrop-filter:blur(5px);
+  display:none;z-index:200}
+.aim .sheet-bg.show{display:block}
+.aim .sheet{position:fixed;left:0;right:0;bottom:0;z-index:201;background:#fff;
+  border-radius:var(--r-3xl) var(--r-3xl) 0 0;box-shadow:0 -20px 50px rgba(0,0,0,.22);
+  padding:var(--sp-4);max-height:82vh;overflow:auto;transform:translateY(100%);
+  transition:transform .35s var(--ease)}
+.aim .sheet.show{transform:none}
+.aim .sheet::before{content:"";display:block;width:42px;height:4px;border-radius:999px;
+  background:var(--line);margin:0 auto var(--sp-3)}
+
+/* states: empty / loading / error — every data panel needs all three */
+.aim .state{display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:var(--sp-1);padding:var(--sp-7) var(--sp-4);color:var(--muted)}
+.aim .state .state-ic{font-size:2.4rem;width:72px;height:72px;border-radius:var(--r-xl);
+  display:grid;place-items:center;background:rgba(245,185,66,.10);margin-bottom:var(--sp-1)}
+.aim .state h3{color:var(--text)}
+.aim .state p{max-width:420px}
+.aim .state .btn{margin-top:var(--sp-2)}
+.aim .state.error .state-ic{background:rgba(192,57,43,.08);color:var(--danger)}
+
+/* skeleton + spinner for loading */
+.aim .skeleton{background:linear-gradient(90deg,var(--card2),#F3EAD8,var(--card2));
+  background-size:200% 100%;animation:aim-shimmer 1.3s linear infinite;border-radius:var(--r-md)}
+.aim .skeleton.line{height:14px;margin:8px 0}
+.aim .skeleton.line.short{width:55%}
+@keyframes aim-shimmer{to{background-position:-200% 0}}
+.aim .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--gold);
+  border-radius:50%;animation:aim-spin .8s linear infinite}
+@keyframes aim-spin{to{transform:rotate(360deg)}}
+
+/* ---- 16. LEARNING-LOOP COMPONENTS -------------------------------------- */
+/* Used by the AI Marga Learning Loop; general enough to reuse across panels. */
+
+/* segmented step indicator (question 1..n) */
+.aim .seg{display:inline-flex;gap:6px}
+.aim .seg i{width:26px;height:8px;border-radius:var(--r-pill);background:var(--card2);border:1px solid var(--line)}
+.aim .seg i.on{background:var(--grad-gold-h);border-color:transparent}
+
+/* mission strip — inline labelled stats + progress */
+.aim .mstrip{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.aim .mstrip .mi{display:flex;flex-direction:column}
+.aim .mstrip .mi b{font-family:var(--font-head);font-size:1.15rem;color:var(--gold-deep);line-height:1.1}
+.aim .mstrip .mi span{font-size:.72rem;color:var(--muted)}
+
+/* feedback panel — animated reveal after an answer */
+.aim .fb-panel{margin-top:20px;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--card2);
+  padding:20px 22px;max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .5s var(--ease),opacity .4s,margin .3s,padding .3s}
+.aim .fb-panel.show{max-height:560px;opacity:1}
+.aim .fb-head{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:800;font-size:1.12rem;margin-bottom:6px}
+.aim .fb-head.ok{color:var(--success)}
+.aim .fb-head.no{color:var(--danger)}
+.aim .fblive{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line);
+  font-family:var(--font-head);font-weight:800;color:var(--gold-deep);font-size:.95rem}
+.aim .fblive .arr{color:var(--gold)}
+.aim .fblive .mp{margin-left:auto;color:var(--muted);font-weight:600;font-size:.82rem;font-family:var(--font-body)}
+
+/* expandable "why" rationale card */
+.aim .whycard{margin-top:14px;background:#fff;border:1px solid var(--gold-soft);border-radius:var(--r-lg);
+  text-align:left;max-height:0;opacity:0;overflow:hidden;padding:0 18px;
+  transition:max-height .45s var(--ease),opacity .35s,padding .3s}
+.aim .whycard.show{max-height:320px;opacity:1;padding:16px 18px}
+.aim .whycard ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.95}
+
+/* before → after stat */
+.aim .ba{display:flex;align-items:center;gap:12px}
+.aim .ba .from{font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--muted)}
+.aim .ba .to{font-family:var(--font-head);font-weight:800;font-size:2.2rem;color:var(--gold-deep)}
+.aim .ba .arr{color:var(--gold);font-size:1.4rem}
+
+/* inline text-link button */
+.aim .linkbtn{background:none;border:none;color:var(--gold-deep);font-family:var(--font-head);font-weight:700;
+  font-size:.9rem;cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+
+</style></head><body style="background:var(--bg);min-height:100vh"><div class="aim" id="mount"></div><script>
+/* ============================================================================
+   aim_loop.js — AI Marga "Learning Loop 1.0" as a self-contained feature module.
+
+   Single public surface: window.AIMLoop = { init, startMission, submitAnswer,
+   completeMission }. Everything else is private (IIFE) — no globals leak into the
+   SPA, the behavioural twin of scoping CSS under `.aim`.
+
+   Layered so Sprint 3 replaces ONLY the `api` layer:
+     · api      — the ONLY code that knows the backend (mock now, /me/... later)
+     · state    — local mission/question/session state
+     · renderer — builds & updates the `.aim` DOM
+     · events   — delegated DOM handling + optional SPA event hooks
+     · view     — owns the mount element and screen templates
+
+   Mounts into any element: AIMLoop.init(el). The standalone prototype page and the
+   SPA `#panel-loop` both call the same init — one source of truth for the UI.
+   ========================================================================== */
+window.AIMLoop = (function () {
+  "use strict";
+
+  // ── api ── the ONLY layer that talks to the backend ───────────────────────
+  // Mock now. Shapes match the implementation-spec contract exactly, so Sprint 3
+  // swaps these bodies for fetch('/me/...') with no change to state/renderer:
+  //   getCurrentMission -> GET /me/mission/current (+ /me/mission, /me/learning)
+  //   getMissionDetail  -> GET /me/mission/{id}
+  //   getQuestions      -> GET /me/mission/{id}/questions   (NO answers to client)
+  //   submitAnswer      -> POST /me/attempt (+ explanation)  -> MCQ_ATTEMPTED
+  //   getOutcome        -> GET /me/mission/{id}/outcome
+  var MockMissionAPI = (function () {
+    var MISSION = {
+      mission_id: "m-demo-1", concept: "Fundamental Rights", subject: "Constitution",
+      n_questions: 5, difficulty: "Medium", est_minutes: 12,
+      mastery: 54, revision_due: 6,
+      reason: [
+        "Your accuracy in Fundamental Rights has recently declined.",
+        "This topic is due for spaced revision.",
+        "Strengthening it now will improve long-term retention."
+      ]
+    };
+    // answers held privately (the client never receives correctIndex up front)
+    var BANK = [
+      { id: "q1", text: "Which Article of the Constitution abolishes untouchability?",
+        options: ["Article 14", "Article 17", "Article 19", "Article 21"], _a: 1,
+        explanation: "Article 17 declares untouchability abolished and its practice in any form forbidden and punishable by law." },
+      { id: "q2", text: "The Right to Constitutional Remedies is guaranteed under which Article?",
+        options: ["Article 32", "Article 21", "Article 25", "Article 29"], _a: 0,
+        explanation: "Dr. Ambedkar called Article 32 the “heart and soul” of the Constitution — it lets citizens approach the Supreme Court directly to enforce Fundamental Rights." },
+      { id: "q3", text: "Which Fundamental Right is available to citizens only, and not to foreigners?",
+        options: ["Right to equality (Art 14)", "Right to freedom (Art 19)", "Right to life (Art 21)", "Freedom of religion (Art 25)"], _a: 1,
+        explanation: "The six freedoms under Article 19 are guaranteed only to citizens; Articles 14 and 21 extend to all persons." },
+      { id: "q4", text: "The Right to Education was made a Fundamental Right by which amendment?",
+        options: ["44th Amendment", "73rd Amendment", "86th Amendment", "101st Amendment"], _a: 2,
+        explanation: "The 86th Amendment (2002) inserted Article 21A, making free and compulsory education a Fundamental Right for children aged 6 to 14." },
+      { id: "q5", text: "Which writ is issued to produce a person who has been unlawfully detained?",
+        options: ["Mandamus", "Certiorari", "Quo Warranto", "Habeas Corpus"], _a: 3,
+        explanation: "Habeas corpus (“to have the body”) directs authorities to produce a detained person before the court to test the legality of the detention." }
+    ];
+    var attempts = [];              // mock event log (stands in for MCQ_ATTEMPTED)
+    function delay(v) { return Promise.resolve(v); }
+    return {
+      getCurrentMission: function () { attempts = []; return delay(JSON.parse(JSON.stringify(MISSION))); },
+      getMissionDetail: function (id) { return delay(MISSION); },
+      getQuestions: function (id) {
+        return delay(BANK.map(function (q) {   // strip the answer — client must not see it
+          return { id: q.id, text: q.text, options: q.options };
+        }));
+      },
+      submitAnswer: function (qid, selected) {
+        var q = BANK.filter(function (x) { return x.id === qid; })[0];
+        var correct = selected === q._a;
+        attempts.push({ qid: qid, correct: correct });   // emit MCQ_ATTEMPTED (mock)
+        return delay({ correct: correct, correct_index: q._a, explanation: q.explanation });
+      },
+      getOutcome: function (id) {
+        var n = attempts.length || 1;
+        var right = attempts.filter(function (a) { return a.correct; }).length;
+        var acc = Math.round(right / n * 100);
+        var gain = Math.round(acc / 100 * 12);          // representative mock gain
+        return delay({
+          accuracy_before: 72, accuracy_after: acc,
+          mastery_before: MISSION.mastery, mastery_after: Math.min(100, MISSION.mastery + gain),
+          revision_in_days: 2,
+          next_recommendation: { concept: "Directive Principles", est_minutes: 9 }
+        });
+      }
+    };
+  })();
+
+  // the active api implementation — INJECTED at init() (Sprint 3 swaps the mock
+  // for a RealMissionAPI with the same shape); defaults to the mock for standalone.
+  var api = MockMissionAPI;
+
+  // ── state ── local session state (never authoritative; backend is) ────────
+  var state = {
+    screen: "dashboard", mission: null, questions: [], i: 0,
+    chosen: [], locked: [], results: [], hist: [], whyOpen: false, t0: 0, timer: 0
+  };
+
+  // ── view ── the mount element + tiny DOM helpers ──────────────────────────
+  var view = { root: null };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function h(html) { return html; }
+  function acc() {
+    var ans = state.results.filter(function (r) { return r != null; }).length;
+    var corr = state.results.filter(function (r) { return r && r.correct; }).length;
+    return { ans: ans, corr: corr, pct: ans ? Math.round(corr / ans * 100) : null };
+  }
+
+  // ── renderer ── pure: state -> DOM ────────────────────────────────────────
+  var renderer = {
+    dashboard: function () {
+      var m = state.mission;
+      return '<div class="page">'
+        + '<div style="margin:8px 0 22px"><div class="eyebrow">Today</div>'
+        + '<h1 style="font-size:2rem;margin-top:4px">Good morning</h1></div>'
+        + '<div class="card-accent" style="padding:26px 28px">'
+        + '<div class="label" style="color:var(--gold-deep)">Today’s mission is ready</div>'
+        + '<h2 style="font-size:1.5rem;margin:8px 0 6px">' + esc(m.concept) + '</h2>'
+        + '<p class="meta" style="margin:0 0 12px;max-width:560px">Based on your recent attempts, <b style="color:var(--text)">' + esc(m.concept) + '</b> needs reinforcement.</p>'
+        + '<button class="linkbtn" data-act="toggle-why">Why this mission?</button>'
+        + '<div class="whycard' + (state.whyOpen ? ' show' : '') + '"><div class="label" style="margin-bottom:8px">Why was this chosen</div>'
+        + '<ul>' + m.reason.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>'
+        + '<button class="btn btn-subtle btn-sm" style="margin-top:12px" data-act="toggle-why">Got it</button></div>'
+        + '<div class="flex" style="align-items:center;gap:12px;margin:18px 0 20px">'
+        + '<span class="pill">⏱ ' + m.est_minutes + ' min</span><span class="pill">🎯 ' + m.n_questions + ' questions</span><span class="pill">' + esc(m.difficulty) + '</span></div>'
+        + '<button class="btn btn-primary btn-lg" data-act="overview">Start Mission →</button></div>'
+        + '<div class="section" style="margin-top:32px"><div class="section-head"><h2 style="font-size:1.15rem">Where you stand</h2></div>'
+        + '<div class="stat-grid"><div class="stat"><b>' + m.mastery + '%</b><span>Mastery · ' + esc(m.concept) + '</span></div>'
+        + '<div class="stat"><b>' + m.revision_due + '</b><span>Concepts due for revision</span></div></div></div>'
+        + '</div>';
+    },
+    overview: function () {
+      var m = state.mission;
+      return '<div class="page">'
+        + '<button class="btn btn-subtle btn-sm" data-act="dashboard" style="margin-bottom:18px">← Back</button>'
+        + '<div class="card" style="text-align:center;padding:38px 34px;max-width:560px;margin:0 auto">'
+        + '<div class="eyebrow">Mission · ' + esc(m.subject) + '</div>'
+        + '<h1 style="font-size:1.9rem;margin:8px 0 24px">' + esc(m.concept) + '</h1>'
+        + '<div class="stat-grid" style="margin-bottom:22px">'
+        + '<div class="stat"><b>' + m.n_questions + '</b><span>Questions</span></div>'
+        + '<div class="stat"><b>' + esc(m.difficulty) + '</b><span>Difficulty</span></div>'
+        + '<div class="stat"><b>' + m.est_minutes + ' min</b><span>Est. time</span></div></div>'
+        + '<p class="meta" style="margin:0 0 24px">This mission targets your weakest concept.</p>'
+        + '<button class="btn btn-primary btn-lg btn-block" data-act="begin">Begin →</button></div></div>';
+    },
+    quiz: function () {
+      var q = state.questions[state.i], keys = ["A", "B", "C", "D"], a = acc();
+      var res = state.results[state.i], locked = !!res;
+      var seg = state.questions.map(function (_, k) { return '<i' + (k <= state.i ? ' class="on"' : '') + '></i>'; }).join('');
+      var opts = q.options.map(function (o, k) {
+        var cls = "opt";
+        if (locked) { if (k === res.correct_index) cls += " correct"; else if (k === state.chosen[state.i]) cls += " wrong"; }
+        var sel = (state.chosen[state.i] === k && !locked) ? ' style="border-color:var(--gold);background:var(--card2)"' : '';
+        return '<button class="' + cls + '"' + (locked ? '' : ' data-act="pick" data-arg="' + k + '"') + sel + '><span class="okey">' + keys[k] + '</span> ' + esc(o) + '</button>';
+      }).join('');
+      var fb = "";
+      if (locked) {
+        var ok = res.correct, hist = state.hist[state.i];
+        var live = hist ? ((hist.first ? 'Accuracy <span style="margin-left:4px">' + hist.now + '%</span>'
+          : 'Accuracy ' + hist.prev + '% <span class="arr">→</span> ' + hist.now + '%')
+          + '<span class="mp">Mission ' + (state.i + 1) + ' / ' + state.questions.length + '</span>') : "";
+        fb = '<div class="fb-panel show"><div class="fb-head ' + (ok ? 'ok' : 'no') + '">' + (ok ? '✓ Nice.' : '✗ Not quite.')
+          + ' &nbsp;<span class="meta" style="font-weight:600">' + esc(q.options[res.correct_index]) + '</span></div>'
+          + '<p class="meta" style="margin:0 0 12px">' + esc(res.explanation) + '</p>'
+          + '<span class="badge badge-muted">Confidence · Medium</span>'
+          + '<div class="fblive">' + live + '</div></div>';
+      }
+      var nextLabel = locked ? (state.i === state.questions.length - 1 ? "Finish mission →" : "Continue →") : "Check";
+      return '<div class="page">'
+        + '<div class="card" style="margin-bottom:18px;padding:16px 20px"><div class="mstrip">'
+        + '<div class="mi"><b>' + (state.i + 1) + ' / ' + state.questions.length + '</b><span>Mission</span></div>'
+        + '<div class="track" style="flex:1;min-width:120px"><i style="width:' + (((state.i + (locked ? 1 : 0)) / state.questions.length) * 100) + '%"></i></div>'
+        + '<div class="mi"><b>' + (a.pct === null ? "—" : a.pct + "%") + '</b><span>Accuracy</span></div>'
+        + '<div class="mi"><b id="aim-time">' + fmtTime() + '</b><span>Time</span></div></div></div>'
+        + '<div class="qcard"><div class="flex-between" style="margin-bottom:14px">'
+        + '<span class="meta">Question <b style="color:var(--text)">' + (state.i + 1) + '</b> of ' + state.questions.length + '</span>'
+        + '<span class="seg">' + seg + '</span></div>'
+        + '<div class="qtext">' + esc(q.text) + '</div><div class="opts' + (locked ? ' locked' : '') + '">' + opts + '</div>' + fb + '</div>'
+        + '<div class="action-bar" style="margin-top:18px">'
+        + '<button class="btn btn-subtle btn-sm" data-act="prev"' + (state.i === 0 ? ' disabled' : '') + '>← Previous</button>'
+        + '<span class="meta">Question ' + (state.i + 1) + ' of ' + state.questions.length + '</span>'
+        + '<button class="btn btn-primary btn-sm" data-act="primary">' + nextLabel + '</button></div></div>';
+    },
+    complete: function (o) {
+      var next = o.next_recommendation;
+      return '<div class="page">'
+        + '<div class="card-dark" style="text-align:center;padding:40px 34px;max-width:600px;margin:0 auto">'
+        + '<div class="label" style="color:#F5D98A">Mission complete</div>'
+        + '<h1 style="font-size:2rem;color:#fff;margin:8px 0 8px">Excellent.</h1>'
+        + '<p style="color:#e8d9b8;margin:0 0 6px">You’ve strengthened <b style="color:#F5D98A">' + esc(state.mission.concept) + '</b>.</p>'
+        + '<p style="color:#cbb98f;margin:0;font-size:.92rem">Tomorrow we’ll revisit this briefly to improve long-term retention.</p></div>'
+        + '<div class="grid grid-2" style="max-width:600px;margin:16px auto 0">'
+        + '<div class="card"><div class="card-sub">Accuracy</div><div class="ba"><span class="from">' + o.accuracy_before + '%</span><span class="arr">→</span><span class="to">' + o.accuracy_after + '%</span></div></div>'
+        + '<div class="card"><div class="card-sub">Concept mastery</div><div class="ba"><span class="from">' + o.mastery_before + '%</span><span class="arr">→</span><span class="to">' + o.mastery_after + '%</span></div></div></div>'
+        + '<div class="card-accent" style="max-width:600px;margin:16px auto 0"><div class="flex-between">'
+        + '<div><div class="label" style="color:var(--gold-deep);margin-bottom:4px">Recommended next mission</div>'
+        + '<div style="font-family:var(--font-head);font-weight:800;font-size:1.2rem">' + esc(next.concept) + '</div>'
+        + '<div class="meta">Estimated ' + next.est_minutes + ' minutes</div></div><div style="font-size:1.8rem">🧭</div></div></div>'
+        + '<div class="flex" style="max-width:600px;margin:20px auto 0;justify-content:center">'
+        + '<button class="btn btn-primary btn-lg" data-act="start-now">Start Now</button>'
+        + '<button class="btn btn-ghost btn-lg" data-act="finish-today">Finish for Today</button></div></div>';
+    }
+  };
+
+  function fmtTime() {
+    if (!state.t0) return "0:00";
+    var d = Math.floor((Date.now() - state.t0) / 1000);
+    return Math.floor(d / 60) + ":" + String(d % 60).padStart(2, "0");
+  }
+  function paint(html) { view.root.innerHTML = h(html); }
+  function tick() { var el = document.getElementById("aim-time"); if (el) el.textContent = fmtTime(); }
+
+  // ── events ── one delegated handler; no inline onclick, no globals ────────
+  function onClick(e) {
+    var t = e.target.closest("[data-act]");
+    if (!t || !view.root.contains(t)) return;
+    var act = t.getAttribute("data-act"), arg = t.getAttribute("data-arg");
+    ({
+      "toggle-why": function () { state.whyOpen = !state.whyOpen; paint(renderer.dashboard()); },
+      "overview": function () { state.screen = "overview"; paint(renderer.overview()); },
+      "dashboard": function () { state.screen = "dashboard"; paint(renderer.dashboard()); },
+      "begin": startMission,
+      "pick": function () { pick(parseInt(arg, 10)); },
+      "primary": primary,
+      "prev": function () { if (state.i > 0) { state.i--; paint(renderer.quiz()); } },
+      "start-now": startMission,
+      "finish-today": function () { stopTimer(); state.screen = "dashboard"; paint(renderer.dashboard()); }
+    }[act] || function () {})();
+  }
+  function stopTimer() { if (state.timer) { clearInterval(state.timer); state.timer = 0; } }
+
+  // ── flow ──────────────────────────────────────────────────────────────────
+  function startMission() {
+    api.getQuestions(state.mission.mission_id).then(function (qs) {
+      state.questions = qs; state.i = 0;
+      state.chosen = qs.map(function () { return null; });
+      state.results = qs.map(function () { return null; });
+      state.hist = qs.map(function () { return null; });
+      state.screen = "quiz"; state.t0 = Date.now();
+      stopTimer(); state.timer = setInterval(tick, 1000);
+      paint(renderer.quiz());
+    });
+  }
+  function pick(k) { if (state.results[state.i]) return; state.chosen[state.i] = k; paint(renderer.quiz()); }
+  function primary() {
+    var res = state.results[state.i];
+    if (!res) {                                    // "Check"
+      if (state.chosen[state.i] == null) return;
+      submitAnswer();
+    } else if (state.i === state.questions.length - 1) {
+      completeMission();
+    } else { state.i++; paint(renderer.quiz()); }
+  }
+  function submitAnswer() {
+    var q = state.questions[state.i], before = acc();
+    api.submitAnswer(q.id, state.chosen[state.i]).then(function (r) {
+      state.results[state.i] = r;
+      var after = acc();
+      state.hist[state.i] = { prev: before.pct == null ? after.pct : before.pct, now: after.pct, first: before.ans === 0 };
+      paint(renderer.quiz());
+    });
+  }
+  function completeMission() {
+    stopTimer();
+    api.getOutcome(state.mission.mission_id).then(function (o) { state.screen = "complete"; paint(renderer.complete(o)); });
+  }
+
+  // ── public surface ────────────────────────────────────────────────────────
+  var bound = false;
+  function init(opts) {
+    opts = opts || {};
+    if (typeof opts === "string" || (opts && opts.nodeType)) opts = { mount: opts };
+    var root = (typeof opts.mount === "string") ? document.querySelector(opts.mount) : opts.mount;
+    if (!root) throw new Error("AIMLoop.init: mount element not found");
+    if (opts.api) api = opts.api;                         // dependency injection
+    if (view.root !== root || !bound) {                   // bind delegated handler ONCE per root
+      if (view.root && bound) view.root.removeEventListener("click", onClick);
+      view.root = root; view.root.addEventListener("click", onClick); bound = true;
+    }
+    stopTimer();
+    state.i = 0; state.chosen = []; state.results = []; state.hist = []; state.whyOpen = false;
+    return api.getCurrentMission().then(function (m) {
+      state.mission = m; state.screen = "dashboard";
+      paint(renderer.dashboard());
+    });
+  }
+  return { init: init, startMission: startMission, submitAnswer: submitAnswer,
+           completeMission: completeMission, MockMissionAPI: MockMissionAPI };
+})();
+
+</script><script>AIMLoop.init({mount:"#mount", api: AIMLoop.MockMissionAPI});</script></body></html>

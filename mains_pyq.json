@@ -1,0 +1,3232 @@
+{
+  "papers": [
+    {
+      "year": 2019,
+      "paper": "GS Paper I",
+      "paper_code": "GS1",
+      "questions": [
+        {
+          "q": "Highlight the Central Asian and Greco-Bactrian elements in the Gandhara art.",
+          "subject": "Art & Culture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The 1857 Uprising was the culmination of the recurrent big and small local rebellions that had occurred in the preceding hundred years of British rule. Elucidate.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Examine the linkages between the nineteenth century's 'Indian Renaissance' and the emergence of national identity.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Assess the impact of global warming on the coral life system with examples.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the causes of depletion of mangroves and explain their importance in maintaining coastal ecology.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Can the strategy of regional resource-based manufacturing help in promoting employment in India?",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the factors for localisation of agro-based food processing industries of North-West India.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What makes the Indian society unique in sustaining its culture? Discuss.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Empowering women is the key to control population growth.\" Discuss.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the challenges to our cultural practices in the name of secularism?",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Many voices had strengthened and enriched the nationalist movement during the Gandhian phase. Elaborate.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Assess the role of British imperial power in complicating the process of transfer of power during the 1940s.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain how the foundations of the modern world were laid by the American and French Revolutions.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is water stress? How and why does it differ regionally in India?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How can the mountain ecosystem be restored from the negative impact of development initiatives and tourism?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How is efficient and affordable urban mass transport key to the rapid economic development of India?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How do ocean currents and water masses differ in their impacts on marine life and the coastal environment? Give suitable examples.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Do we have cultural pockets of small India all over the nation? Elaborate with examples.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the continued challenges for women in India against time and space?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"Are we losing our local identity for the global identity?\" Discuss.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "paper": "GS Paper II",
+      "paper_code": "GS2",
+      "questions": [
+        {
+          "q": "Do you think that the Constitution of India does not accept the principle of strict separation of powers rather it is based on the principle of 'checks and balance'? Explain.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The Central Administrative Tribunal which was established for redressal of grievances and complaints by or against central government employees, nowadays is exercising its powers as an independent judicial authority.\" Explain.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the methods used by the Farmers' organizations to influence the policy-makers in India and how effective are these methods?",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "From the resolution of contentious issues regarding distribution of legislative powers by the courts, 'Principle of Federal Supremacy' and 'Harmonious Construction' have emerged. Explain.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What can France learn from the Indian Constitution's approach to secularism?",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Despite consistent experience of high growth, India still goes with the lowest indicators of human development. Examine the issues that make balanced and inclusive development elusive.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"There is a growing divergence in the relationship between poverty and hunger in India. The shrinking of social expenditure by the government is forcing the poor to spend more on non-food essential items squeezing their food-budget.\" Elucidate.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Implementation of Information and Communication Technology (ICT) based projects/programmes usually suffers in terms of certain vital factors. Identify these factors, and suggest measures for their effective implementation.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The time has come for India and Japan to build a strong contemporary relationship, one involving global and strategic partnership that will have a great significance for Asia and the world as a whole.\" Comment.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Too little cash, too much politics, leaves UNESCO fighting for life.\" Discuss the statement in the light of US' withdrawal and its accusation of the cultural body as being 'anti-Israel bias'.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "On what grounds a people's representative can be disqualified under the Representation of People Act, 1951? Also mention the remedies available to such person against his disqualification.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"Parliament's power to amend the Constitution is a limited power and it cannot be enlarged into absolute power.\" In the light of this statement explain whether Parliament under Article 368 of the Constitution can destroy the Basic Structure of the Constitution by expanding its amending power?",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"The reservation of seats for women in the institutions of local self-government has had a limited impact on the patriarchal character of the Indian Political Process.\" Comment.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"The Attorney-General is the chief legal adviser and lawyer of the Government of India.\" Discuss.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Individual Parliamentarian's role as the national lawmaker is on a decline, which in turn, has adversely impacted the quality of debates and their outcome. Discuss.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"In the context of neo-liberal paradigm of development planning, multi-level planning is expected to make operations cost effective and remove many implementation blockages.\" Discuss.",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The need for cooperation among various service sectors has been an inherent component of development discourse. Partnership bridges the gap among the sectors. It also sets in motion a culture of 'Collaboration' and 'team spirit'. In the light of statements above examine India's Development process.",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The performance of welfare schemes that are implemented for vulnerable sections is not so effective due to absence of their awareness and active involvement at all stages of the policy process. Discuss.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"The long-sustained image of India as a leader of the oppressed and marginalised nations has disappeared on account of its new found role in the emerging global order.\" Elaborate.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"What introduces friction into the ties between India and the United States is that Washington is still unable to find for India a position in its global strategy, which would satisfy India's National self-esteem and ambitions.\" Explain with suitable examples.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "paper": "GS Paper III",
+      "paper_code": "GS3",
+      "questions": [
+        {
+          "q": "Enumerate the indirect taxes which have been subsumed in the Goods and Services Tax (GST) in India. Also, comment on the revenue implications of the GST introduced in India since July 2017.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Do you agree with the view that steady GDP growth and low inflation have left the Indian economy in good shape? Give reasons in support of your arguments.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How far is the Integrated Farming System (IFS) helpful in sustaining agricultural production?",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Elaborate on the impact of the National Watershed Project in increasing agricultural production from water-stressed areas.",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How did India benefit from the contributions of Sir M. Visvesvaraya and Dr. M. S. Swaminathan in the fields of water engineering and agricultural science respectively?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is India's plan to have its own space station and how will it benefit our space programme?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Coastal sand mining, whether legal or illegal, poses one of the biggest threats to our environment. Analyse the impact of sand mining along the Indian coasts, citing specific examples.",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Vulnerability is an essential element for defining disaster impacts and its threat to people. How and in what ways can vulnerability to disasters be characterised? Discuss different types of vulnerability with reference to disasters.",
+          "subject": "Disaster Management",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The banning of 'Jamaat-e-Islami' in Jammu and Kashmir brought into focus the role of over-ground workers (OGWs) in assisting terrorist organizations. Examine the role played by OGWs in assisting terrorist organizations in insurgency-affected areas. Discuss measures to neutralize the influence of OGWs.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is the CyberDome Project? Explain how it can be useful in controlling internet crimes in India.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "It is argued that the strategy of inclusive growth is intended to meet the objectives of inclusiveness and sustainability together. Comment on this statement.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Public expenditure management is a challenge to the Government of India in the context of budget-making during the post-liberalization period. Clarify it.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the reformative steps taken by the Government to make the food grain distribution system more effective?",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Elaborate on the policy taken by the Government of India to meet the challenges of the food processing sector.",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How is the Government of India protecting traditional knowledge of medicine from patenting by pharmaceutical companies?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How can biotechnology improve the living standards of farmers?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Define the concept of carrying capacity of an ecosystem as relevant to an environment. Explain how understanding this concept is vital while planning for sustainable development of a region.",
+          "subject": "Environment",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Disaster preparedness is the first step in any disaster management process. Explain how hazard zonation mapping will help in disaster mitigation in the case of landslides.",
+          "subject": "Disaster Management",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The Indian Government has recently strengthened the anti-terrorism laws by amending the Unlawful Activities (Prevention) Act (UAPA), 1967 and the NIA Act. Analyse the changes in the context of prevailing security environment while discussing the scope and reasons for opposing the UAPA by human rights organizations.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The cross-border movement of insurgents is only one of the several security challenges facing the policing of the border in North-East India. Examine the various challenges currently emanating across the India-Myanmar border. Also, discuss the steps to counter the challenges.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "paper": "GS Paper IV",
+      "paper_code": "GS4",
+      "questions": [
+        {
+          "q": "What are the basic principles of public life? Illustrate any three of these with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What do you understand by the term 'public servant'? Reflect on the expected role of a public servant.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Effective utilization of public funds is crucial to meet development goals. Critically examine the reasons for under-utilization and mis-utilization of public funds and their implications.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Non-performance of duty by a public servant is a form of corruption.\" Do you agree with this view? Justify your answer.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is meant by the term 'constitutional morality'? How does one uphold constitutional morality?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is meant by 'crisis of conscience'? How does it manifest itself in the public domain?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain the basic principles of the citizens' charter movement and bring out its importance.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "There is a view that the Official Secrets Act is an obstacle to the implementation of the Right to Information Act. Do you agree with the view? Discuss.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What do you understand by probity in governance? Based on your understanding of the term, suggest measures for ensuring probity in government.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Emotional Intelligence is the ability to make your emotions work for you instead of against you.\" Do you agree with this view? Discuss.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"An unexamined life is not worth living.\" - Socrates",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"A man is but the product of his thoughts. What he thinks, he becomes.\" - M.K. Gandhi",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Where there is righteousness in the heart, there is beauty in the character. When there is beauty in the character, there is harmony in the home. When there is harmony in the home, there is order in the nation. When there is order in the nation, there is peace in the world.\" - A.P.J. Abdul Kalam",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Case Study: You are leading rescue operations in a disaster-affected area where thousands are homeless and without food and water; heavy rainfall has disrupted the work, and enraged local people have assaulted some of your team members, one of whom is severely injured, prompting some members to urge you to stop operations. In such trying circumstances, what will be your response? Examine the qualities of a public servant which will be required to manage the situation.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Honesty and uprightness are the hallmarks of a strong civil service; however, recently some civil servants have faced prosecution and imprisonment for bonafide mistakes made without intentional wrongdoing or personal benefit, which has deeply affected the morale of the services. How does this trend affect the functioning of the civil services? What measures can be taken to ensure that honest civil servants are not implicated for the bonafide mistakes on their part? Justify your answer.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: In an apparel company with a predominantly female workforce, a reputed marketing executive reversed declining sales, but unconfirmed reports of workplace sexual harassment emerged; a woman employee filed formal complaints to which management remained indifferent, she lodged an FIR, and management subsequently offered substantial compensation to her to withdraw the complaint and exonerate the executive. Identify the ethical issues involved in this case. What options are available to the woman employee?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: In democratic systems the political executive frames policy and the permanent executive (bureaucrats) implements it, but over time political executives have increasingly insisted that bureaucrats follow their agenda, interfered in routine administrative transfers, and acquired materialistic values, leading to 'politicization of bureaucracy'. What are the consequences of this 'politicization of bureaucracy'? Discuss.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: A frontier district faces a severe narcotics problem causing money laundering, poppy cultivation, arms smuggling and a collapsing education system, with unconfirmed reports that politicians and senior police officers patronize the drug mafia, and a skilled woman police officer has been appointed superintendent to restore normalcy. If you are the same police officer, identify the various dimensions of the crisis. Based on your understanding, suggest measures to deal with the crisis.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: India has increasingly emphasized civil service ethics, codes of conduct, transparency and anti-corruption systems, with three priority areas requiring focus: anticipating threats to integrity, strengthening ethical competence, and developing administrative processes that promote ethical values. Suggest institutional measures to address the above three issues.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "paper": "Essay",
+      "paper_code": "ESSAY",
+      "questions": [
+        {
+          "q": "Wisdom finds truth.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Values are not what humanity is, but what humanity ought to be.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Best for an individual is not necessarily best for the society.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Courage to accept and dedication to improve are two keys to success.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "South Asian societies are woven not around the state, but around their plural cultures and plural identities.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Neglect of primary health care and education in India are reasons for its backwardness.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Biased media is a real threat to Indian democracy.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Rise of Artificial Intelligence: the threat of a jobless future or better job opportunities through reskilling and upskilling.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": "GS Paper I",
+      "paper_code": "GS1",
+      "questions": [
+        {
+          "q": "The rock-cut architecture represents one of the most important sources of our knowledge of early Indian art and history. Discuss.",
+          "subject": "Art & Culture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Pala period is the most significant phase in the history of Buddhism in India. Enumerate.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Evaluate the policies of Lord Curzon and their long term implications on the national movements.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the geophysical characteristics of Circum-Pacific Zone.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The process of desertification does not have climate boundaries. Justify with examples.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How will the melting of Himalayan glaciers have a far-reaching impact on the water resources of India?",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Account for the present location of iron and steel industries away from the source of raw material, by giving examples.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Has caste lost its relevance in understanding the multi-cultural Indian Society? Elaborate your answer with illustrations.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "COVID-19 pandemic accelerated class inequalities and poverty in India. Comment.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Do you agree that regionalism in India appears to be a consequence of rising cultural assertiveness? Argue.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Indian Philosophy and tradition played a significant role in conceiving and shaping the monuments and their art in India. Discuss.",
+          "subject": "Art & Culture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Persian literary sources of medieval India reflect the spirit of the age. Comment.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Since the decade of the 1920s, the national movement acquired various ideological strands and thereby expanded its social base. Discuss.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The interlinking of rivers can provide viable solutions to the multi-dimensional inter-related problems of droughts, floods and interrupted navigation. Critically examine.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Account for the huge flooding of million cities in India including the smart ones like Hyderabad and Pune. Suggest lasting remedial measures.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "India has immense potential of solar energy though there are regional variations in its development. Elaborate.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Examine the status of forest resources of India and its resultant impact on climate change.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Is diversity and pluralism in India under threat due to globalisation? Justify your answer.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Customs and traditions suppress reason leading to obscurantism. Do you agree?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How have digital initiatives in India contributed to the functioning of the education system in the country? Elaborate your answer.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": "GS Paper II",
+      "paper_code": "GS2",
+      "questions": [
+        {
+          "q": "\"There is a need for simplification of procedure for disqualification of persons found guilty of corrupt practices under the Representation of Peoples Act\". Comment.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Recent amendments to the Right to Information Act will have profound impact on the autonomy and independence of the Information Commission\". Discuss.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How far do you think cooperation, competition and confrontation have shaped the nature of federation in India? Cite some recent examples to validate your answer.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The judicial system in India and UK seem to be converging as well as diverging in recent times. Highlight the key points of convergence and divergence between the two nations in terms of their judicial practices.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'Once a Speaker, Always a Speaker'! Do you think this practice should be adopted to impart objectivity to the office of the Speaker of Lok Sabha? What could be its implication for the robust functioning of parliamentary business in India?",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "In order to enhance the prospects of social development, sound and adequate health care policies are needed in the fields of geriatric and maternal health care. Discuss.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Institutional quality is a crucial driver of economic performance\". In this context suggest reforms in Civil Service for strengthening democracy.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The emergence of Fourth Industrial Revolution (Digital Revolution) has initiated e-Governance as an integral part of the government\". Discuss.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Critically examine the role of WHO in providing global health security during the COVID-19 Pandemic.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Indian diaspora has a decisive role to play in the politics and economy of America and European Countries\". Comment with examples.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Indian Constitution exhibits centralising tendencies to maintain unity and integrity of the nation. Elucidate in the perspective of the Epidemic Diseases Act, 1897; The Disaster Management Act, 2005 and recently passed Farm Acts.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Judicial legislation is antithetical to the doctrine of separation of powers as envisaged in the Indian Constitution. In this context justify the filing of large number of public interest petitions praying for issuing guidelines to executive authorities.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The strength and sustenance of local institutions in India has shifted from their formative phase of 'functions, functionaries and funds' to the contemporary stage of 'functionality'. Highlight the critical challenges faced by local institutions in terms of their functionality in recent times.",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Rajya Sabha has been transformed from a 'useless Stepney tyre' to the most useful supportive organ in past few decades. Highlight the factors as well as areas in which this transformation could be visible.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Which steps are required for constitutionalisation of a commission? Do you think imparting constitutionality to the National Commission for Women would ensure greater gender justice and empowerment in India? Give reasons.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"Institutional quality is a crucial driver of economic performance\". In this context analyze the latest United Nations Multidimensional Poverty Index report.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"Microfinance as an anti-poverty vaccine is aimed at asset creation and income security of the rural poor in India\". Evaluate the role of Self Help Groups in achieving the twin objectives along with empowering women in rural India.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "National Education Policy 2020 is in conformity with the Sustainable Development Goal-4 (2030). It intends to restructure and reorient education system in India. Critically examine the statement.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "'Quadrilateral Security Dialogue (Quad)' is transforming itself into a trade bloc from a military alliance, in present times. Discuss.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is the significance of Indo-US deals over Indo-Russian defence deals? Discuss with reference to stability in the Indo-Pacific region.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": "GS Paper III",
+      "paper_code": "GS3",
+      "questions": [
+        {
+          "q": "Explain intra-generational and inter-generational issues of equity from the perspective of inclusive growth and sustainable development.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Define potential GDP and explain its determinants. What are the factors that have been inhibiting India from realizing its potential GDP?",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the main constraints in transport and marketing of agricultural produce in India?",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the challenges and opportunities of the food processing sector in the country? How can income of the farmers be substantially increased by encouraging food processing?",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What do you understand by nanotechnology and how is it helping in health sector?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How is science interwoven deeply with our lives? What are the striking changes in agriculture triggered off by the science-based technologies?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How does the draft Environment Impact Assessment (EIA) Notification, 2020 differ from the existing EIA Notification, 2006?",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the salient features of the Jal Shakti Abhiyan launched by the Government of India for water conservation and water security?",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss different types of cybercrimes and measures required to be taken to fight the menace.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "For effective border area management, discuss the steps required to be taken to deny local support to militants and also suggest ways to manage favourable perception among locals.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain the meaning of investment in an economy in terms of capital formation. Discuss the factors to be considered while designing a concession agreement between a public entity and a private entity.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the rationale behind the Goods and Services Tax (Compensation to States) Act of 2017. How has COVID-19 impacted the GST compensation fund and created new federal tensions?",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the major factors responsible for making rice-wheat system a success? In spite of this success how has this system become bane in India?",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Suggest measures to improve water storage and irrigation system to make its judicious use under depleting scenario.",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "COVID-19 pandemic has caused unprecedented devastation worldwide. However, technological advancements are being availed readily to win over the crisis. Give an account of how technology was sought to aid management of the pandemic.",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Describe the benefits of deriving electric energy from sunlight in contrast to the conventional energy generation. What are the initiatives offered by our Government for this purpose?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the key features of the National Clean Air Programme (NCAP) initiated by the Government of India?",
+          "subject": "Environment",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the recent measures initiated in disaster management by the Government of India departing from the earlier reactive approach.",
+          "subject": "Disaster Management",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the determinants of left-wing extremism in Eastern part of India? What strategy should Government of India, civil administration and security forces adopt to counter the threat in the affected areas?",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Analyse internal security threats and transborder crimes along Myanmar, Bangladesh and Pakistan borders including Line of Control (LoC). Also discuss the role played by various security forces in this regard.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": "GS Paper IV",
+      "paper_code": "GS4",
+      "questions": [
+        {
+          "q": "Discuss the role of ethics and values in enhancing the following three major components of Comprehensive National Power (CNP) viz. human capital, soft power (culture and policies), and social harmony.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Education is not an injunction, it is an effective and pervasive tool for all-round development of an individual and social transformation.\" Examine the New Education Policy, 2020 (NEP, 2020) in light of the above statement.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Hatred is destructive of a person's wisdom and conscience that can poison a nation's spirit.\" Do you agree with this view? Justify your answer.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the main components of emotional intelligence (EI)? Can they be learned? Discuss.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What teachings of Buddha are most relevant today and why? Discuss.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The will to power exists, but it can be tamed and be guided by rationality and principles of moral duty.\" Examine this statement in the context of international relations.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Distinguish between laws and rules. Discuss the role of ethics in formulating them.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "A positive attitude is considered to be an essential characteristic of a civil servant who is often required to function under extreme stress. What contributes to a positive attitude in a person?",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the main factors responsible for gender inequality in India? Discuss the contribution of Savitribai Phule in this regard.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The current internet expansion has instilled a different set of cultural values which are often in conflict with traditional values. Discuss.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Condemn none: if you can stretch out a helping hand do so. If not fold your hands, bless your brothers and let them go their own way.\" - Swami Vivekananda. What does this quotation mean to you in the present context?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The best way to find yourself is to lose yourself in the service of others.\" - Mahatma Gandhi. What does this quotation mean to you in the present context?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"A system of morality which is based on relative emotional values is a mere illusion, a thoroughly vulgar conception which has nothing sound in it and nothing true.\" - Socrates. What does this quotation mean to you in the present context?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Case Study: Rajesh Kumar, a senior public servant in the Finance Ministry, faces a decision to re-appropriate funds from a National Housing Scheme to development projects. (a) What are the ethical issues involved in the re-appropriation of funds from a welfare project to development projects? (b) Given the need for proper utilization of public funds, discuss the options available to Rajesh Kumar. Is resigning a worthy option?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As Chairman of Bharat Missiles Ltd, you must weigh opportunities to export arms to foreign governments. (a) As an arms exporter of a responsible nation like India, what are the ethical issues involved in the arms trade? (b) List five ethical factors that would influence the decision to sell arms to foreign governments.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: In Rampura, a tribal-majority district, minor girls are employed as child labour in cotton farms while families migrate for work. (a) Identify the ethical issues involved. (b) Which specific steps will you initiate, as District Collector, to ameliorate the conditions of the minor girls and to improve the overall economic scenario in the district?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As municipal commissioner you investigate the collapse of the roof of a multipurpose mall under construction that caused deaths and injuries, revealing violations. (a) Discuss the ethical issues involved in the case. (b) What are the options available to you in this situation? Explain your selected course of action.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Parmal, a backward district, sees the establishment and growth of Amria Plastic Works (APW) which industrialises Noora village between 2010 and 2020. (a) Critically analyse the story of APW and state the ethical issues involved. (b) Do you consider APW as a role model for the development of backward areas? Give reasons.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: During the nationwide COVID-19 lockdown, migrant workers at the socio-economic margins are brought into national focus by a humanitarian crisis. (a) What ethical issues arose in the current migrant crisis? (b) What do you understand by an ethical care-giving state? (c) What assistance can the civil society render to mitigate the sufferings of migrants in similar situations?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "paper": "Essay",
+      "paper_code": "ESSAY",
+      "questions": [
+        {
+          "q": "Life is a long journey between human being and being humane.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Mindful manifesto is the catalyst to a tranquil self.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Ships do not sink because of water around them, ships sink because of water that gets into them.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Simplicity is the ultimate sophistication.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Culture is what we are, civilization is what we have.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "There can be no social justice without economic prosperity but economic prosperity without social justice is meaningless.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Patriarchy is the least noticed yet the most significant structure of social inequality.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Technology as the silent factor in international relations.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "paper": "GS Paper I",
+      "paper_code": "GS1",
+      "questions": [
+        {
+          "q": "Evaluate the nature of Bhakti Literature and its contribution to Indian culture.",
+          "subject": "Art & Culture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Trace the rise and growth of socio-religious reform movements with special reference to Young Bengal and Brahmo Samaj.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Assess the main administrative issues and socio-cultural problems in the integration process of Indian Princely States.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Differentiate the causes of landslides in the Himalayan region and Western Ghats.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Despite India being one of the countries of the Gondwanaland, its mining industry contributes much less to its Gross Domestic Product (GDP) in percentage. Discuss.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the environmental implications of the reclamation of water bodies into urban land use? Explain with examples.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Mention the global occurrence of volcanic eruptions in 2021 and their impact on regional environment.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Examine the uniqueness of tribal knowledge system when compared with mainstream knowledge and cultural systems.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Examine the role of 'Gig Economy' in the process of empowerment of women in India.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "To what extent did the role of the moderates prepare a base for the wider freedom movement? Comment.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Bring out the constructive programmes of Mahatma Gandhi during Non-Cooperation Movement and Civil Disobedience Movement.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "There arose a serious challenge to the Democratic State System between the two World Wars. Evaluate the statement.",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How do the melting of the Arctic ice and glaciers of the Antarctic differently affect the weather patterns and human activities on the Earth? Explain.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the main socio-economic implications arising out of the development of IT industries in major cities of India?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How does Indian society maintain continuity in traditional social values? Enumerate the changes taking place in it.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "paper": "GS Paper II",
+      "paper_code": "GS2",
+      "questions": [
+        {
+          "q": "'Constitutional Morality' is rooted in the Constitution itself and is founded on its essential facets. Explain the doctrine of 'Constitutional Morality' with the help of relevant judicial decisions.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the desirability of greater representation to women in the higher judiciary to ensure diversity, equity and inclusiveness.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How have the recommendations of the 14th Finance Commission of India enabled the states to improve their fiscal position?",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "To what extent, in your view, the Parliament is able to ensure accountability of the executive in India?",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'Pressure groups play a vital role in influencing public policy-making in India.' Explain how the business associations contribute to public policies.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'Besides being a moral imperative of Welfare State, primary health structure is a necessary pre-condition for sustainable development.' Analyse.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Can the vicious cycle of gender inequality, poverty and malnutrition be broken through the microfinancing of women SHGs? Explain with examples.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'If the last few decades were of Asia's growth story, the next few are expected to be of Africa's.' In light of this statement, examine India's influence in Africa in recent years.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'The USA is facing an existential threat in the form of a China, that is much more challenging than the erstwhile Soviet Union.' Explain.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The jurisdiction of the Central Bureau of Investigation (CBI) regarding lodging an FIR and conducting probes within a particular state is being questioned by various States. However, the power of States to withhold consent to the CBI is not absolute. Explain with special reference to the federal character of India.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Though the Human Rights Commissions have contributed immensely to the protection of human rights in India, yet they have failed to assert themselves against the mighty and powerful. Analysing their structural and practical limitations, suggest remedial measures.",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Analyse the distinguishing features of the notion of Equality in the Constitutions of the USA and India.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the constitutional provisions under which Legislative Councils are established. Review the working and current status of Legislative Councils with suitable illustrations.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "'Though women in post-Independent India have excelled in various fields, the social attitude towards women and the feminist movement has been patriarchal.' Apart from women education and women empowerment schemes, what interventions can help change this milieu?",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Critically examine the aims and objectives of SCO. What importance does it hold for India?",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The newly tri-nation partnership AUKUS is aimed at countering China's ambitions in the Indo-Pacific region. Is it going to supersede the existing partnerships in the region? Discuss the strength and impact of AUKUS in the present scenario.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "paper": "GS Paper III",
+      "paper_code": "GS3",
+      "questions": [
+        {
+          "q": "Explain the difference between computing methodology of India's Gross Domestic Product (GDP) before the year 2015 and after the year 2015.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Distinguish between Capital Budget and Revenue Budget. Explain the components of both these Budgets.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How did land reforms in some parts of the country help to improve the socio-economic conditions of marginal and small farmers?",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How and to what extent would micro-irrigation help in solving India's water crisis?",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How is S-400 air defence system technically superior to any other system presently available in the world?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain the purpose of the Green Grid Initiative launched at World Leaders Summit of the COP26 UN Climate Change Conference in Glasgow in November, 2021. When was this idea first floated in the International Solar Alliance (ISA)?",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Describe the key points of the revised Global Air Quality Guidelines (AQGs) recently released by the World Health Organisation (WHO). How are these different from its last update in 2005? What changes in India's National Clean Air Programme are required to achieve revised standards?",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss about the vulnerability of India to earthquake related hazards. Give examples including the salient features of major disasters caused by earthquakes in different parts of India during the last three decades.",
+          "subject": "Disaster Management",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss how emerging technologies and globalisation contribute to money laundering. Elaborate measures to tackle the problem of money laundering both at national and international levels.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Analyse the multidimensional challenges posed by external state and non-state actors, to the internal security of India. Also discuss measures required to be taken to combat these threats.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Do you agree that the Indian economy has recently experienced V-shaped recovery? Give reasons in support of your answer.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Investment in infrastructure is essential for more rapid and inclusive economic growth. Discuss in the light of India's experience.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the salient features of the National Food Security Act, 2013? How has the Food Security Bill helped in eliminating hunger and malnutrition in India?",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the present challenges before crop diversification? How do emerging technologies provide an opportunity for crop diversification?",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How is the Government of India protecting traditional knowledge of medicine from patenting by pharmaceutical companies?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Describe the major outcomes of the 26th session of the Conference of the Parties (COP) to the United Nations Framework Convention on Climate Change (UNFCCC). What are the commitments made by India in this conference?",
+          "subject": "Environment",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "paper": "GS Paper IV",
+      "paper_code": "GS4",
+      "questions": [
+        {
+          "q": "Identify five ethical traits on which one can plot the performance of a civil servant. Justify their inclusion in the matrix.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Identify ten essential values that are needed to be an effective public servant. Describe the ways and means to prevent non-ethical behaviour in the public servants.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Impact of digital technology as a reliable source of input for rational decision making is a debatable issue. Critically evaluate with suitable example.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Besides domain knowledge, a public official needs innovativeness and creativity of a high order as well, while resolving ethical dilemmas. Discuss with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Attitude is an important component that goes as input in the development of human being. How to build a suitable attitude needed for a public servant?",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "In case of crisis of conscience does emotional intelligence help to overcome the same without compromising the ethical or moral stand that you are likely to follow? Critically examine.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'Refugees should not be turned back to the country where they would face persecution or human right violation.' Examine the statement with reference to the ethical dimension being violated by the nations claiming to be democratic with open society.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'An independent and empowered social audit mechanism is an absolute must in every sphere of public service, including judiciary, to ensure performance, accountability and ethical conduct.' Elaborate.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Case Study: Sunil, a competent civil servant, is posted to combat illegal sand mining in a tribal district where the mafia, backed by local officials and musclemen, threatens him and his family after he initiates raids. (a) Identify the different options available to Sunil in attending to this situation. (b) Critically evaluate each of the options identified by you. (c) Which of the above would be the most appropriate option for Sunil to adopt and why?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As Vice-Principal you discover unfair means used during examinations involving a lecturer close to the management and students from influential families, while the management pressures you to settle it discreetly and student unions demand strict action. (a) Discuss the ethical issues involved in the case. (b) Critically examine the options available with you as the Vice-Principal. What option will you adopt and why?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As project manager of an election-deadline-bound elevated corridor, you find minor pier cracks needing demolition and reconstruction that would delay the project, while the chief engineer orders you to overlook the defects. (a) What are the options available to you as project manager? (b) Examine the ethical dilemmas involved while exercising each of these options. (c) What are the professional challenges you are likely to face and how would you address them? (d) What are the likely consequences of overlooking the observations of the inspecting team?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: During the COVID-19 pandemic surge you manage a public hospital facing surging patient numbers with limited infrastructure, staff and resources. (a) What are the criteria you would consider to justify deploying clinical and non-clinical staff to treat highly infectious patients despite limited resources? (b) Would the justification differ for a private hospital as against a public hospital? Give reasons.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: A food product company that exported successfully launches the same products domestically claiming identical quality, but random testing reveals the domestic products violate approval standards and contain rejected export stock. (a) What are the ethical issues and actions the competent authority should take against the company? (b) What courses of action are available to the company to resolve the crisis and rebuild its reputation? (c) Examine the ethical dilemmas involved.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Pawan, a government officer of ten years, transfers to a new department where his senior officer repeatedly belittles, publicly criticizes and humiliates him without work-related justification, causing stress affecting his personal and family life. (a) What options are available to Pawan to cope with this situation? (b) What approach should Pawan adopt for bringing peace and tranquility to the office and home? (c) As an outsider what suggestions do you have for both the boss and the subordinate to improve work performance and mental/emotional hygiene? (d) What types of training would you suggest for various levels of government office?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "paper": "Essay",
+      "paper_code": "ESSAY",
+      "questions": [
+        {
+          "q": "The process of self-discovery has now been technologically outsourced.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Your perception of me is a reflection of you; my reaction to you is an awareness of me.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Philosophy of wantlessness is Utopian, while materialism is a chimera.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "The real is rational and the rational is real.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Hand that rocks the cradle rules the world.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "What is research, but a blind date with knowledge!",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "History repeats itself, first as a tragedy, second as a farce.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "There are better practices to \"best practices\".",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "paper": "GS Paper I",
+      "paper_code": "GS1",
+      "questions": [
+        {
+          "q": "How will you explain that medieval Indian temple sculptures represent the social life of those days?",
+          "subject": "Art & Culture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Why did the armies of the British East India company - mostly comprising of Indian soldiers - win consistently against the more numerous and better equipped armies of then Indian rulers?",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Why was there a sudden spurt in famines in colonial India since the mid-18th century?",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Describe the characteristics and type of primary rocks.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the meaning of colour-coded weather warnings for cyclone prone areas given by India Meteorological Department.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the natural resource potential of 'Deccan trap'.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Examine the potential of wind energy in India and explain the reasons for their limited spatial spread.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explore and evaluate the impact of 'Work From Home' on family relationships.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How is the growth of Tier 2 cities related to the rise of a new middle class with an emphasis on the culture of consumption?",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Given the diversities among tribal communities in India, in which specific context should they be considered as a single category?",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The political and administrative reorganization of states and territories has been a continuous ongoing process since the mid-nineteenth century. Discuss with examples.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the main contributions of Gupta period and Chola period to Indian heritage and culture.",
+          "subject": "Art & Culture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the significance of the lion and bull figures in Indian mythology, art and architecture.",
+          "subject": "Art & Culture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the forces that influence ocean currents? Describe their role in the fishing industry of the world.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Describing the distribution of rubber producing countries, indicate the major environmental issues faced by them.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Mention the significance of straits and isthmus in international trade.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Troposphere is a very significant atmospheric layer that determines weather processes. How?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Analyse the salience of 'sect' in Indian society vis-a-vis caste, region and religion.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Are tolerance, assimilation and pluralism the key elements in the making of an Indian form of secularism? Justify your answer.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Elucidate the relationship between globalization and new technology in a world of scarce resources, with special reference to India.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "paper": "GS Paper II",
+      "paper_code": "GS2",
+      "questions": [
+        {
+          "q": "\"The most significant achievement of modern law in India is the constitutionalization of environmental problems by the Supreme Court.\" Discuss this statement with the help of relevant case laws.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Right of movement and residence throughout the territory of India are freely available to the Indian citizens, but these rights are not absolute.\" Comment.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "To what extent, in your opinion, has the decentralisation of power in India changed the governance landscape at the grassroots?",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the role of the Vice-President of India as the Chairman of the Rajya Sabha.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the role of the National Commission for Backward Classes in the wake of its transformation from a statutory body to a constitutional body.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The Gati-Shakti Yojana needs meticulous coordination between the government and the private sector to achieve the goal of connectivity. Discuss.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The Rights of Persons with Disabilities Act, 2016 remains only a legal document without intense sensitisation of government functionaries and citizens regarding disability. Comment.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Reforming the government delivery system through the Direct Benefit Transfer Scheme is a progressive step, but it has its limitations too. Comment.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"India is an age-old friend of Sri Lanka.\" Discuss India's role in the recent crisis in Sri Lanka in the light of the preceding statement.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Do you think that BIMSTEC is a parallel organisation like the SAARC? What are the similarities and dissimilarities between the two? How are Indian foreign policy objectives realized by forming this new organisation?",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the procedures to decide the disputes arising out of the election of a Member of the Parliament or State Legislature under The Representation of the People Act, 1951. What are the grounds on which the election of any returned candidate may be declared void? What remedy is available to the aggrieved party against the decision? Refer to the case laws.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the essential conditions for exercise of the legislative powers by the Governor. Discuss the legality of re-promulgation of ordinances by the Governor without placing them before the Legislature.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"While the national political parties in India favour centralisation, the regional parties are in favour of State autonomy.\" Comment.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Critically examine the procedures through which the Presidents of India and France are elected.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the role of the Election Commission of India in the light of the evolution of the Model Code of Conduct.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Besides the welfare schemes, India needs deft management of inflation and unemployment to serve the poor and the underprivileged sections of the society. Discuss.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Do you agree with the view that increasing dependence on donor agencies for development reduces the importance of community participation in the development process? Justify your answer.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The Right of Children to Free and Compulsory Education Act, 2009 remains inadequate in promoting incentive-based system for children's education without generating awareness about the importance of schooling. Analyse.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How will I2U2 (India, Israel, UAE and USA) grouping transform India's position in global politics?",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"Clean energy is the order of the day.\" Describe briefly India's changing policy towards climate change in various international fora in the context of geopolitics.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "paper": "GS Paper III",
+      "paper_code": "GS3",
+      "questions": [
+        {
+          "q": "Why is Public Private Partnership (PPP) required in infrastructural projects? Examine the role of PPP model in the redevelopment of Railway Stations in India.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Is inclusive growth possible under market economy? State the significance of financial inclusion in achieving economic growth in India.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the major challenges of Public Distribution System (PDS) in India? How can it be made effective and transparent?",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Elaborate the scope and significance of the food processing industry in India.",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The increase in life expectancy in the country has led to newer health challenges in the community. What are those challenges and what steps need to be taken to meet them?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Each year a large amount of plant material, cellulose, is deposited on the surface of Planet Earth. What are the natural processes this cellulose undergoes before yielding carbon dioxide, water and other end products?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss in detail the photochemical smog emphasizing its formation, effects and mitigation. Explain the 1999 Gothenburg Protocol.",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain the mechanism and occurrence of cloudburst in the context of the Indian subcontinent. Discuss two recent examples.",
+          "subject": "Disaster Management",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the types of organised crimes. Describe the linkages between terrorists and organised crime that exist at the national and transnational levels.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the maritime security challenges in India? Discuss the organisational, technical and procedural initiatives taken to improve the maritime security.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Economic growth in the recent past has been led by increase in labour productivity.\" Explain this statement. Suggest the growth pattern that will lead to creation of more jobs without compromising labour productivity.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Do you think India will meet 50 percent of its energy needs from renewable energy by 2030? Justify your answer. How will the shift of subsidies from fossil fuels to renewables help achieve the above objective? Explain.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the main bottlenecks in upstream and downstream process of marketing of agricultural products in India?",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is Integrated Farming System? How is it helpful to small and marginal farmers in India?",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Launched on 25th December, 2021, James Webb Space Telescope has been much in the news since then. What are its unique features which make it superior to its predecessor Space Telescopes? What are the key goals of this mission? What potential benefits does it hold for the human race?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is the basic principle behind vaccine development? How do vaccines work? What approaches were adopted by the Indian vaccine manufacturers to produce COVID-19 vaccines?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss global warming and mention its effects on the global climate. Explain the control measures to bring down the level of greenhouse gases which cause global warming, in the light of the Kyoto Protocol, 1997.",
+          "subject": "Environment",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the causes and effects of coastal erosion in India. What are the available coastal management techniques for combating the hazard?",
+          "subject": "Disaster Management",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the different elements of cyber security? Keeping in view the challenges in cyber security, examine the extent to which India has successfully developed a comprehensive National Cyber Security Strategy.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Naxalism is a social, economic and developmental issue manifesting as a violent internal security threat. In this context, discuss the emerging issues and suggest a multilayered strategy to tackle the menace of Naxalism.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "paper": "GS Paper IV",
+      "paper_code": "GS4",
+      "questions": [
+        {
+          "q": "Wisdom lies in knowing what to reckon with and what to overlook. An officer being engrossed with the periphery, ignoring the core issues before him, is no rare in the bureaucracy. Do you agree that such preoccupation of an administrator leads to travesty of justice to the cause of effective service delivery and good governance? Critically evaluate.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Apart from intellectual competency and moral qualities, empathy and compassion are some of the other vital attributes that facilitate the civil servants to be more competent in tackling the crucial issues or taking critical decisions. Explain with suitable illustrations.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The Rules and Regulations provided to all the civil servants are same, yet there is difference in the performance. Positive minded officers are able to interpret the Rules and Regulations in favour of the case and achieve success, whereas negative minded officers are unable to achieve goals by interpreting the same Rules and Regulations against the case. Discuss with illustrations.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "It is believed that adherence to ethics in human actions would ensure in smooth functioning of an organization/system. If so, what does ethics seek to promote in human life? How do ethical values assist in the resolution of conflicts faced by him in his day-to-day functioning?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Ethics is knowing the difference between what you have the right to do and what is right to do.\" - Potter Stewart. Explain.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"If a country is to be corruption free and become a nation of beautiful minds, I strongly feel there are three key societal members who can make a difference. They are the father, the mother and the teacher.\" - A. P. J. Abdul Kalam. Analyse.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Judge your success by what you had to give up in order to get it.\" - Dalai Lama. Analyse.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What do you understand by the term 'good governance'? How far recent initiatives in terms of e-Governance steps taken by the State have helped the beneficiaries? Discuss with suitable examples.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Online methodology is being used for day-to-day meetings, institutional approvals in the administration and for teaching and learning in education sector to the extent telemedicine in the health sector is getting popular with the approvals of the competent authority. No doubt it has advantages and disadvantages for both the beneficiaries and system at large. Describe and discuss the ethical issues involved in the use of online method particularly to vulnerable section of society.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Russia and Ukraine war has been going on for the last seven months. Different countries have taken independent stands and actions keeping in view their own national interests. We are all aware that war has its own impact on the different aspects of society, including human tragedy. What are those ethical issues that are crucial to be considered while launching the war and its continuation so far? Illustrate with justification the ethical issues involved in the given state of affair.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Whistle blower, who reports corruption and illegal activities, wrongdoing and misconduct to the concerned authorities, runs the risk of being exposed to grave danger, physical harm and victimization by the vested interests, accused persons and his team. What policy measures would you suggest to strengthen protection mechanism to safeguard the whistle blower?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "In contemporary world, corporate sector's contribution in generating wealth and employment is increasing. In doing so, they are bringing in unprecedented onslaught on the climate, environmental sustainability and living conditions of human beings. In this background, do you think Corporate Social Responsibility (CSR) is efficient and sufficient enough to fulfill the social roles and responsibilities needed in the corporate world mandated? Critically examine.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Case Study: Prabhat, the newly appointed Vice President (Marketing) of Sterling Electric Ltd., is faced with a situation where the company is dumping defective products in the market and a junior colleague raises concerns. (a) Discuss the ethical issues involved in the case. (b) Critically examine the options available to Prabhat in the above situation. (c) Which of the above would be the most appropriate for Prabhat and why?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Ramesh, a State Civil Services officer serving as Director of the Home Department of a bordering State, must deal with the issue of infiltration of illegal migrants from a neighbouring country. (a) What are the options available to Ramesh as the Director of the Home Department of the bordering State? (b) What option should Ramesh adopt and why? (c) Critically evaluate each of the options. (d) What are the ethical dilemmas being faced by Ramesh? (e) What policy measures would you suggest to combat the menace of infiltration of illegal migrants from the neighbouring country?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Ashok, an investigative journalist, uncovers illegal stone mining and is faced with threats and dilemmas. (a) What are the options available with Ashok to cope up with the situation? (b) Critically evaluate/examine each of the options identified by Ashok. (c) What are the ethical dilemmas being faced by Ashok? (d) Which of the options, do you think, would be the most appropriate for Ashok to adopt and why? (e) In the above scenario, what type of training would you suggest for police officers posted to such districts where stone mining illegal activities are rampant?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As a newly recruited MBA graduate posted in the inspection section of a shoe manufacturing company, you discover quality and labour-related lapses during an inspection. (a) Under the given conditions, what are the options available to you as a member of the Inspecting Team? (b) Critically evaluate each of the options listed by you. (c) What option would you adopt and why? (d) What are the ethical dilemmas being faced by you? (e) What can be the consequences of overlooking the observations raised by the Inspecting Team?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Rakesh, a Joint Commissioner in the Transport department, faces pressure and an ethically charged situation in the discharge of his duties. (a) What are the options available to Rakesh to meet the above situation? (b) Critically examine each of the options identified by Rakesh. (c) What are the ethical dilemmas being faced by Rakesh? (d) What course of action would Rakesh adopt to diffuse the above situation?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As an officer heading a section in the Environment Pollution Control Board, you are confronted with a situation requiring you to ensure environmental compliance against pressures. (a) What are the options available to you under the given situation? (b) Critically examine the options listed by you. (c) What type of mechanism would you suggest to ensure environmental compliance? (d) What are the ethical dilemmas you faced in exercising your option?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "paper": "Essay",
+      "paper_code": "ESSAY",
+      "questions": [
+        {
+          "q": "Forests are the best case studies for economic excellence.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Poets are the unacknowledged legislators of the world.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "History is a series of victories won by the scientific man over the romantic man.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "A ship in harbour is safe, but that is not what a ship is for.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "The time to repair the roof is when the sun is shining.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "You cannot step twice in the same river.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "A smile is the chosen vehicle for all ambiguities.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Just because you have a choice, it does not mean that any of them has to be right.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "paper": "GS Paper I",
+      "paper_code": "GS1",
+      "questions": [
+        {
+          "q": "Explain the role of geographical factors towards the development of Ancient India.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What was the difference between Mahatma Gandhi and Rabindranath Tagore in their approach towards education and nationalism?",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Bring out the socio-economic effects of the introduction of railways in different countries of the world.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the consequences of climate change on the food security in tropical countries.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Why is the world today confronted with a crisis of availability of and access to freshwater resources?",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How are the fjords formed? Why do they constitute some of the most picturesque areas of the world?",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Why is the South-West monsoon called 'Purvaiya' (easterly) in Bhojpur Region? How has this directional seasonal wind system influenced the cultural ethos of the region?",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Do you think marriage as a sacrament is loosing its value in Modern India?",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain why suicide among young women is increasing in Indian Society.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Child cuddling is now being replaced by mobile phones. Discuss its impact on the socialization of children.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the main features of Vedic society and religion? Do you think some of the features are still prevailing in Indian society?",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What were the major technological changes introduced during the Sultanate period? How did those technological changes influence the Indian society?",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How did the colonial rule affect the tribals in India and what was the tribal response to the colonial oppression?",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Comment on the resource potentials of the long coastline of India and highlight the status of natural hazard preparedness in these areas.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Identify and discuss the factors responsible for diversity of natural vegetation in India. Assess the significance of wildlife sanctuaries in rain forest regions of India.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Why did human development fail to keep pace with economic development in India?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "From being net food importer in 1960s, India has emerged as a net food exporter to the world. Provide reasons.",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Does urbanization lead to more segregation and/or marginalization of the poor in Indian metropolises?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Why is caste identity in India both fluid and static?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the impact of post-liberal economy on ethnic identity and communalism.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "paper": "GS Paper II",
+      "paper_code": "GS2",
+      "questions": [
+        {
+          "q": "\"Constitutionally guaranteed judicial independence is a prerequisite of democracy.\" Comment.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Who are entitled to receive free legal aid? Assess the role of the National Legal Services Authority (NALSA) in rendering free legal aid in India.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The states in India seem reluctant to empower urban local bodies both functionally as well as financially.\" Comment.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Compare and contrast the British and Indian approaches to Parliamentary sovereignty.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the role of Presiding Officers of state legislatures in maintaining order and impartiality in conducting legislative work and in facilitating best democratic practices.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The crucial aspect of development process has been the inadequate attention paid to Human Resource Development in India. Suggest measures that can address this inadequacy.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the role of the Competition Commission of India in containing the abuse of dominant position by the Multi-National Corporations in India. Refer to the recent decisions.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "E-governance, as a critical tool of governance, has ushered in effectiveness, transparency and accountability in governments. What inadequacies hamper the enhancement of these features?",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'Virus of Conflict is affecting the functioning of the SCO'. In the light of the above statement point out the role of India in mitigating the problems.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Indian diaspora has scaled new heights in the West. Describe its economic and political benefits for India.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The Constitution of India is a living instrument with capabilities of enormous dynamism. It is a constitution made for a progressive society.\" Illustrate with special reference to the expanding horizons of the right to life and personal liberty.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the constitutional perspectives of Gender Justice with the help of relevant Constitutional Provisions and case laws.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Account for the legal and political factors responsible for the reduced frequency of using Article 356 by the Union Governments since mid 1990s.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the contribution of civil society groups for women's effective and meaningful participation and representation in state legislatures in India.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the significance of the 101st Constitutional Amendment Act. To what extent does it reflect the accommodative spirit of federalism?",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the structure of the Parliamentary Committee system. How far have the financial committees helped in the institutionalization of Indian Parliament?",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "\"Development and welfare schemes for the vulnerable, by its nature, are discriminatory in approach.\" Do you agree? Give reasons for your answer.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Skill development programmes have succeeded in increasing human resources supply to various sectors. In the context of the statement analyse the linkages between education, skill and employment.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "'The expansion and strengthening of NATO and a stronger US-Europe strategic partnership works well in India.' What is your opinion about this statement? Give reasons and examples to support your answer.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "'Sea is an important component of the Cosmos.' Discuss in the light of the above statement the role of the IMO (International Maritime Organisation) in protecting environment and enhancing maritime safety and security.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "paper": "GS Paper III",
+      "paper_code": "GS3",
+      "questions": [
+        {
+          "q": "\"Faster economic growth requires increased share of the manufacturing sector in GDP, particularly of MSMEs.\" Comment on the present policies of the Government in this regard.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is the status of digitalization in the Indian economy? Examine the problems faced in this regard and suggest improvements.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "How does e-Technology help farmers in production and marketing of agricultural produce? Explain it.",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "State the objectives and measures of land reforms in India. Discuss how land ceiling policy on landholding can be considered as an effective reform under economic criteria.",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Introduce the concept of Artificial Intelligence (AI). How does AI help clinical diagnosis? Do you perceive any threat to privacy of the individual in the use of AI in healthcare?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss several ways in which microorganisms can help in meeting the current fuel shortage.",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Dam failures are always catastrophic, especially on the downstream side, resulting in a colossal loss of life and property. Analyze the various causes of dam failures. Give two examples of large dam failures.",
+          "subject": "Disaster Management",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is oil pollution? What are its impacts on the marine ecosystem? In what way is oil pollution particularly harmful for a country like India?",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Winning of 'Hearts and Minds' in terrorism affected areas is an essential step in restoring the trust of the population. Discuss the measures adopted by the Government in this respect as part of the conflict resolution in Jammu and Kashmir.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The use of unmanned aerial vehicles (UAVs) by our adversaries across the borders to ferry arms/ammunitions, drugs, etc., is a serious threat to the internal security. Comment on the measures being taken to tackle this threat.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Most of the unemployment in India is structural in nature. Examine the methodology adopted to compute unemployment in the country and suggest improvements.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Distinguish between 'care economy' and 'monetized economy'. How can care economy be brought into monetized economy through women empowerment?",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the changes in cropping pattern in India in the context of changes in consumption pattern and marketing conditions.",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the direct and indirect subsidies provided to farm sector in India? Discuss the issues raised by the World Trade Organization (WTO) in relation to agricultural subsidies.",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The adoption of electric vehicles is rapidly growing worldwide. How do electric vehicles contribute to reducing carbon emissions and what are the key benefits they offer compared to traditional combustion engine vehicles?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is the main task of India's third moon mission which could not be achieved in its earlier mission? List the countries that have achieved this task. Introduce the subsystems in the spacecraft launched and explain the role of the 'Virtual Launch Control Centre' at the Vikram Sarabhai Space Centre which contributed to the successful launch from Sriharikota.",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Comment on the National Wetland Conservation Programme initiated by the Government of India and name a few India's wetlands of international importance included in the Ramsar Sites.",
+          "subject": "Environment",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The Intergovernmental Panel on Climate Change (IPCC) has predicted a global sea level rise of about one metre by AD 2100. What would be its impact in India and the other countries in the Indian Ocean region?",
+          "subject": "Environment",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the internal security challenges being faced by India? Give out the role of Central Intelligence and Investigative Agencies tasked to counter such threats.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Give out the major sources of terror funding in India and efforts being made to curtail these sources. In the light of this, also discuss the aim and objective of the 'No Money for Terror (NMFT)' Conference recently held at New Delhi in November 2022.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "paper": "GS Paper IV",
+      "paper_code": "GS4",
+      "questions": [
+        {
+          "q": "What do you understand by 'moral integrity' and 'professional efficiency' in the context of corporate governance in India? Illustrate with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "'International aid' is an accepted form of helping 'resource-challenged' nations. Comment on 'ethics in contemporary international aid'. Support your answer with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Corruption is the manifestation of the failure of core values in the society.\" In your opinion what measures can be adopted to uplift the core values in the society?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "In the context of work environment, differentiate between 'coercion' and 'undue influence' with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The simplest acts of kindness are by far more powerful than a thousand heads bowing in prayer.\" - Mahatma Gandhi. What do you understand by this statement? Explain its relevance in the contemporary times.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"To awaken the people, it is the women who must be awakened. Once she is on the move, the family moves, the village moves, the nation moves.\" - Jawaharlal Nehru. What do you understand by this statement? Explain its relevance in the contemporary times.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Do not hate anybody, because that hatred which comes out from you must, in the long run, come back to you. If you love, that love will come back to you, completing the circle.\" - Swami Vivekananda. What do you understand by this statement? Explain its relevance in the contemporary times.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"What really matters for success, character, happiness and lifelong achievements is a definite set of emotional skills - your EQ - not just purely cognitive abilities that are measured by conventional IQ tests.\" Do you agree with this view? Give reasons in support of your answer.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Differentiate 'moral intuition' from 'moral reasoning' with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Probity is essential for an effective system of governance and socio-economic development.\" Discuss.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Is conscience a more reliable guide when compared to laws, rules and regulations in the context of ethical decision-making? Discuss.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain the term 'social capital'. How does it enhance good governance?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What were the major teachings of Guru Nanak? Explain their relevance in the contemporary world.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Case Study: A bank manager facilitated Rs 10 lakh from a dormant account to fund the immediate heart surgery of a lower-middle-class colleague's father, who lacked insurance, with promises of confidentiality and repayment which the colleague has begun. (a) What are the ethical issues involved? (b) Evaluate the behaviour of the bank manager from an ethical point of view. (c) How would you react to the situation?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Following a devastating landslide near Uttarkashi, as the District Magistrate overseeing rescue operations, you face a pregnant woman in labour who needs an immediate blood transfusion, while professional standards require blood to be procured only through recognised blood banks; your team volunteers to donate. (a) What are the ethical issues involved in this case? (b) Evaluate the options available to you, being the District Magistrate of the area.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Rashika, a Joint Secretary, is asked to prepare notes late on a Saturday for a Sunday ministry meeting; with a frequently travelling husband and young children dependent on domestic help, she recently left a sick child with the nanny for office work and reflects on balancing professional dedication against family obligations. (a) Discuss the ethical issues involved in this case. (b) Briefly describe at least four laws that have been enacted regarding a healthy, safe and equitable working environment for women. (c) Imagine you are in a similar situation. What suggestions would you make to mitigate such working conditions?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Vinod, an honest IAS officer and Managing Director of a State Road Transport Corporation, is given documents and video evidence of bribery by an Opposition Board Member against the politically powerful Chairman, with an offer of political support for his career if he exposes the Chairman, even as he risks penalisation and transfer. (a) As a conscientious civil servant, evaluate the options available to Vinod. (b) In the light of the above case, comment upon the ethical issues that may arise due to the politicization of bureaucracy.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: As Additional Director General of the Central Public Works Department overseeing a prestigious project, you find that Seema, a newly appointed Senior Architect whose suggestions would improve the project, is being humiliated and disrespected before colleagues by the insecure retiring Chief Architect, leading her to contemplate resignation. (a) What are the ethical issues involved in the above case? (b) What are the options available to you in order to complete the project as well as to retain Seema in the organization? (c) What would be your response to Seema's predicament? What measures would you institute to prevent such occurrences from happening in your organization?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Your 11-year-old son becomes withdrawn after being mocked by classmates in class and on WhatsApp; after you walk past the perpetrators at a sporting event, a viral social media video falsely accuses you of physically bullying children, damaging your professional reputation, and you respond by posting a video identifying the actual perpetrators and highlighting social media's adverse effects. (a) Based on the above case study, discuss the ethical issues involved in the use of social media. (b) Discuss the pros and cons of using social media by you to put across the facts to counter the fake propaganda against your family.",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "paper": "Essay",
+      "paper_code": "ESSAY",
+      "questions": [
+        {
+          "q": "Thinking is like a game, it does not begin unless there is an opposite team.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Visionary decision-making happens at the intersection of intuition and logic.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Not all who wander are lost.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Inspiration for creativity springs from the effort to look for the magical in the mundane.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Girls are weighed down by restrictions, boys with demands - two equally harmful disciplines.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Mathematics is the music of reason.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "A society that has more justice is a society that needs less charity.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Education is what remains after one has forgotten what one has learned in school.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "paper": "GS Paper I",
+      "paper_code": "GS1",
+      "questions": [
+        {
+          "q": "Underline the changes in the field of economy and society from Rig Vedic to later Vedic period.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Estimate the contribution of Pallavas of Kanchi for the development of art and literature of South India.",
+          "subject": "Art & Culture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What were the events that led to the Quit India Movement? Point out its results.",
+          "subject": "History",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is sea surface temperature rise? How does it affect the formation of tropical cyclones?",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Why do large cities tend to attract more migrants than smaller towns? Discuss in the light of conditions in developing countries.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is the phenomenon of 'cloudbursts'? Explain.",
+          "subject": "Geography",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is the concept of a 'demographic winter'? Is the world moving towards such a situation? Elaborate.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Distinguish between gender equality, gender equity and women's empowerment. Why is it important to take gender concerns into account in programme design and implementation?",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Intercaste marriages between castes which have socio-economic parity have increased, to some extent, but this is less true of interreligious marriages. Discuss.",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "In dealing with socio-economic issues of development, what kind of collaboration between government, NGOs and private sector would be most productive?",
+          "subject": "Indian Society",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Though the great Cholas are no more yet their name is still remembered with great pride because of their highest achievements in the domain of art and architecture.\" Comment.",
+          "subject": "Art & Culture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How far is it correct to say that the First World War was fought essentially for the preservation of balance of power?",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "How far was the Industrial Revolution in England responsible for the decline of handicrafts and cottage industries in India?",
+          "subject": "History",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The groundwater potential of the gangetic valley is on a serious decline. How may it affect the food security of India?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are aurora australis and aurora borealis? How are these triggered?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is a twister? Why are the majority of twisters observed in areas around the Gulf of Mexico?",
+          "subject": "Geography",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is regional disparity? How does it differ from diversity? How serious is the issue of regional disparity in India?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Despite comprehensive policies for equity and social justice, underprivileged sections are not yet getting the full benefits of affirmative action envisaged by the Constitution. Comment.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Globalization has increased urban migration by skilled, young, unmarried women from various classes. How has this trend impacted upon their personal freedom and relationship with family?",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Critically analyse the proposition that there is a high correlation between India's cultural diversities and socio-economic marginalities.",
+          "subject": "Indian Society",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "paper": "GS Paper II",
+      "paper_code": "GS2",
+      "questions": [
+        {
+          "q": "Examine the need for electoral reforms as suggested by various committees, with particular reference to 'one nation - one election' principle.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain and distinguish between Lok Adalats and Arbitration Tribunals. Whether they entertain civil as well as criminal cases?",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The growth of cabinet system has practically resulted in the marginalisation of the parliamentary supremacy.\" Elucidate.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The duty of the Comptroller and Auditor General is not merely to ensure the legality of expenditure but also its propriety.\" Comment.",
+          "subject": "Polity & Constitution",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Analyse the role of local bodies in providing good governance at local level and bring out the pros and cons of merging the rural local bodies with the urban local bodies.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Public charitable trusts have the potential to make India's development more inclusive as they relate to certain vital public issues.\" Comment.",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Poverty and malnutrition create a vicious cycle, adversely affecting human capital formation. What steps can be taken to break the cycle?",
+          "subject": "Social Justice",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The Doctrine of Democratic Governance makes it necessary that the public perception of the integrity and commitment of civil servants becomes absolutely positive.\" Discuss.",
+          "subject": "Governance",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The West is fostering India as an alternative to reduce dependence on China's supply chain and as a strategic ally to counter China's political and economic dominance.\" Explain this statement with examples.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Critically analyse India's evolving diplomatic, economic and strategic relations with the Central Asian Republics (CARs) highlighting their increasing significance in regional and global geopolitics.",
+          "subject": "International Relations",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the aims and objects of recently passed and enforced, The Public Examination (Prevention of Unfair Means) Act, 2024? Whether University/State Education Board examinations, too, are covered under the Act?",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Right to privacy is intrinsic to life and personal liberty and is inherently protected under Article 21 of the constitution. Explain. In this reference discuss the law relating to D.N.A. testing of child in the womb to establish its paternity.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What changes has the Union Government recently introduced in the domain of Centre-State relations? Suggest measures to be adopted to build the trust between the Centre and the States and for strengthening federalism.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Explain the reasons for the growth of public interest litigation in India. As a result of it, has the Indian Supreme Court emerged as the world's most powerful judiciary?",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss India as a secular state and compare with the secular principles of the US constitution.",
+          "subject": "Polity & Constitution",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The Citizens' charter has been a landmark initiative in ensuring citizen-centric administration. But it is yet to reach its full potential. Identify the factors hindering the realisation of its promise and suggest measures to overcome them.",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "In a crucial domain like the public healthcare system, the Indian State should play a vital role to contain the adverse impact of marketization of the system. Suggest some measures through which the State can enhance the reach of public healthcare at the grassroots level.",
+          "subject": "Social Justice",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "e-governance is not just about the routine application of digital technology in service delivery process. It is as much about multifarious interactions for ensuring transparency and accountability. In this context, evaluate the role of the 'Interactive Service Model' of e-governance.",
+          "subject": "Governance",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "'Terrorism has become a significant threat to global peace and security.' Evaluate the effectiveness of the United Nations Security Council's Counter Terrorism Committee (CTC) and its associated bodies in addressing and mitigating this threat at the international level.",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Discuss the geopolitical and geostrategic importance of Maldives for India, with a focus on global trade and energy flows. Further, also discuss how this relationship affects India's maritime security and regional stability amidst international competition?",
+          "subject": "International Relations",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "paper": "GS Paper III",
+      "paper_code": "GS3",
+      "questions": [
+        {
+          "q": "Examine the pattern and trend of public expenditure on Social Services in the post-reforms period in India. To what extent this has been in consonance with achieving the objective of inclusive growth?",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What are the causes of persistent high food inflation in India? Comment on the effectiveness of the monetary policy of the RBI to control this type of inflation.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What were the factors responsible for the successful implementation of land reforms in some parts of the country? Elaborate.",
+          "subject": "Economy",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain the role of millets for ensuring health and nutritional security in India.",
+          "subject": "Agriculture",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is the present world scenario of intellectual property rights with respect to life materials? Although, India is second in the world to file patents, still only a few have been commercialized. Explain the reasons behind this less commercialization.",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What is the technology being employed for electronic toll collection on highways? What are its advantages and limitations? What are the proposed changes that will make this process seamless? Would this transition carry any potential hazard?",
+          "subject": "Science & Technology",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Industrial pollution of river water is a significant environmental issue in India. Discuss the various mitigation measures to deal with this problem and also the government's initiatives in this regard.",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "What role do environmental NGOs and activists play in influencing Environmental Impact Assessment (EIA) outcomes for major projects in India? Cite four examples with all important details.",
+          "subject": "Environment",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Explain how narco-terrorism has emerged as a serious threat across the country. Suggest suitable measures to counter narco-terrorism.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Describe the context and salient features of the Digital Personal Data Protection Act, 2023.",
+          "subject": "Internal Security",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Discuss the merits and demerits of the four 'Labour Codes' in the context of labour market reforms in India. What has been the progress so far in this regard?",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is the need for expanding regional air connectivity in India? In this context, discuss the government's UDAN Scheme and its achievements.",
+          "subject": "Economy",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are the major challenges faced by the Indian irrigation system in recent times? State the measures taken by the government for efficient irrigation management.",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Elucidate the importance of buffer stocks for stabilizing agricultural prices in India. What are the challenges associated with the storage of buffer stock? Discuss.",
+          "subject": "Agriculture",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "The world is facing an acute shortage of clean and safe freshwater. What are the alternative technologies which can solve this crisis? Briefly discuss any three such technologies, citing their key merits and demerits.",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What are asteroids? How real is the threat of them causing extinction of life? What strategies have been developed to prevent such a catastrophe?",
+          "subject": "Science & Technology",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "What is disaster resilience? How is it determined? Describe various elements of a resilience framework. Also mention the global targets of the Sendai Framework for Disaster Risk Reduction (2015-2030).",
+          "subject": "Disaster Management",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Flooding in urban areas is an emerging climate-induced disaster. Discuss the causes of this disaster. Mention the features of two such major floods in the last two decades in India. Describe the policies and frameworks in India that aim at tackling such floods.",
+          "subject": "Disaster Management",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "India has a long and troubled border with China and Pakistan fraught with contentious issues. Examine the conflicting issues and security challenges along the border. Also give out the development being undertaken in these areas under the Border Area Development Programme (BADP) and Border Infrastructure and Management (BIM) Scheme.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        },
+        {
+          "q": "Social media and encrypting messaging services pose a serious security challenge. What measures have been adopted at various levels to address the security implications of social media? Also suggest any other remedies to address the problem.",
+          "subject": "Internal Security",
+          "marks": 15,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "paper": "GS Paper IV",
+      "paper_code": "GS4",
+      "questions": [
+        {
+          "q": "\"The application of Artificial Intelligence as a dependable source of input for administrative rational decision-making is a debatable issue.\" Critically examine the statement from the ethical point of view.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Ethics encompasses several key dimensions that are crucial in guiding individuals and organizations towards morally responsible behaviour.\" Explain the key dimensions of ethics that influence human actions. Discuss how these dimensions shape ethical decision-making in the professional context.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"It is not enough to talk about peace, one must believe in it; and it is not enough to believe in it, one must act upon it.\" In the present context, the major weapon industries of the developed nations are adversely influencing continuation of number of wars for their own self-interest, all around the world. What are the ethical considerations of the powerful nations in today's international arena to stop continuation of ongoing conflicts?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Global warming and climate change are the outcomes of human greed in the name of development, indicating the direction in which extinction of organisms including human beings is heading towards loss of life on Earth. How do you put an end to this to protect life and bring equilibrium between the society and the environment?",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Given below are three quotations of great moral thinkers/philosophers. For each of these quotations, bring out what it means to you in the present context: \"Learn everything that is good from others, but bring it in, and in your own way absorb it; do not become others.\" - Swami Vivekananda",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Given below are three quotations of great moral thinkers/philosophers. For each of these quotations, bring out what it means to you in the present context: \"Faith is of no avail in the absence of strength. Faith and strength, both are essential to accomplish any great work.\" - Sardar Patel",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Given below are three quotations of great moral thinkers/philosophers. For each of these quotations, bring out what it means to you in the present context: \"In law, a man is guilty when he violates the rights of others. In ethics, he is guilty if he only thinks of doing so.\" - Immanuel Kant",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"The concept of Just and Unjust is contextual. What was just a year back, may turn out to be unjust in today's context. Changing context should be constantly under scrutiny to prevent miscarriage of justice.\" Examine the above statement with suitable examples.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"Mindless addiction to Form, ignoring the Substance of the matter, results in rendering of injustice. A perceptive civil servant is one who ignores such literalness and carries out true intent.\" Examine the above statement with suitable illustrations.",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The 'Code of Conduct' and 'Code of Ethics' are the sources of guidance in public administration. There is code of conduct already in operation, whereas code of ethics is not yet put in place. Suggest a suitable model for code of ethics to maintain integrity, probity and transparency in governance.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "The soul of the new law, Bharatiya Nyaya Sanhita (BNS) is Justice, Equality and Impartiality based on Indian culture and ethos. Discuss this in the light of major shift from a doctrine of punishment to justice in the present judicial system.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "\"In Indian culture and value system, an equal opportunity has been provided irrespective of gender identity. The number of women in public service has been steadily increasing over the years.\" Examine the gender-specific challenges faced by female public servants and suggest suitable measures to increase their efficiency in discharging their duties and maintaining high standards of probity.",
+          "subject": "Ethics & Integrity",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Mission Karmayogi is aiming for maintaining a very high standard of conduct and behaviour to ensure efficiency for serving citizens and in turn developing oneself. How will this scheme empower the civil servants in enhancing productive efficiency and delivering the services at the grassroots level?",
+          "subject": "Aptitude",
+          "marks": 10,
+          "words": 150
+        },
+        {
+          "q": "Case Study: As the Chief Executive Officer and majority shareholder of a Third-World technology company, ABC Incorporated (the second largest worldwide), you confront a 48% rise in greenhouse gas emissions in 2023 over 2019 levels, driven by the surging energy demands of AI-powered data centres, while a 2030 net-zero commitment, intense competition for rapid innovation, and shareholder value pull in opposing directions. (a) What is your immediate response to the challenges posed in the above case? (b) Discuss the ethical issues involved in the above case. (c) Your company has been identified to be penalized by technological giants. What logical and ethical arguments will you put forth to convince about its necessity? (d) Being a conscience being, what measures would you adopt to maintain balance between AI innovation and environment footprint?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Raman, a senior IPS officer recently posted as D.G. of a state with high graduate unemployment, learns that a new global terrorist group is recruiting unemployed youth from a particular community via social media and local communal organisations to carry out militant activities, with intelligence indicating many youth are already being radicalised online. (a) What are the options available to Raman to tackle the above situation? (b) What measures would you suggest for strengthening the existing set-up to ensure that such groups do not succeed in penetrating and vitiating the atmosphere in the state? (c) In the above scenario, what action plan would you advise for enhancing the intelligence gathering mechanism of the police force?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Rohit, SP (Special Operations) in a naxalite-affected district, leads a successful cordon-and-search operation overpowering ten hardcore naxalites with sophisticated weapons, but more than five hundred agitated tribal women surround the village demanding their immediate release; with communication to his superior failing and two top insurgents carrying prize money and involved in a recent ambush, firing risks loss of civilian lives. (a) What are the options available with Rohit to cope with the situation? (b) What are the ethical dilemmas being faced by Rohit? (c) Which of the options, do you think, would be more appropriate for Rohit to adopt and why? (d) In the present situation, what are the extra precautionary measures to be taken by the police in dealing with women protesters?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Sneha, a Senior Manager in charge of procurement for a privately owned hospital chain's new super speciality centre, discovers that her brother - a well-known medical equipment supplier facing financial difficulties - has submitted a bid; as committee head she is not bound to choose the lowest bidder, but awarding the contract to him risks charges of favouritism, while the management trusts her fully. (a) What should be Sneha's course of action? (b) How would she justify what she chooses to do? (c) In this case, how is medical ethics compromised with vested personal interest?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Facing an exceptionally severe summer and acute water shortage, a District Collector deploys vigilance teams to stop farmers over-exploiting groundwater for irrigation; the agitated farmers allege the administration is anti-farmer and corrupt because nearby industries continue drawing huge amounts of water, yet closing the industries would render many workers unemployed. (a) Discuss all options available to the District Collector as a District Magistrate. (b) What suitable actions can be taken in view of mutually compatible interests of the stakeholders? (c) What are the potential administrative and ethical dilemmas for the District Collector?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        },
+        {
+          "q": "Case Study: Dr. Srinivasan, a senior scientist heading a team developing a new drug against a rapidly spreading viral disease, faces intense pressure for first-mover market advantage; senior team members suggest shortcuts including manipulating data to exclude negative outcomes, selectively reporting positive results, foregoing informed consent, and using a rival company's patented compound, but he is uncomfortable taking such shortcuts even though meeting targets seems impossible without them. (a) What would you do in such a situation? (b) Examine your options and consequences in the light of the ethical questions involved. (c) How can data ethics and drug ethics save humanity at large in such a scenario?",
+          "subject": "Case Study",
+          "marks": 20,
+          "words": 250
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "paper": "Essay",
+      "paper_code": "ESSAY",
+      "questions": [
+        {
+          "q": "Forests precede civilizations and deserts follow them.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "The empires of the future will be the empires of the mind.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "There is no path to happiness; happiness is the path.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "The doubter is a true man of science.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Social media is triggering 'Fear Of Missing Out' (FOMO) amongst the youth, precipitating depression and loneliness.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "Nearly all men can stand adversity, but if you want to test a man's character, give him power.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "All ideas having large consequences are always simple.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        },
+        {
+          "q": "The cost of being wrong is less than the cost of doing nothing.",
+          "subject": "Essay",
+          "marks": 125,
+          "words": 1000
+        }
+      ]
+    }
+  ]
+}

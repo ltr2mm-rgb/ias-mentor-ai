@@ -1,0 +1,341 @@
+/* ============================================================================
+   aim_loop.js — AIMENTORA "Learning Loop 1.0" as a self-contained feature module.
+
+   Single public surface: window.AIMLoop = { init, startMission, submitAnswer,
+   completeMission }. Everything else is private (IIFE) — no globals leak into the
+   SPA, the behavioural twin of scoping CSS under `.aim`.
+
+   Layered so Sprint 3 replaces ONLY the `api` layer:
+     · api      — the ONLY code that knows the backend (mock now, /me/... later)
+     · state    — local mission/question/session state
+     · renderer — builds & updates the `.aim` DOM
+     · events   — delegated DOM handling + optional SPA event hooks
+     · view     — owns the mount element and screen templates
+
+   Mounts into any element: AIMLoop.init(el). The standalone prototype page and the
+   SPA `#panel-loop` both call the same init — one source of truth for the UI.
+   ========================================================================== */
+window.AIMLoop = (function () {
+  "use strict";
+
+  // ── api ── the ONLY layer that talks to the backend ───────────────────────
+  // Mock now. Shapes match the implementation-spec contract exactly, so Sprint 3
+  // swaps these bodies for fetch('/me/...') with no change to state/renderer:
+  //   getCurrentMission -> GET /me/mission/current (+ /me/mission, /me/learning)
+  //   getMissionDetail  -> GET /me/mission/{id}
+  //   getQuestions      -> GET /me/mission/{id}/questions   (NO answers to client)
+  //   submitAnswer      -> POST /me/attempt (+ explanation)  -> MCQ_ATTEMPTED
+  //   getOutcome        -> GET /me/mission/{id}/outcome
+  var MockMissionAPI = (function () {
+    var MISSION = {
+      mission_id: "m-demo-1", concept: "Fundamental Rights", subject: "Constitution",
+      n_questions: 5, difficulty: "Medium", est_minutes: 12,
+      mastery: 54, revision_due: 6,
+      reason: [
+        "Your accuracy in Fundamental Rights has recently declined.",
+        "This topic is due for spaced revision.",
+        "Strengthening it now will improve long-term retention."
+      ]
+    };
+    // answers held privately (the client never receives correctIndex up front)
+    var BANK = [
+      { id: "q1", text: "Which Article of the Constitution abolishes untouchability?",
+        options: ["Article 14", "Article 17", "Article 19", "Article 21"], _a: 1,
+        explanation: "Article 17 declares untouchability abolished and its practice in any form forbidden and punishable by law." },
+      { id: "q2", text: "The Right to Constitutional Remedies is guaranteed under which Article?",
+        options: ["Article 32", "Article 21", "Article 25", "Article 29"], _a: 0,
+        explanation: "Dr. Ambedkar called Article 32 the “heart and soul” of the Constitution — it lets citizens approach the Supreme Court directly to enforce Fundamental Rights." },
+      { id: "q3", text: "Which Fundamental Right is available to citizens only, and not to foreigners?",
+        options: ["Right to equality (Art 14)", "Right to freedom (Art 19)", "Right to life (Art 21)", "Freedom of religion (Art 25)"], _a: 1,
+        explanation: "The six freedoms under Article 19 are guaranteed only to citizens; Articles 14 and 21 extend to all persons." },
+      { id: "q4", text: "The Right to Education was made a Fundamental Right by which amendment?",
+        options: ["44th Amendment", "73rd Amendment", "86th Amendment", "101st Amendment"], _a: 2,
+        explanation: "The 86th Amendment (2002) inserted Article 21A, making free and compulsory education a Fundamental Right for children aged 6 to 14." },
+      { id: "q5", text: "Which writ is issued to produce a person who has been unlawfully detained?",
+        options: ["Mandamus", "Certiorari", "Quo Warranto", "Habeas Corpus"], _a: 3,
+        explanation: "Habeas corpus (“to have the body”) directs authorities to produce a detained person before the court to test the legality of the detention." }
+    ];
+    var attempts = [];              // mock event log (stands in for MCQ_ATTEMPTED)
+    function delay(v) { return Promise.resolve(v); }
+    return {
+      getCurrentMission: function () { attempts = []; return delay(JSON.parse(JSON.stringify(MISSION))); },
+      getMissionDetail: function (id) { return delay(MISSION); },
+      getQuestions: function (id) {
+        return delay(BANK.map(function (q) {   // strip the answer — client must not see it
+          return { id: q.id, text: q.text, options: q.options };
+        }));
+      },
+      submitAnswer: function (qid, selected) {
+        var q = BANK.filter(function (x) { return x.id === qid; })[0];
+        var correct = selected === q._a;
+        attempts.push({ qid: qid, correct: correct });   // emit MCQ_ATTEMPTED (mock)
+        return delay({ correct: correct, correct_index: q._a, explanation: q.explanation });
+      },
+      getOutcome: function (id) {
+        var n = attempts.length || 1;
+        var right = attempts.filter(function (a) { return a.correct; }).length;
+        var acc = Math.round(right / n * 100);
+        var gain = Math.round(acc / 100 * 12);          // representative mock gain
+        return delay({
+          accuracy_before: 72, accuracy_after: acc,
+          mastery_before: MISSION.mastery, mastery_after: Math.min(100, MISSION.mastery + gain),
+          revision_in_days: 2,
+          next_recommendation: { concept: "Directive Principles", est_minutes: 9 }
+        });
+      }
+    };
+  })();
+
+  // the active api implementation — INJECTED at init() (Sprint 3 swaps the mock
+  // for a RealMissionAPI with the same shape); defaults to the mock for standalone.
+  var api = MockMissionAPI;
+
+  // ── state ── local session state (never authoritative; backend is) ────────
+  var state = {
+    screen: "dashboard", mission: null, questions: [], i: 0,
+    chosen: [], locked: [], results: [], hist: [], whyOpen: false, t0: 0, timer: 0
+  };
+
+  // ── view ── the mount element + tiny DOM helpers ──────────────────────────
+  var view = { root: null };
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function h(html) { return html; }
+  function acc() {
+    var ans = state.results.filter(function (r) { return r != null; }).length;
+    var corr = state.results.filter(function (r) { return r && r.correct; }).length;
+    return { ans: ans, corr: corr, pct: ans ? Math.round(corr / ans * 100) : null };
+  }
+
+  // ── view-model ── raw mission -> presentation truth. NONE is a FIRST-CLASS state:
+  // the renderer must never read a null mission; it asks the view-model instead.
+  function missionVM(m) {
+    var st = (m && m.state) || "NONE";
+    return { state: st, hasMission: !!(m && m.concept) && st !== "NONE" };
+  }
+
+  // ── renderer ── pure: state -> DOM ────────────────────────────────────────
+  var renderer = {
+    dashboard: function () {
+      var vm = missionVM(state.mission);
+      if (!vm.hasMission) {
+        return '<div class="page">'
+          + '<div style="margin:8px 0 22px"><div class="eyebrow">Today</div>'
+          + '<h1 style="font-size:2rem;margin-top:4px">Good morning</h1></div>'
+          + '<div class="card-accent" style="padding:26px 28px">'
+          + '<div class="label" style="color:var(--gold-deep)">No mission yet</div>'
+          + '<h2 style="font-size:1.5rem;margin:8px 0 6px">Let\u2019s find your starting point</h2>'
+          + '<p class="meta" style="margin:0 0 18px;max-width:560px">Answer a few practice questions and AIVORA will build your first personalised mission \u2014 aimed at exactly what you need next.</p>'
+          + '<button class="btn btn-primary btn-lg" data-act="go-practice">Start practising \u2192</button>'
+          + '</div></div>';
+      }
+      var m = state.mission;
+      return '<div class="page">'
+        + '<div style="margin:8px 0 22px"><div class="eyebrow">Today</div>'
+        + '<h1 style="font-size:2rem;margin-top:4px">Good morning</h1></div>'
+        + '<div class="card-accent" style="padding:26px 28px">'
+        + '<div class="label" style="color:var(--gold-deep)">Today’s mission is ready</div>'
+        + '<h2 style="font-size:1.5rem;margin:8px 0 6px">' + esc(m.concept) + '</h2>'
+        + '<p class="meta" style="margin:0 0 12px;max-width:560px">Based on your recent attempts, <b style="color:var(--text)">' + esc(m.concept) + '</b> needs reinforcement.</p>'
+        + '<button class="linkbtn" data-act="toggle-why">Why this mission?</button>'
+        + '<div class="whycard' + (state.whyOpen ? ' show' : '') + '"><div class="label" style="margin-bottom:8px">Why was this chosen</div>'
+        + '<ul>' + m.reason.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>'
+        + '<button class="btn btn-subtle btn-sm" style="margin-top:12px" data-act="toggle-why">Got it</button></div>'
+        + '<div class="flex" style="align-items:center;gap:12px;margin:18px 0 20px">'
+        + '<span class="pill">⏱ ' + m.est_minutes + ' min</span><span class="pill">🎯 ' + m.n_questions + ' questions</span><span class="pill">' + esc(m.difficulty) + '</span></div>'
+        + '<button class="btn btn-primary btn-lg" data-act="overview">Start Mission →</button></div>'
+        + '<div class="section" style="margin-top:32px"><div class="section-head"><h2 style="font-size:1.15rem">Where you stand</h2></div>'
+        + '<div class="stat-grid"><div class="stat"><b>' + m.mastery + '%</b><span>Mastery · ' + esc(m.concept) + '</span></div>'
+        + '<div class="stat"><b>' + m.revision_due + '</b><span>Concepts due for revision</span></div></div></div>'
+        + '</div>';
+    },
+    overview: function () {
+      var m = state.mission;
+      return '<div class="page">'
+        + '<button class="btn btn-subtle btn-sm" data-act="dashboard" style="margin-bottom:18px">← Back</button>'
+        + '<div class="card" style="text-align:center;padding:38px 34px;max-width:560px;margin:0 auto">'
+        + '<div class="eyebrow">Mission · ' + esc(m.subject) + '</div>'
+        + '<h1 style="font-size:1.9rem;margin:8px 0 24px">' + esc(m.concept) + '</h1>'
+        + '<div class="stat-grid" style="margin-bottom:22px">'
+        + '<div class="stat"><b>' + m.n_questions + '</b><span>Questions</span></div>'
+        + '<div class="stat"><b>' + esc(m.difficulty) + '</b><span>Difficulty</span></div>'
+        + '<div class="stat"><b>' + m.est_minutes + ' min</b><span>Est. time</span></div></div>'
+        + '<p class="meta" style="margin:0 0 24px">This mission targets your weakest concept.</p>'
+        + '<button class="btn btn-primary btn-lg btn-block" data-act="begin">Begin →</button></div></div>';
+    },
+    quiz: function () {
+      var q = state.questions[state.i], keys = ["A", "B", "C", "D"], a = acc();
+      var res = state.results[state.i], locked = !!res;
+      var seg = state.questions.map(function (_, k) { return '<i' + (k <= state.i ? ' class="on"' : '') + '></i>'; }).join('');
+      var opts = q.options.map(function (o, k) {
+        var cls = "opt";
+        if (locked) { if (k === res.correct_index) cls += " correct"; else if (k === state.chosen[state.i]) cls += " wrong"; }
+        var sel = (state.chosen[state.i] === k && !locked) ? ' style="border-color:var(--gold);background:var(--card2)"' : '';
+        return '<button class="' + cls + '"' + (locked ? '' : ' data-act="pick" data-arg="' + k + '"') + sel + '><span class="okey">' + keys[k] + '</span> ' + esc(o) + '</button>';
+      }).join('');
+      var fb = "";
+      if (locked) {
+        var ok = res.correct, hist = state.hist[state.i];
+        var live = hist ? ((hist.first ? 'Accuracy <span style="margin-left:4px">' + hist.now + '%</span>'
+          : 'Accuracy ' + hist.prev + '% <span class="arr">→</span> ' + hist.now + '%')
+          + '<span class="mp">Mission ' + (state.i + 1) + ' / ' + state.questions.length + '</span>') : "";
+        fb = '<div class="fb-panel show"><div class="fb-head ' + (ok ? 'ok' : 'no') + '">' + (ok ? '✓ Nice.' : '✗ Not quite.')
+          + ' &nbsp;<span class="meta" style="font-weight:600">' + esc(q.options[res.correct_index]) + '</span></div>'
+          + '<p class="meta" style="margin:0 0 12px">' + esc(res.explanation) + '</p>'
+          + '<span class="badge badge-muted">Confidence · Medium</span>'
+          + '<div class="fblive">' + live + '</div></div>';
+      }
+      var nextLabel = locked ? (state.i === state.questions.length - 1 ? "Finish mission →" : "Continue →") : "Check";
+      return '<div class="page">'
+        + '<div class="card" style="margin-bottom:18px;padding:16px 20px"><div class="mstrip">'
+        + '<div class="mi"><b>' + (state.i + 1) + ' / ' + state.questions.length + '</b><span>Mission</span></div>'
+        + '<div class="track" style="flex:1;min-width:120px"><i style="width:' + (((state.i + (locked ? 1 : 0)) / state.questions.length) * 100) + '%"></i></div>'
+        + '<div class="mi"><b>' + (a.pct === null ? "—" : a.pct + "%") + '</b><span>Accuracy</span></div>'
+        + '<div class="mi"><b id="aim-time">' + fmtTime() + '</b><span>Time</span></div></div></div>'
+        + '<div class="qcard"><div class="flex-between" style="margin-bottom:14px">'
+        + '<span class="meta">Question <b style="color:var(--text)">' + (state.i + 1) + '</b> of ' + state.questions.length + '</span>'
+        + '<span class="seg">' + seg + '</span></div>'
+        + '<div class="qtext">' + esc(q.text) + '</div><div class="opts' + (locked ? ' locked' : '') + '">' + opts + '</div>' + fb + '</div>'
+        + '<div class="action-bar" style="margin-top:18px">'
+        + '<button class="btn btn-subtle btn-sm" data-act="prev"' + (state.i === 0 ? ' disabled' : '') + '>← Previous</button>'
+        + '<span class="meta">Question ' + (state.i + 1) + ' of ' + state.questions.length + '</span>'
+        + '<button class="btn btn-primary btn-sm" data-act="primary">' + nextLabel + '</button></div></div>';
+    },
+    complete: function (o) {
+      var next = o.next_recommendation;
+      // next_recommendation is nullable per mission_api.md — a learner with only one
+      // active concept legitimately has no "next" to recommend. Render a graceful state
+      // instead of dereferencing null.
+      var nextBlock = next
+        ? ('<div class="card-accent" style="max-width:600px;margin:16px auto 0"><div class="flex-between">'
+           + '<div><div class="label" style="color:var(--gold-deep);margin-bottom:4px">Recommended next mission</div>'
+           + '<div style="font-family:var(--font-head);font-weight:800;font-size:1.2rem">' + esc(next.concept) + '</div>'
+           + '<div class="meta">Estimated ' + next.est_minutes + ' minutes</div></div><div style="font-size:1.8rem">🧭</div></div></div>')
+        : ('<div class="card-accent" style="max-width:600px;margin:16px auto 0"><div class="flex-between">'
+           + '<div><div class="label" style="color:var(--gold-deep);margin-bottom:4px">No new recommendation right now</div>'
+           + '<div class="meta">You’ve completed today’s recommended focus — keep practising and we’ll surface the next one.</div></div><div style="font-size:1.8rem">✅</div></div></div>');
+      return '<div class="page">'
+        + '<div class="card-dark" style="text-align:center;padding:40px 34px;max-width:600px;margin:0 auto">'
+        + '<div class="label" style="color:#F5D98A">Mission complete</div>'
+        + '<h1 style="font-size:2rem;color:#fff;margin:8px 0 8px">Excellent.</h1>'
+        + '<p style="color:#e8d9b8;margin:0 0 6px">You’ve strengthened <b style="color:#F5D98A">' + esc(state.mission.concept) + '</b>.</p>'
+        + '<p style="color:#cbb98f;margin:0;font-size:.92rem">Tomorrow we’ll revisit this briefly to improve long-term retention.</p></div>'
+        + '<div class="grid grid-2" style="max-width:600px;margin:16px auto 0">'
+        + '<div class="card"><div class="card-sub">Accuracy</div><div class="ba"><span class="from">' + o.accuracy_before + '%</span><span class="arr">→</span><span class="to">' + o.accuracy_after + '%</span></div></div>'
+        + '<div class="card"><div class="card-sub">Concept mastery</div><div class="ba"><span class="from">' + o.mastery_before + '%</span><span class="arr">→</span><span class="to">' + o.mastery_after + '%</span></div></div></div>'
+        + nextBlock
+        + '<div class="flex" style="max-width:600px;margin:20px auto 0;justify-content:center">'
+        + '<button class="btn btn-primary btn-lg" data-act="start-now">Start Now</button>'
+        + '<button class="btn btn-ghost btn-lg" data-act="finish-today">Finish for Today</button></div></div>';
+    },
+    error: function () {
+      var e = state.error || {};
+      return '<div class="page">'
+        + '<div class="card-dark" style="text-align:center;padding:44px 34px;max-width:600px;margin:0 auto">'
+        + '<div class="label" style="color:#F5D98A">Something went wrong</div>'
+        + '<p style="color:#e8d9b8;margin:12px 0 22px;font-size:1.02rem">' + esc(e.message || "Something went wrong.") + '</p>'
+        + '<div class="flex" style="justify-content:center;gap:12px">'
+        + '<button class="btn btn-primary btn-lg" data-act="retry">Retry</button>'
+        + '<button class="btn btn-ghost btn-lg" data-act="dashboard">Back to dashboard</button>'
+        + '</div></div></div>';
+    }
+  };
+
+  function fmtTime() {
+    if (!state.t0) return "0:00";
+    var d = Math.floor((Date.now() - state.t0) / 1000);
+    return Math.floor(d / 60) + ":" + String(d % 60).padStart(2, "0");
+  }
+  function paint(html) { view.root.innerHTML = h(html); }
+  function tick() { var el = document.getElementById("aim-time"); if (el) el.textContent = fmtTime(); }
+
+  // ── events ── one delegated handler; no inline onclick, no globals ────────
+  function onClick(e) {
+    var t = e.target.closest("[data-act]");
+    if (!t || !view.root.contains(t)) return;
+    var act = t.getAttribute("data-act"), arg = t.getAttribute("data-arg");
+    ({
+      "toggle-why": function () { state.whyOpen = !state.whyOpen; paint(renderer.dashboard()); },
+      "go-practice": function () { if (window.enterWorkspace) { window.enterWorkspace("learn"); if (window.showPanel) window.showPanel("bookwise"); } else { location.href = "/?ws=learn"; } },
+      "overview": function () { state.screen = "overview"; paint(renderer.overview()); },
+      "dashboard": function () { state.error = null; state.screen = "dashboard"; paint(renderer.dashboard()); },
+      "begin": startMission,
+      "pick": function () { pick(parseInt(arg, 10)); },
+      "primary": primary,
+      "prev": function () { if (state.i > 0) { state.i--; paint(renderer.quiz()); } },
+      "start-now": startMission,
+      "finish-today": function () { stopTimer(); state.screen = "dashboard"; paint(renderer.dashboard()); },
+      "retry": function () { var r = state.error && state.error.retry; state.error = null; if (r) r(); }
+    }[act] || function () {})();
+  }
+  function stopTimer() { if (state.timer) { clearInterval(state.timer); state.timer = 0; } }
+
+  // ── flow ──────────────────────────────────────────────────────────────────
+  // Any API rejection → the design-system error state (Retry + Back). MockMissionAPI never
+  // rejects, so this path is exercised only by RealMissionAPI (409 / network / auth). The
+  // retry thunk re-runs the step that failed.
+  function apiFailure(retry) {
+    return function (err) {
+      stopTimer();
+      var message = (err && err.message) || (err && err.detail) || "Something went wrong.";
+      state.error = { message: message, retry: retry };
+      paint(renderer.error());
+    };
+  }
+  function startMission() {
+    api.getQuestions(state.mission.mission_id).then(function (qs) {
+      state.questions = qs; state.i = 0;
+      state.chosen = qs.map(function () { return null; });
+      state.results = qs.map(function () { return null; });
+      state.hist = qs.map(function () { return null; });
+      state.screen = "quiz"; state.t0 = Date.now();
+      stopTimer(); state.timer = setInterval(tick, 1000);
+      paint(renderer.quiz());
+    }).catch(apiFailure(startMission));
+  }
+  function pick(k) { if (state.results[state.i]) return; state.chosen[state.i] = k; paint(renderer.quiz()); }
+  function primary() {
+    var res = state.results[state.i];
+    if (!res) {                                    // "Check"
+      if (state.chosen[state.i] == null) return;
+      submitAnswer();
+    } else if (state.i === state.questions.length - 1) {
+      completeMission();
+    } else { state.i++; paint(renderer.quiz()); }
+  }
+  function submitAnswer() {
+    var q = state.questions[state.i], before = acc();
+    api.submitAnswer(q.id, state.chosen[state.i]).then(function (r) {
+      state.results[state.i] = r;
+      var after = acc();
+      state.hist[state.i] = { prev: before.pct == null ? after.pct : before.pct, now: after.pct, first: before.ans === 0 };
+      paint(renderer.quiz());
+    }).catch(apiFailure(submitAnswer));
+  }
+  function completeMission() {
+    stopTimer();
+    api.getOutcome(state.mission.mission_id).then(function (o) { state.screen = "complete"; paint(renderer.complete(o)); }).catch(apiFailure(completeMission));
+  }
+
+  // ── public surface ────────────────────────────────────────────────────────
+  var bound = false;
+  function init(opts) {
+    opts = opts || {};
+    if (typeof opts === "string" || (opts && opts.nodeType)) opts = { mount: opts };
+    var root = (typeof opts.mount === "string") ? document.querySelector(opts.mount) : opts.mount;
+    if (!root) throw new Error("AIMLoop.init: mount element not found");
+    if (opts.api) api = opts.api;                         // dependency injection
+    if (view.root !== root || !bound) {                   // bind delegated handler ONCE per root
+      if (view.root && bound) view.root.removeEventListener("click", onClick);
+      view.root = root; view.root.addEventListener("click", onClick); bound = true;
+    }
+    stopTimer();
+    state.i = 0; state.chosen = []; state.results = []; state.hist = []; state.whyOpen = false;
+    return api.getCurrentMission().then(function (m) {
+      state.mission = m; state.screen = "dashboard";
+      paint(renderer.dashboard());
+    }).catch(apiFailure(function () { state.error = null; init(opts); }));
+  }
+  return { init: init, startMission: startMission, submitAnswer: submitAnswer,
+           completeMission: completeMission, MockMissionAPI: MockMissionAPI };
+})();

@@ -1,0 +1,330 @@
+{
+  "schema": "ExperimentOpsArtifact",
+  "schema_version": 1,
+  "artifact_version": "ops-1.0",
+  "generated_at": "2026-07-30T06:02:34Z",
+  "source": {
+    "kind": "snapshot",
+    "generated_at": "2026-07-30T06:02:34Z",
+    "artifact_version": "ops-1.0"
+  },
+  "platform": "AI Marga \u00b7 Experiment Operations",
+  "featured": {
+    "id": "exp-17",
+    "title": "Spaced-repetition due gate",
+    "status": "closed",
+    "default_policy": "mission-policy-det-1.0",
+    "candidate_policy": "mission-policy-det-1.1",
+    "assignment_version": "exp-assign-v1",
+    "hypothesis": "Interrupt acquisition only when a review is genuinely due.",
+    "window": {
+      "basis": "per-learner seq [enrollment_seq, end_seq]",
+      "start_seq": 20,
+      "end_seq": 10000
+    },
+    "enrolled": 90,
+    "arm_counts": {
+      "mission-policy-det-1.0": 46,
+      "mission-policy-det-1.1": 44
+    },
+    "in_window_outcomes": 90,
+    "minimum_sample": 20,
+    "primary_metric": "avg_mastery_gain",
+    "guardrails": [
+      "completion_rate"
+    ],
+    "scorecard": {
+      "scorecard_version": "scorecard-1.0",
+      "default_policy": "mission-policy-det-1.0",
+      "candidate_policy": "mission-policy-det-1.1",
+      "n_default": 46,
+      "n_candidate": 44,
+      "rows": [
+        {
+          "metric": "completion_rate",
+          "label": "Completion rate",
+          "class": "guardrail",
+          "higher_is_better": true,
+          "default": 0.8043,
+          "candidate": 0.8182,
+          "delta": 0.0139,
+          "n_default": 46,
+          "n_candidate": 44,
+          "effect": 0.013834,
+          "interval": [
+            -0.150277,
+            0.175165
+          ],
+          "sample_size": {
+            "default": 46,
+            "candidate": 44,
+            "min": 44
+          },
+          "method": "wilson-newcombe",
+          "signal": {
+            "label": "Not worse",
+            "status": "neutral"
+          }
+        },
+        {
+          "metric": "avg_mastery_gain",
+          "label": "Avg mastery gain",
+          "class": "leading",
+          "higher_is_better": true,
+          "default": 0.103,
+          "candidate": 0.1875,
+          "delta": 0.0845,
+          "n_default": 46,
+          "n_candidate": 44,
+          "effect": 0.084527,
+          "interval": [
+            0.077763,
+            0.091539
+          ],
+          "sample_size": {
+            "default": 37,
+            "candidate": 36,
+            "min": 36
+          },
+          "method": "bootstrap-percentile",
+          "signal": {
+            "label": "Higher (supported)",
+            "status": "good"
+          }
+        },
+        {
+          "metric": "avg_attempts_on_target",
+          "label": "Avg attempts / mission",
+          "class": "efficiency",
+          "higher_is_better": null,
+          "default": 5.0,
+          "candidate": 5.3182,
+          "delta": 0.3182,
+          "n_default": 46,
+          "n_candidate": 44,
+          "effect": 0.318182,
+          "interval": [
+            0.056324,
+            0.603755
+          ],
+          "sample_size": {
+            "default": 46,
+            "candidate": 44,
+            "min": 44
+          },
+          "method": "bootstrap-percentile",
+          "signal": {
+            "label": "Higher (supported)",
+            "status": "neutral"
+          }
+        },
+        {
+          "metric": "avg_elapsed_seq",
+          "label": "Avg elapsed (seq-span)",
+          "class": "efficiency",
+          "higher_is_better": null,
+          "default": 6.027,
+          "candidate": 6.0,
+          "delta": -0.027,
+          "n_default": 46,
+          "n_candidate": 44,
+          "effect": -0.027027,
+          "interval": [
+            -0.332583,
+            0.301051
+          ],
+          "sample_size": {
+            "default": 37,
+            "candidate": 36,
+            "min": 36
+          },
+          "method": "bootstrap-percentile",
+          "signal": {
+            "label": "No sig. difference",
+            "status": "neutral"
+          }
+        }
+      ],
+      "note": "presentation only \u2014 governance and evidence-strength are separate outputs",
+      "confidence_version": "confidence-1.0",
+      "alpha": 0.05,
+      "evaluation_window": {
+        "default": {
+          "seq_low": 20,
+          "seq_high": 157,
+          "missions": 46
+        },
+        "candidate": {
+          "seq_low": 20,
+          "seq_high": 151,
+          "missions": 44
+        }
+      }
+    },
+    "promotion": {
+      "promotion_version": "promotion-1.0",
+      "decision": "PROMOTE",
+      "verdict": null,
+      "min_sample_size": 36,
+      "threshold": 20,
+      "primary": {
+        "metric": "avg_mastery_gain",
+        "direction": "higher"
+      },
+      "guardrails": [
+        {
+          "metric": "completion_rate",
+          "direction": "higher"
+        }
+      ],
+      "reasons": [
+        "primary avg_mastery_gain improved (supported); guardrails not worse; n>=threshold"
+      ],
+      "evaluations": {
+        "avg_mastery_gain": {
+          "metric_type": "continuous",
+          "method": "bootstrap-percentile",
+          "default_stat": 0.102973,
+          "candidate_stat": 0.1875,
+          "effect": 0.084527,
+          "interval": [
+            0.077763,
+            0.091539
+          ],
+          "sample_size": {
+            "default": 37,
+            "candidate": 36,
+            "min": 36
+          },
+          "supported": {
+            "higher": true,
+            "lower": false,
+            "distinguishable": true
+          },
+          "alpha": 0.05
+        },
+        "completion_rate": {
+          "metric_type": "proportion",
+          "method": "wilson-newcombe",
+          "default_stat": 0.804348,
+          "candidate_stat": 0.818182,
+          "effect": 0.013834,
+          "interval": [
+            -0.150277,
+            0.175165
+          ],
+          "sample_size": {
+            "default": 46,
+            "candidate": 44,
+            "min": 44
+          },
+          "supported": {
+            "higher": false,
+            "lower": false,
+            "distinguishable": false
+          },
+          "alpha": 0.05
+        }
+      }
+    }
+  },
+  "replay": {
+    "experiment_layer_version": "experiment-1.0",
+    "evaluator_version": "evaluator-1.0",
+    "outcome_version": "outcome-1.0",
+    "confidence_version": "confidence-1.0",
+    "scorecard_version": "scorecard-1.0",
+    "promotion_version": "promotion-1.0",
+    "assignment_version": "exp-assign-v1",
+    "window_basis": "per-learner seq [enrollment_seq, end_seq]",
+    "replay_hash": "sha256:600e6ed7f5b390beb9bfdf8222e9d062",
+    "note": "hash over {scorecard, promotion}; identical inputs reproduce it exactly"
+  },
+  "history": [
+    {
+      "experiment_id": "exp-16",
+      "title": "Due gate 0.6 (first trial)",
+      "date": "2026-07-28",
+      "candidate": "mission-policy-det-1.1",
+      "default": "mission-policy-det-1.0",
+      "n": 34,
+      "decision": "PROMOTE",
+      "verdict": null,
+      "primary_metric": "avg_mastery_gain",
+      "primary_effect": 0.09,
+      "primary_ci": [
+        0.085294,
+        0.094706
+      ],
+      "completion_default": 0.8095,
+      "completion_candidate": 0.8095,
+      "window": {
+        "basis": "per-learner seq [enrollment_seq, end_seq]",
+        "end_seq": 8000
+      }
+    },
+    {
+      "experiment_id": "exp-15",
+      "title": "Aggressive due threshold 0.75",
+      "date": "2026-07-26",
+      "candidate": "mission-policy-det-1.1",
+      "default": "mission-policy-det-1.0",
+      "n": 20,
+      "decision": "KEEP_DEFAULT",
+      "verdict": "worse",
+      "primary_metric": "avg_mastery_gain",
+      "primary_effect": 0.05,
+      "primary_ci": [
+        0.04625,
+        0.053125
+      ],
+      "completion_default": 0.8,
+      "completion_candidate": 0.5,
+      "window": {
+        "basis": "per-learner seq [enrollment_seq, end_seq]",
+        "end_seq": 6000
+      }
+    },
+    {
+      "experiment_id": "exp-14",
+      "title": "Retention-first ordering (pilot)",
+      "date": "2026-07-24",
+      "candidate": "mission-policy-det-1.1",
+      "default": "mission-policy-det-1.0",
+      "n": 6,
+      "decision": "KEEP_DEFAULT",
+      "verdict": "insufficient_evidence",
+      "primary_metric": "avg_mastery_gain",
+      "primary_effect": 0.05,
+      "primary_ci": [
+        0.05,
+        0.05
+      ],
+      "completion_default": 0.75,
+      "completion_candidate": 1.0,
+      "window": {
+        "basis": "per-learner seq [enrollment_seq, end_seq]",
+        "end_seq": 4000
+      }
+    }
+  ],
+  "promotion_history": [
+    {
+      "date": "2026-07-28",
+      "experiment_id": "exp-16",
+      "action": "PROMOTE candidate \u2192 default",
+      "from_policy": "mission-policy-det-1.0",
+      "to_policy": "mission-policy-det-1.1",
+      "note": "promotion rule fired (primary supported; guardrails not worse)"
+    },
+    {
+      "date": "2026-07-26",
+      "experiment_id": "exp-15",
+      "action": "KEEP_DEFAULT (worse)",
+      "from_policy": "mission-policy-det-1.0",
+      "to_policy": "mission-policy-det-1.0",
+      "note": "candidate significantly regressed a guardrail"
+    }
+  ],
+  "footer": "Representative snapshot generated by the deterministic evaluator over the Phase B harness (offline). Every value is a genuine evaluator/experiment output; no live-learner data yet."
+}
